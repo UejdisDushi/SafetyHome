@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="zway-lib-0.2.8-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/zway-lib-0.2.8-SNAPSHOT.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
