@@ -11,7 +11,7 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import java.nio.charset.Charset;
 
-import static it.upo.reti2s.utils.SFWebhook.zWayApi;
+import static it.upo.reti2s.utils.SFWebhook.*;
 
 /**
  * Created by Luca Franciscone on 12/07/2017.
@@ -117,6 +117,27 @@ public class Util
             }
         }
         return null;
+    }
+
+    public static  Device getSensorePresenza()
+    {
+        return getDevice(SENSORBINARY,MULTILEVEL_PURPOSE,MULTILEVEL_ID);
+    }
+
+    public static Device getSensoreAperturaPorta()
+    {
+        return getDevice(SENSORBINARY,APERTURA_PORTE_ID);
+
+    }
+
+    public static Device getHolederLampadina()
+    {
+        return getDevice(SWITCHBINARY,HOLDER_LAMPADINA);
+    }
+
+    public static Device getSensoreLuminosita()
+    {
+        return getDevice(SENSORMULTILEVEL,MULTILEVEL_LUMINESCENCE,MULTILEVEL_ID);
     }
 
 

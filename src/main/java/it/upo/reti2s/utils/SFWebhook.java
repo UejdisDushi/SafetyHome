@@ -38,8 +38,8 @@ public class SFWebhook
 
     final static String PATH_IMMAGINE = "Images/prova.png";
     final static String FORMATO_IMMAGINE = "PNG";
-            //MULTISENSORE
-    final static String MULTILEVEL = "SensorMultilevel";
+            //
+    final static String SENSORMULTILEVEL = "SensorMultilevel";
 
     final static int MULTILEVEL_ID = 6;
     final static String MULTILEVEL_LUMINESCENCE = "Luminiscence";
@@ -47,7 +47,6 @@ public class SFWebhook
     final static String MULTILEVEL_PURPOSE = "purpose";
 
 
-    final static String BINARY = "SensorBinary";
 
     final static int APERTURA_PORTE_ID = 13;
 
@@ -60,6 +59,8 @@ public class SFWebhook
     final static String SWITCHBINARY = "SwitchBinary";
 
     final static String SENSORBINARY = "SensorBinary";
+
+
 
 
 
@@ -139,7 +140,7 @@ public class SFWebhook
                 System.out.println("Webcam: " + webcam.getName());
                 webcam.open();
                 try {
-                    ImageIO.write(webcam.getImage(), "PNG", new File("Images/prova.png"));
+                    ImageIO.write(webcam.getImage(), FORMATO_IMMAGINE, new File(PATH_IMMAGINE));
                     finalJson = "Immagine scattata";
 
 
