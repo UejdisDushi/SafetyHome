@@ -2,428 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="966f5009-a094-4c32-9990-c49804e0a537" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileHashes.bin" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileSnapshots.bin" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.bin" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.lock" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/51c84083-04b2-4f88-90a2-8fe5c2e6d941/_metadata_/metadata" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/51c84083-04b2-4f88-90a2-8fe5c2e6d941/_metadata_/metadata.keystream" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/51c84083-04b2-4f88-90a2-8fe5c2e6d941/_metadata_/metadata.keystream.len" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/51c84083-04b2-4f88-90a2-8fe5c2e6d941/_metadata_/metadata.len" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/51c84083-04b2-4f88-90a2-8fe5c2e6d941/_metadata_/metadata.values.at" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/51c84083-04b2-4f88-90a2-8fe5c2e6d941/_metadata_/metadata_i" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/51c84083-04b2-4f88-90a2-8fe5c2e6d941/_metadata_/metadata_i.len" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Images/Ghostbusters_logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Images/gb.JPG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Images/prova.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/classes/main/it/upo/reti2s/utils/QuickStart.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/classes/main/it/upo/reti2s/utils/SFWebhook.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/classes/main/it/upo/reti2s/utils/SimpleRunner.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/classes/main/it/upo/reti2s/utils/ThreadController.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/classes/main/it/upo/reti2s/utils/ZWaySimpleCallback.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/resources/main/tasks.db" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/libs/bridj-0.6.2.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/libs/slf4j-api-1.7.2.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/src/com/github/sarxos/webcam/ds/buildin/lib/darwin_universal/libOpenIMAJGrabber.dylib" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/src/com/github/sarxos/webcam/ds/buildin/lib/linux_armel/OpenIMAJGrabber.so" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/src/com/github/sarxos/webcam/ds/buildin/lib/linux_armhf/OpenIMAJGrabber.so" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/src/com/github/sarxos/webcam/ds/buildin/lib/linux_x64/OpenIMAJGrabber.so" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/src/com/github/sarxos/webcam/ds/buildin/lib/linux_x86/OpenIMAJGrabber.so" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/src/com/github/sarxos/webcam/ds/buildin/lib/win32/OpenIMAJGrabber.dll" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/src/com/github/sarxos/webcam/ds/buildin/lib/win64/OpenIMAJGrabber.dll" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/src/com/github/sarxos/webcam/icons/camera-icon.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/webcam-capture-0.3.10.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/zway-lib-0.2.8-SNAPSHOT.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/SafetyHome/tasks.db" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/tasks.db" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/51c84083-04b2-4f88-90a2-8fe5c2e6d941.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/51c84083-04b2-4f88-90a2-8fe5c2e6d941/storage.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/gradle.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__ai_api_libai_1_4_8.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_fasterxml_jackson_core_jackson_core_2_1_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_sarxos_webcam_capture_0_3_10.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_api_client_google_api_client_1_22_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_apis_google_api_services_calendar_v3_rev249_1_22_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_code_findbugs_jsr305_1_3_9.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_code_gson_gson_2_8_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_guava_guava_jdk5_17_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_http_client_google_http_client_1_22_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_http_client_google_http_client_jackson2_1_22_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_oauth_client_google_oauth_client_1_22_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_oauth_client_google_oauth_client_java6_1_22_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_oauth_client_google_oauth_client_jetty_1_22_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_nativelibs4java_bridj_0_6_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_sparkjava_spark_core_2_6_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__commons_codec_commons_codec_1_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__commons_logging_commons_logging_1_1_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__javax_servlet_javax_servlet_api_3_1_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__junit_junit_4_12.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_apache_commons_commons_lang3_3_4.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_apache_httpcomponents_httpclient_4_0_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_apache_httpcomponents_httpcore_4_0_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_apache_logging_log4j_log4j_api_2_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_apache_logging_log4j_log4j_core_2_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_eclipse_jetty_jetty_client_9_4_4_v20170414.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_eclipse_jetty_jetty_http_9_4_4_v20170414.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_eclipse_jetty_jetty_io_9_4_4_v20170414.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_eclipse_jetty_jetty_security_9_4_4_v20170414.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_eclipse_jetty_jetty_server_9_4_4_v20170414.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_eclipse_jetty_jetty_servlet_9_4_4_v20170414.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_eclipse_jetty_jetty_util_9_4_4_v20170414.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_eclipse_jetty_jetty_webapp_9_4_4_v20170414.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_eclipse_jetty_jetty_xml_9_4_4_v20170414.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_eclipse_jetty_websocket_websocket_api_9_4_4_v20170414.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_eclipse_jetty_websocket_websocket_client_9_4_4_v20170414.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_eclipse_jetty_websocket_websocket_common_9_4_4_v20170414.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_eclipse_jetty_websocket_websocket_server_9_4_4_v20170414.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_eclipse_jetty_websocket_websocket_servlet_9_4_4_v20170414.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_core_1_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_mortbay_jetty_jetty_6_1_26.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_mortbay_jetty_jetty_util_6_1_26.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_mortbay_jetty_servlet_api_2_5_20081211.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_slf4j_slf4j_api_1_7_21.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_slf4j_slf4j_simple_1_7_21.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_xerial_sqlite_jdbc_3_15_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/zway_lib_0_2_8_SNAPSHOT.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules/SafetyHome.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules/SafetyHome_main.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules/SafetyHome_test.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build.gradle" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gradlew" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gradlew.bat" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/CHANGELOG.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/LICENSE.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/allclasses-frame.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/allclasses-noframe.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/Webcam.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/WebcamCompositeDriver.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/WebcamDevice.BufferAccess.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/WebcamDevice.FPSSource.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/WebcamDevice.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/WebcamDiscoveryEvent.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/WebcamDiscoveryListener.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/WebcamDiscoveryService.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/WebcamDiscoverySupport.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/WebcamDriver.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/WebcamDriverUtils.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/WebcamEvent.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/WebcamEventType.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/WebcamException.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/WebcamExceptionHandler.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/WebcamImageTransformer.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/WebcamListener.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/WebcamLock.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/WebcamLockException.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/WebcamMotionDetector.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/WebcamMotionEvent.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/WebcamMotionListener.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/WebcamPanel.DefaultPainter.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/WebcamPanel.DrawMode.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/WebcamPanel.Painter.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/WebcamPanel.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/WebcamPicker.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/WebcamPickerCellRenderer.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/WebcamPickerModel.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/WebcamProcessor.ProcessorThread.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/WebcamProcessor.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/WebcamResolution.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/WebcamShutdownHook.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/WebcamStreamer.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/WebcamTask.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/WebcamUpdater.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/WebcamUtils.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/WebcamViewer.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/class-use/Webcam.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/class-use/WebcamCompositeDriver.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/class-use/WebcamDevice.BufferAccess.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/class-use/WebcamDevice.FPSSource.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/class-use/WebcamDevice.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/class-use/WebcamDiscoveryEvent.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/class-use/WebcamDiscoveryListener.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/class-use/WebcamDiscoveryService.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/class-use/WebcamDiscoverySupport.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/class-use/WebcamDriver.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/class-use/WebcamDriverUtils.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/class-use/WebcamEvent.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/class-use/WebcamEventType.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/class-use/WebcamException.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/class-use/WebcamExceptionHandler.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/class-use/WebcamImageTransformer.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/class-use/WebcamListener.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/class-use/WebcamLock.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/class-use/WebcamLockException.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/class-use/WebcamMotionDetector.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/class-use/WebcamMotionEvent.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/class-use/WebcamMotionListener.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/class-use/WebcamPanel.DefaultPainter.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/class-use/WebcamPanel.DrawMode.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/class-use/WebcamPanel.Painter.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/class-use/WebcamPanel.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/class-use/WebcamPicker.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/class-use/WebcamPickerCellRenderer.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/class-use/WebcamPickerModel.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/class-use/WebcamProcessor.ProcessorThread.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/class-use/WebcamProcessor.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/class-use/WebcamResolution.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/class-use/WebcamShutdownHook.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/class-use/WebcamStreamer.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/class-use/WebcamTask.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/class-use/WebcamUpdater.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/class-use/WebcamUtils.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/class-use/WebcamViewer.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/ds/buildin/WebcamDefaultDevice.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/ds/buildin/WebcamDefaultDriver.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/ds/buildin/class-use/WebcamDefaultDevice.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/ds/buildin/class-use/WebcamDefaultDriver.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/ds/buildin/natives/Device.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/ds/buildin/natives/DeviceList.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/ds/buildin/natives/OpenIMAJGrabber.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/ds/buildin/natives/class-use/Device.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/ds/buildin/natives/class-use/DeviceList.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/ds/buildin/natives/class-use/OpenIMAJGrabber.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/ds/buildin/natives/package-frame.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/ds/buildin/natives/package-summary.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/ds/buildin/natives/package-tree.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/ds/buildin/natives/package-use.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/ds/buildin/package-frame.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/ds/buildin/package-summary.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/ds/buildin/package-tree.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/ds/buildin/package-use.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/ds/cgt/WebcamCloseTask.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/ds/cgt/WebcamDisposeTask.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/ds/cgt/WebcamGetBufferTask.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/ds/cgt/WebcamGetImageTask.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/ds/cgt/WebcamOpenTask.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/ds/cgt/WebcamReadBufferTask.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/ds/cgt/class-use/WebcamCloseTask.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/ds/cgt/class-use/WebcamDisposeTask.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/ds/cgt/class-use/WebcamGetBufferTask.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/ds/cgt/class-use/WebcamGetImageTask.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/ds/cgt/class-use/WebcamOpenTask.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/ds/cgt/class-use/WebcamReadBufferTask.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/ds/cgt/package-frame.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/ds/cgt/package-summary.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/ds/cgt/package-tree.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/ds/cgt/package-use.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/ds/dummy/WebcamDummyDevice.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/ds/dummy/WebcamDummyDriver.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/ds/dummy/class-use/WebcamDummyDevice.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/ds/dummy/class-use/WebcamDummyDriver.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/ds/dummy/package-frame.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/ds/dummy/package-summary.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/ds/dummy/package-tree.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/ds/dummy/package-use.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/log/WebcamLogConfigurator.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/log/class-use/WebcamLogConfigurator.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/log/package-frame.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/log/package-summary.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/log/package-tree.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/log/package-use.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/package-frame.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/package-summary.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/package-tree.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/package-use.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/util/ImageUtils.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/util/NixVideoDevUtils.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/util/OsUtils.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/util/class-use/ImageUtils.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/util/class-use/NixVideoDevUtils.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/util/class-use/OsUtils.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/util/jh/JHBlurFilter.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/util/jh/JHFilter.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/util/jh/JHGrayFilter.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/util/jh/class-use/JHBlurFilter.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/util/jh/class-use/JHFilter.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/util/jh/class-use/JHGrayFilter.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/util/jh/package-frame.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/util/jh/package-summary.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/util/jh/package-tree.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/util/jh/package-use.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/util/package-frame.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/util/package-summary.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/util/package-tree.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/util/package-use.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/constant-values.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/deprecated-list.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/help-doc.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/index-all.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/overview-frame.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/overview-summary.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/overview-tree.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/package-list" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/script.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/serialized-form.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/src-html/com/github/sarxos/webcam/Webcam.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/src-html/com/github/sarxos/webcam/WebcamCompositeDriver.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/src-html/com/github/sarxos/webcam/WebcamDevice.BufferAccess.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/src-html/com/github/sarxos/webcam/WebcamDevice.FPSSource.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/src-html/com/github/sarxos/webcam/WebcamDevice.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/src-html/com/github/sarxos/webcam/WebcamDiscoveryEvent.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/src-html/com/github/sarxos/webcam/WebcamDiscoveryListener.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/src-html/com/github/sarxos/webcam/WebcamDiscoveryService.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/src-html/com/github/sarxos/webcam/WebcamDiscoverySupport.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/src-html/com/github/sarxos/webcam/WebcamDriver.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/src-html/com/github/sarxos/webcam/WebcamDriverUtils.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/src-html/com/github/sarxos/webcam/WebcamEvent.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/src-html/com/github/sarxos/webcam/WebcamEventType.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/src-html/com/github/sarxos/webcam/WebcamException.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/src-html/com/github/sarxos/webcam/WebcamExceptionHandler.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/src-html/com/github/sarxos/webcam/WebcamImageTransformer.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/src-html/com/github/sarxos/webcam/WebcamListener.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/src-html/com/github/sarxos/webcam/WebcamLock.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/src-html/com/github/sarxos/webcam/WebcamLockException.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/src-html/com/github/sarxos/webcam/WebcamMotionDetector.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/src-html/com/github/sarxos/webcam/WebcamMotionEvent.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/src-html/com/github/sarxos/webcam/WebcamMotionListener.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/src-html/com/github/sarxos/webcam/WebcamPanel.DefaultPainter.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/src-html/com/github/sarxos/webcam/WebcamPanel.DrawMode.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/src-html/com/github/sarxos/webcam/WebcamPanel.Painter.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/src-html/com/github/sarxos/webcam/WebcamPanel.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/src-html/com/github/sarxos/webcam/WebcamPicker.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/src-html/com/github/sarxos/webcam/WebcamPickerCellRenderer.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/src-html/com/github/sarxos/webcam/WebcamPickerModel.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/src-html/com/github/sarxos/webcam/WebcamProcessor.ProcessorThread.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/src-html/com/github/sarxos/webcam/WebcamProcessor.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/src-html/com/github/sarxos/webcam/WebcamResolution.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/src-html/com/github/sarxos/webcam/WebcamShutdownHook.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/src-html/com/github/sarxos/webcam/WebcamStreamer.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/src-html/com/github/sarxos/webcam/WebcamTask.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/src-html/com/github/sarxos/webcam/WebcamUpdater.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/src-html/com/github/sarxos/webcam/WebcamUtils.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/src-html/com/github/sarxos/webcam/WebcamViewer.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/src-html/com/github/sarxos/webcam/ds/buildin/WebcamDefaultDevice.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/src-html/com/github/sarxos/webcam/ds/buildin/WebcamDefaultDriver.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/src-html/com/github/sarxos/webcam/ds/buildin/natives/Device.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/src-html/com/github/sarxos/webcam/ds/buildin/natives/DeviceList.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/src-html/com/github/sarxos/webcam/ds/buildin/natives/OpenIMAJGrabber.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/src-html/com/github/sarxos/webcam/ds/cgt/WebcamCloseTask.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/src-html/com/github/sarxos/webcam/ds/cgt/WebcamDisposeTask.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/src-html/com/github/sarxos/webcam/ds/cgt/WebcamGetBufferTask.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/src-html/com/github/sarxos/webcam/ds/cgt/WebcamGetImageTask.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/src-html/com/github/sarxos/webcam/ds/cgt/WebcamOpenTask.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/src-html/com/github/sarxos/webcam/ds/cgt/WebcamReadBufferTask.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/src-html/com/github/sarxos/webcam/ds/dummy/WebcamDummyDevice.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/src-html/com/github/sarxos/webcam/ds/dummy/WebcamDummyDriver.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/src-html/com/github/sarxos/webcam/log/WebcamLogConfigurator.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/src-html/com/github/sarxos/webcam/util/ImageUtils.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/src-html/com/github/sarxos/webcam/util/NixVideoDevUtils.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/src-html/com/github/sarxos/webcam/util/OsUtils.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/src-html/com/github/sarxos/webcam/util/jh/JHBlurFilter.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/src-html/com/github/sarxos/webcam/util/jh/JHFilter.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/src-html/com/github/sarxos/webcam/util/jh/JHGrayFilter.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/docs/javadoc/stylesheet.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/examples/CalculateFPSExample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/examples/ConcurrentThreadsExample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/examples/CustomResolutionExample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/examples/DetectMotionEventsExample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/examples/DetectMotionExample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/examples/DetectMotionExample2.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/examples/DetectMotionExample3.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/examples/DetectWebcamExample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/examples/DifferentFileFormatsExample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/examples/DummyDeviceExample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/examples/ImageTransformerExample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/examples/MjpegStreamingExample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/examples/NonBlockingModeExample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/examples/PureDefaultDeviceExample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/examples/PureDeviceTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/examples/TakePictureDifferentSizeExample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/examples/TakePictureExample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/examples/TakePictureExample2.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/examples/TakePicturesAndPlayExample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/examples/TakeSnapshotFromAllWebcamsExample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/examples/TakeSnapshotFromVideoExample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/examples/WebcamDiscoveryListenerExample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/examples/WebcamPanelExample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/examples/WebcamPanelFillAreaExample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/examples/WebcamViewerExample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/license/bridj-0.6.3.LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/license/core-video-capture-1.1.1-SNAPSHOT.LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/license/dx-1.7.LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/license/filters-2.0.235-1.LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/license/slf4j-api-1.7.2.LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/src/META-INF/3rd-party-licenses/filters-2.0.235-1.LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/src/META-INF/3rd-party-licenses/openimaj-1.1.1-SNAPSHOT.LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/src/com/github/sarxos/webcam/Webcam.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/src/com/github/sarxos/webcam/WebcamCompositeDriver.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/src/com/github/sarxos/webcam/WebcamDeallocator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/src/com/github/sarxos/webcam/WebcamDevice.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/src/com/github/sarxos/webcam/WebcamDiscoveryEvent.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/src/com/github/sarxos/webcam/WebcamDiscoveryListener.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/src/com/github/sarxos/webcam/WebcamDiscoveryService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/src/com/github/sarxos/webcam/WebcamDiscoverySupport.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/src/com/github/sarxos/webcam/WebcamDriver.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/src/com/github/sarxos/webcam/WebcamDriverUtils.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/src/com/github/sarxos/webcam/WebcamEvent.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/src/com/github/sarxos/webcam/WebcamEventType.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/src/com/github/sarxos/webcam/WebcamException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/src/com/github/sarxos/webcam/WebcamExceptionHandler.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/src/com/github/sarxos/webcam/WebcamImageTransformer.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/src/com/github/sarxos/webcam/WebcamListener.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/src/com/github/sarxos/webcam/WebcamLock.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/src/com/github/sarxos/webcam/WebcamLockException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/src/com/github/sarxos/webcam/WebcamMotionDetector.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/src/com/github/sarxos/webcam/WebcamMotionEvent.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/src/com/github/sarxos/webcam/WebcamMotionListener.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/src/com/github/sarxos/webcam/WebcamPanel.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/src/com/github/sarxos/webcam/WebcamPicker.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/src/com/github/sarxos/webcam/WebcamPickerCellRenderer.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/src/com/github/sarxos/webcam/WebcamPickerModel.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/src/com/github/sarxos/webcam/WebcamProcessor.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/src/com/github/sarxos/webcam/WebcamResolution.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/src/com/github/sarxos/webcam/WebcamShutdownHook.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/src/com/github/sarxos/webcam/WebcamSignalHandler.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/src/com/github/sarxos/webcam/WebcamStreamer.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/src/com/github/sarxos/webcam/WebcamTask.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/src/com/github/sarxos/webcam/WebcamUpdater.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/src/com/github/sarxos/webcam/WebcamUtils.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/src/com/github/sarxos/webcam/WebcamViewer.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/src/com/github/sarxos/webcam/ds/buildin/WebcamDefaultDevice.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/src/com/github/sarxos/webcam/ds/buildin/WebcamDefaultDriver.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/src/com/github/sarxos/webcam/ds/buildin/natives/Device.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/src/com/github/sarxos/webcam/ds/buildin/natives/DeviceList.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/src/com/github/sarxos/webcam/ds/buildin/natives/OpenIMAJGrabber.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/src/com/github/sarxos/webcam/ds/cgt/WebcamCloseTask.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/src/com/github/sarxos/webcam/ds/cgt/WebcamDisposeTask.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/src/com/github/sarxos/webcam/ds/cgt/WebcamGetBufferTask.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/src/com/github/sarxos/webcam/ds/cgt/WebcamGetImageTask.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/src/com/github/sarxos/webcam/ds/cgt/WebcamOpenTask.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/src/com/github/sarxos/webcam/ds/cgt/WebcamReadBufferTask.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/src/com/github/sarxos/webcam/ds/dummy/WebcamDummyDevice.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/src/com/github/sarxos/webcam/ds/dummy/WebcamDummyDriver.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/src/com/github/sarxos/webcam/i18n/WebcamPanel.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/src/com/github/sarxos/webcam/i18n/WebcamPanel_de.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/src/com/github/sarxos/webcam/i18n/WebcamPanel_en.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/src/com/github/sarxos/webcam/i18n/WebcamPanel_pl.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/src/com/github/sarxos/webcam/i18n/WebcamPanel_ru.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/src/com/github/sarxos/webcam/i18n/WebcamPanel_zh.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/src/com/github/sarxos/webcam/i18n/WebcamPanel_zh_CN.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/src/com/github/sarxos/webcam/i18n/WebcamPanel_zh_TW.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/src/com/github/sarxos/webcam/log/WebcamLogConfigurator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/src/com/github/sarxos/webcam/util/ImageUtils.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/src/com/github/sarxos/webcam/util/NixVideoDevUtils.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/src/com/github/sarxos/webcam/util/OsUtils.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/src/com/github/sarxos/webcam/util/jh/JHBlurFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/src/com/github/sarxos/webcam/util/jh/JHFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/src/com/github/sarxos/webcam/util/jh/JHGrayFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/settings.gradle" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/QuickStart.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/SFWebhook.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/SimpleRunner.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/ThreadController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/ZWaySimpleCallback.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_pengrad_java_telegram_bot_api_3_1_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_code_gson_gson_2_8_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_okhttp3_logging_interceptor_3_8_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_okhttp3_okhttp_3_8_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_okio_okio_1_13_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client_secret.json.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/client_secret.json.json" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_code_gson_gson_2_8_0.xml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/it/upo/reti2s/utils/QuickStart.class" afterPath="$PROJECT_DIR$/build/classes/main/it/upo/reti2s/utils/QuickStart.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/SafetyHome.iml" afterPath="$PROJECT_DIR$/.idea/modules/SafetyHome.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/SafetyHome_main.iml" afterPath="$PROJECT_DIR$/.idea/modules/SafetyHome_main.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/SafetyHome_test.iml" afterPath="$PROJECT_DIR$/.idea/modules/SafetyHome_test.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/QuickStart.java" afterPath="$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/QuickStart.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/SFWebhook.java" afterPath="$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/SFWebhook.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -462,32 +56,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="SFWebhook.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SFWebhook.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/SFWebhook.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4267">
-              <caret line="273" column="41" lean-forward="false" selection-start-line="273" selection-start-column="41" selection-end-line="273" selection-end-column="41" />
+            <state relative-caret-position="356">
+              <caret line="373" column="8" lean-forward="false" selection-start-line="373" selection-start-column="8" selection-end-line="373" selection-end-column="8" />
               <folding>
-                <element signature="imports" expanded="false" />
                 <element signature="docComment;class#SFWebhook#0" expanded="false" />
                 <element signature="e#2093#2125#0" expanded="false" />
-                <element signature="e#11247#11248#0" expanded="false" />
-                <element signature="e#11290#11291#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SimpleRunner.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/SimpleRunner.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="680">
-              <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#1666#1667#0" expanded="false" />
-                <element signature="e#1699#1700#0" expanded="false" />
-                <marker date="1499804559000" expanded="true" signature="1548:1628" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -496,8 +72,8 @@
       <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="697">
-              <caret line="41" column="75" lean-forward="false" selection-start-line="41" selection-start-column="75" selection-end-line="41" selection-end-column="75" />
+            <state relative-caret-position="645">
+              <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -506,89 +82,29 @@
       <file leaf-file-name="QuickStart.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/QuickStart.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="26" column="12" lean-forward="false" selection-start-line="26" selection-start-column="7" selection-end-line="26" selection-end-column="12" />
+            <state relative-caret-position="238">
+              <caret line="33" column="86" lean-forward="false" selection-start-line="33" selection-start-column="86" selection-end-line="33" selection-end-column="86" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="InputStreamReader.java" pinned="false" current-in-tab="true">
-        <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/io/InputStreamReader.java">
+      <file leaf-file-name="client_secret.json.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client_secret.json.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="100" column="5" lean-forward="true" selection-start-line="100" selection-start-column="5" selection-end-line="102" selection-end-column="7" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ThreadController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/ThreadController.java">
+      <file leaf-file-name="Reader.java" pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/io/Reader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="57" lean-forward="false" selection-start-line="13" selection-start-column="57" selection-end-line="13" selection-end-column="57" />
+            <state relative-caret-position="17">
+              <caret line="77" column="0" lean-forward="false" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ZWaySimpleCallback.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/ZWaySimpleCallback.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="595">
-              <caret line="63" column="13" lean-forward="false" selection-start-line="63" selection-start-column="13" selection-end-line="63" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#1766#1767#0" expanded="false" />
-                <element signature="e#1822#1823#0" expanded="false" />
-                <element signature="e#1892#1893#0" expanded="false" />
-                <element signature="e#1956#1957#0" expanded="false" />
-                <element signature="e#2016#2017#0" expanded="false" />
-                <element signature="e#2071#2072#0" expanded="false" />
-                <element signature="e#2297#2298#0" expanded="false" />
-                <element signature="e#2358#2359#0" expanded="false" />
-                <element signature="e#2439#2440#0" expanded="false" />
-                <element signature="e#2504#2505#0" expanded="false" />
-                <element signature="e#2729#2730#0" expanded="false" />
-                <element signature="e#2792#2793#0" expanded="false" />
-                <element signature="e#3171#3172#0" expanded="false" />
-                <element signature="e#3232#3233#0" expanded="false" />
-                <element signature="e#3298#3299#0" expanded="false" />
-                <element signature="e#3369#3370#0" expanded="false" />
-                <element signature="e#3435#3436#0" expanded="false" />
-                <element signature="e#3494#3495#0" expanded="false" />
-                <element signature="e#3562#3563#0" expanded="false" />
-                <element signature="e#3624#3625#0" expanded="false" />
-                <element signature="e#3705#3706#0" expanded="false" />
-                <element signature="e#3770#3771#0" expanded="false" />
-                <element signature="e#3991#3992#0" expanded="false" />
-                <element signature="e#4054#4055#0" expanded="false" />
-                <element signature="e#4126#4127#0" expanded="false" />
-                <element signature="e#4201#4202#0" expanded="false" />
-                <element signature="e#4268#4269#0" expanded="false" />
-                <element signature="e#4334#4335#0" expanded="false" />
-                <element signature="e#4412#4413#0" expanded="false" />
-                <element signature="e#4475#4476#0" expanded="false" />
-                <element signature="e#4545#4546#0" expanded="false" />
-                <element signature="e#4619#4620#0" expanded="false" />
-                <element signature="e#4688#4689#0" expanded="false" />
-                <element signature="e#4749#4750#0" expanded="false" />
-                <element signature="e#4818#4819#0" expanded="false" />
-                <element signature="e#4891#4892#0" expanded="false" />
-                <element signature="e#4957#4958#0" expanded="false" />
-                <element signature="e#5022#5023#0" expanded="false" />
-                <element signature="e#6232#6233#0" expanded="false" />
-                <element signature="e#6280#6281#0" expanded="false" />
-                <element signature="e#6357#6358#0" expanded="false" />
-                <element signature="e#6417#6418#0" expanded="false" />
-                <element signature="e#6472#6473#0" expanded="false" />
-                <element signature="e#6525#6526#0" expanded="false" />
-                <element signature="e#6599#6600#0" expanded="false" />
-                <element signature="e#6650#6651#0" expanded="false" />
-                <element signature="e#6708#6709#0" expanded="false" />
-                <element signature="e#6779#6780#0" expanded="false" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -602,6 +118,11 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>input</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
@@ -679,6 +200,11 @@
                 <option name="name" value="buildEnvironment" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
+                <option name="description" value="Runs this project as a JVM application" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="run" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
                 <option name="description" value="Generates Gradle wrapper files. [incubating]" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="wrapper" />
@@ -694,6 +220,11 @@
                 <option name="name" value="javadoc" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
+                <option name="description" value="Creates OS specific scripts to run the project as a JVM application." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="startScripts" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
                 <option name="description" value="Assembles a jar archive containing the main classes." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="jar" />
@@ -704,6 +235,11 @@
                 <option name="name" value="model" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
+                <option name="description" value="Installs the project as a distribution as-is." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="installDist" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
                 <option name="description" value="Processes main resources." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="processResources" />
@@ -712,6 +248,11 @@
                 <option name="description" value="Displays the tasks runnable from root project 'SafetyHome'." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="tasks" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles the main distributions" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="assembleDist" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Initializes a new Gradle build. [incubating]" />
@@ -779,6 +320,16 @@
                 <option name="name" value="buildNeeded" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
+                <option name="description" value="Bundles the project as a distribution." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="distTar" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Bundles the project as a distribution." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="distZip" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
                 <option name="description" value="Displays the properties of root project 'SafetyHome'." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="properties" />
@@ -790,8 +341,8 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="4498023859779" />
-        <entry key="$PROJECT_DIR$/build.gradle" value="1665115624" />
+        <entry key="$PROJECT_DIR$" value="4498029964641" />
+        <entry key="$PROJECT_DIR$/build.gradle" value="528104956" />
         <entry key="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" value="829777938" />
       </map>
     </option>
@@ -976,10 +527,12 @@
         <option value="$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/AIResponse.java" />
         <option value="$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/ThreadController.java" />
         <option value="$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/SimpleRunner.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/SFWebhook.java" />
-        <option value="$PROJECT_DIR$/build.gradle" />
-        <option value="$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/QuickStart.java" />
         <option value="C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/io/InputStreamReader.java" />
+        <option value="C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/io/Reader.java" />
+        <option value="$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/QuickStart.java" />
+        <option value="$PROJECT_DIR$/build.gradle" />
+        <option value="$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/Bot.java" />
+        <option value="$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/SFWebhook.java" />
       </list>
     </option>
   </component>
@@ -1011,6 +564,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -1037,10 +592,52 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SafetyHome" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SafetyHome" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SafetyHome" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SafetyHome" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="utils" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -1054,19 +651,21 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="it.upo.reti2s.utils" />
-    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Luca Franciscone\Dropbox\Università 2016-17\Reti2Sperimentazioni\SafetyHome\src\main\java\it\upo\reti2s\utils" />
+      <recent name="C:\Users\Luca Franciscone\Dropbox\Università 2016-17\Reti2Sperimentazioni\SafetyHome" />
+      <recent name="C:\Users\lucaf\Desktop\Spark reti\SafetyHome\lib" />
+      <recent name="C:\Users\lucaf\Desktop\Spark reti\SafetyHome\src\main\java\it\upo\reti2s\utils" />
+      <recent name="C:\Users\lucaf\Desktop\Spark reti\SafetyHome\src\main\resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="it.upo.reti2s.utils" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\lucaf\Desktop\Spark reti\SafetyHome\lib" />
-      <recent name="C:\Users\lucaf\Desktop\Spark reti\SafetyHome\src\main\java\it\upo\reti2s\utils" />
-      <recent name="C:\Users\lucaf\Desktop\Spark reti\SafetyHome\src\main\resources" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="it.upo.reti2s.utils" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -1578,11 +1177,13 @@
       <workItem from="1499803998067" duration="1742000" />
       <workItem from="1499840951583" duration="1300000" />
       <workItem from="1499842735944" duration="330000" />
+      <workItem from="1499843596676" duration="1755000" />
+      <workItem from="1499845698704" duration="1714000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49937000" />
+    <option name="totallyTimeSpent" value="53406000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1600,13 +1201,14 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32769555" sideWeight="0.49568966" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36575052" sideWeight="0.18480603" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3689218" sideWeight="0.81519395" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3689218" sideWeight="0.81519395" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32922733" sideWeight="0.49784482" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1624,7 +1226,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3281075" sideWeight="0.49568966" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1673,7 +1274,15 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/QuickStart.java</url>
+          <line>32</line>
+          <properties />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="2" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1682,92 +1291,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="24" column="32" lean-forward="false" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/ZWaySimpleCallback.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4008">
-          <caret line="233" column="0" lean-forward="false" selection-start-line="233" selection-start-column="0" selection-end-line="233" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1766#1767#0" expanded="false" />
-            <element signature="e#1822#1823#0" expanded="false" />
-            <element signature="e#1892#1893#0" expanded="false" />
-            <element signature="e#1956#1957#0" expanded="false" />
-            <element signature="e#2016#2017#0" expanded="false" />
-            <element signature="e#2071#2072#0" expanded="false" />
-            <element signature="e#2297#2298#0" expanded="false" />
-            <element signature="e#2358#2359#0" expanded="false" />
-            <element signature="e#2439#2440#0" expanded="false" />
-            <element signature="e#2504#2505#0" expanded="false" />
-            <element signature="e#2729#2730#0" expanded="false" />
-            <element signature="e#2792#2793#0" expanded="false" />
-            <element signature="e#3171#3172#0" expanded="false" />
-            <element signature="e#3232#3233#0" expanded="false" />
-            <element signature="e#3298#3299#0" expanded="false" />
-            <element signature="e#3369#3370#0" expanded="false" />
-            <element signature="e#3435#3436#0" expanded="false" />
-            <element signature="e#3494#3495#0" expanded="false" />
-            <element signature="e#3562#3563#0" expanded="false" />
-            <element signature="e#3624#3625#0" expanded="false" />
-            <element signature="e#3705#3706#0" expanded="false" />
-            <element signature="e#3770#3771#0" expanded="false" />
-            <element signature="e#3991#3992#0" expanded="false" />
-            <element signature="e#4054#4055#0" expanded="false" />
-            <element signature="e#4126#4127#0" expanded="false" />
-            <element signature="e#4201#4202#0" expanded="false" />
-            <element signature="e#4268#4269#0" expanded="false" />
-            <element signature="e#4334#4335#0" expanded="false" />
-            <element signature="e#4412#4413#0" expanded="false" />
-            <element signature="e#4475#4476#0" expanded="false" />
-            <element signature="e#4545#4546#0" expanded="false" />
-            <element signature="e#4619#4620#0" expanded="false" />
-            <element signature="e#4688#4689#0" expanded="false" />
-            <element signature="e#4749#4750#0" expanded="false" />
-            <element signature="e#4818#4819#0" expanded="false" />
-            <element signature="e#4891#4892#0" expanded="false" />
-            <element signature="e#4957#4958#0" expanded="false" />
-            <element signature="e#5022#5023#0" expanded="false" />
-            <element signature="e#6232#6233#0" expanded="false" />
-            <element signature="e#6280#6281#0" expanded="false" />
-            <element signature="e#6357#6358#0" expanded="false" />
-            <element signature="e#6417#6418#0" expanded="false" />
-            <element signature="e#6472#6473#0" expanded="false" />
-            <element signature="e#6525#6526#0" expanded="false" />
-            <element signature="e#6599#6600#0" expanded="false" />
-            <element signature="e#6650#6651#0" expanded="false" />
-            <element signature="e#6708#6709#0" expanded="false" />
-            <element signature="e#6779#6780#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/docs/javadoc/com/github/sarxos/webcam/ds/cgt/class-use/WebcamOpenTask.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/SFWebhook.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1128">
-          <caret line="57" column="0" lean-forward="true" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="docComment;class#SFWebhook#0" expanded="false" />
-            <element signature="e#2093#2125#0" expanded="false" />
-            <element signature="e#11247#11248#0" expanded="false" />
-            <element signature="e#11290#11291#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Main.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/UpoDevice.java" />
     <entry file="file://$PROJECT_DIR$/build.gradle">
@@ -1781,57 +1304,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="312">
           <caret line="31" column="13" lean-forward="false" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1766#1767#0" expanded="false" />
-            <element signature="e#1822#1823#0" expanded="false" />
-            <element signature="e#1892#1893#0" expanded="false" />
-            <element signature="e#1956#1957#0" expanded="false" />
-            <element signature="e#2016#2017#0" expanded="false" />
-            <element signature="e#2071#2072#0" expanded="false" />
-            <element signature="e#2297#2298#0" expanded="false" />
-            <element signature="e#2358#2359#0" expanded="false" />
-            <element signature="e#2439#2440#0" expanded="false" />
-            <element signature="e#2504#2505#0" expanded="false" />
-            <element signature="e#2729#2730#0" expanded="false" />
-            <element signature="e#2792#2793#0" expanded="false" />
-            <element signature="e#3171#3172#0" expanded="false" />
-            <element signature="e#3232#3233#0" expanded="false" />
-            <element signature="e#3298#3299#0" expanded="false" />
-            <element signature="e#3369#3370#0" expanded="false" />
-            <element signature="e#3435#3436#0" expanded="false" />
-            <element signature="e#3494#3495#0" expanded="false" />
-            <element signature="e#3562#3563#0" expanded="false" />
-            <element signature="e#3624#3625#0" expanded="false" />
-            <element signature="e#3705#3706#0" expanded="false" />
-            <element signature="e#3770#3771#0" expanded="false" />
-            <element signature="e#3991#3992#0" expanded="false" />
-            <element signature="e#4054#4055#0" expanded="false" />
-            <element signature="e#4126#4127#0" expanded="false" />
-            <element signature="e#4201#4202#0" expanded="false" />
-            <element signature="e#4268#4269#0" expanded="false" />
-            <element signature="e#4334#4335#0" expanded="false" />
-            <element signature="e#4412#4413#0" expanded="false" />
-            <element signature="e#4475#4476#0" expanded="false" />
-            <element signature="e#4545#4546#0" expanded="false" />
-            <element signature="e#4619#4620#0" expanded="false" />
-            <element signature="e#4688#4689#0" expanded="false" />
-            <element signature="e#4749#4750#0" expanded="false" />
-            <element signature="e#4818#4819#0" expanded="false" />
-            <element signature="e#4891#4892#0" expanded="false" />
-            <element signature="e#4957#4958#0" expanded="false" />
-            <element signature="e#5022#5023#0" expanded="false" />
-            <element signature="e#6232#6233#0" expanded="false" />
-            <element signature="e#6280#6281#0" expanded="false" />
-            <element signature="e#6357#6358#0" expanded="false" />
-            <element signature="e#6417#6418#0" expanded="false" />
-            <element signature="e#6472#6473#0" expanded="false" />
-            <element signature="e#6525#6526#0" expanded="false" />
-            <element signature="e#6599#6600#0" expanded="false" />
-            <element signature="e#6650#6651#0" expanded="false" />
-            <element signature="e#6708#6709#0" expanded="false" />
-            <element signature="e#6779#6780#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1849,57 +1321,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="48">
           <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="20" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1766#1767#0" expanded="false" />
-            <element signature="e#1822#1823#0" expanded="false" />
-            <element signature="e#1892#1893#0" expanded="false" />
-            <element signature="e#1956#1957#0" expanded="false" />
-            <element signature="e#2016#2017#0" expanded="false" />
-            <element signature="e#2071#2072#0" expanded="false" />
-            <element signature="e#2297#2298#0" expanded="false" />
-            <element signature="e#2358#2359#0" expanded="false" />
-            <element signature="e#2439#2440#0" expanded="false" />
-            <element signature="e#2504#2505#0" expanded="false" />
-            <element signature="e#2729#2730#0" expanded="false" />
-            <element signature="e#2792#2793#0" expanded="false" />
-            <element signature="e#3171#3172#0" expanded="false" />
-            <element signature="e#3232#3233#0" expanded="false" />
-            <element signature="e#3298#3299#0" expanded="false" />
-            <element signature="e#3369#3370#0" expanded="false" />
-            <element signature="e#3435#3436#0" expanded="false" />
-            <element signature="e#3494#3495#0" expanded="false" />
-            <element signature="e#3562#3563#0" expanded="false" />
-            <element signature="e#3624#3625#0" expanded="false" />
-            <element signature="e#3705#3706#0" expanded="false" />
-            <element signature="e#3770#3771#0" expanded="false" />
-            <element signature="e#3991#3992#0" expanded="false" />
-            <element signature="e#4054#4055#0" expanded="false" />
-            <element signature="e#4126#4127#0" expanded="false" />
-            <element signature="e#4201#4202#0" expanded="false" />
-            <element signature="e#4268#4269#0" expanded="false" />
-            <element signature="e#4334#4335#0" expanded="false" />
-            <element signature="e#4412#4413#0" expanded="false" />
-            <element signature="e#4475#4476#0" expanded="false" />
-            <element signature="e#4545#4546#0" expanded="false" />
-            <element signature="e#4619#4620#0" expanded="false" />
-            <element signature="e#4688#4689#0" expanded="false" />
-            <element signature="e#4749#4750#0" expanded="false" />
-            <element signature="e#4818#4819#0" expanded="false" />
-            <element signature="e#4891#4892#0" expanded="false" />
-            <element signature="e#4957#4958#0" expanded="false" />
-            <element signature="e#5022#5023#0" expanded="false" />
-            <element signature="e#6232#6233#0" expanded="false" />
-            <element signature="e#6280#6281#0" expanded="false" />
-            <element signature="e#6357#6358#0" expanded="false" />
-            <element signature="e#6417#6418#0" expanded="false" />
-            <element signature="e#6472#6473#0" expanded="false" />
-            <element signature="e#6525#6526#0" expanded="false" />
-            <element signature="e#6599#6600#0" expanded="false" />
-            <element signature="e#6650#6651#0" expanded="false" />
-            <element signature="e#6708#6709#0" expanded="false" />
-            <element signature="e#6779#6780#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1916,57 +1337,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="48">
           <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="20" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1766#1767#0" expanded="false" />
-            <element signature="e#1822#1823#0" expanded="false" />
-            <element signature="e#1892#1893#0" expanded="false" />
-            <element signature="e#1956#1957#0" expanded="false" />
-            <element signature="e#2016#2017#0" expanded="false" />
-            <element signature="e#2071#2072#0" expanded="false" />
-            <element signature="e#2297#2298#0" expanded="false" />
-            <element signature="e#2358#2359#0" expanded="false" />
-            <element signature="e#2439#2440#0" expanded="false" />
-            <element signature="e#2504#2505#0" expanded="false" />
-            <element signature="e#2729#2730#0" expanded="false" />
-            <element signature="e#2792#2793#0" expanded="false" />
-            <element signature="e#3171#3172#0" expanded="false" />
-            <element signature="e#3232#3233#0" expanded="false" />
-            <element signature="e#3298#3299#0" expanded="false" />
-            <element signature="e#3369#3370#0" expanded="false" />
-            <element signature="e#3435#3436#0" expanded="false" />
-            <element signature="e#3494#3495#0" expanded="false" />
-            <element signature="e#3562#3563#0" expanded="false" />
-            <element signature="e#3624#3625#0" expanded="false" />
-            <element signature="e#3705#3706#0" expanded="false" />
-            <element signature="e#3770#3771#0" expanded="false" />
-            <element signature="e#3991#3992#0" expanded="false" />
-            <element signature="e#4054#4055#0" expanded="false" />
-            <element signature="e#4126#4127#0" expanded="false" />
-            <element signature="e#4201#4202#0" expanded="false" />
-            <element signature="e#4268#4269#0" expanded="false" />
-            <element signature="e#4334#4335#0" expanded="false" />
-            <element signature="e#4412#4413#0" expanded="false" />
-            <element signature="e#4475#4476#0" expanded="false" />
-            <element signature="e#4545#4546#0" expanded="false" />
-            <element signature="e#4619#4620#0" expanded="false" />
-            <element signature="e#4688#4689#0" expanded="false" />
-            <element signature="e#4749#4750#0" expanded="false" />
-            <element signature="e#4818#4819#0" expanded="false" />
-            <element signature="e#4891#4892#0" expanded="false" />
-            <element signature="e#4957#4958#0" expanded="false" />
-            <element signature="e#5022#5023#0" expanded="false" />
-            <element signature="e#6232#6233#0" expanded="false" />
-            <element signature="e#6280#6281#0" expanded="false" />
-            <element signature="e#6357#6358#0" expanded="false" />
-            <element signature="e#6417#6418#0" expanded="false" />
-            <element signature="e#6472#6473#0" expanded="false" />
-            <element signature="e#6525#6526#0" expanded="false" />
-            <element signature="e#6599#6600#0" expanded="false" />
-            <element signature="e#6650#6651#0" expanded="false" />
-            <element signature="e#6708#6709#0" expanded="false" />
-            <element signature="e#6779#6780#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2033,25 +1403,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/SFWebhook.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4267">
-          <caret line="273" column="41" lean-forward="false" selection-start-line="273" selection-start-column="41" selection-end-line="273" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="docComment;class#SFWebhook#0" expanded="false" />
-            <element signature="e#2093#2125#0" expanded="false" />
-            <element signature="e#11247#11248#0" expanded="false" />
-            <element signature="e#11290#11291#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/ThreadController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="13" column="57" lean-forward="false" selection-start-line="13" selection-start-column="57" selection-end-line="13" selection-end-column="57" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2059,57 +1414,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="595">
           <caret line="63" column="13" lean-forward="false" selection-start-line="63" selection-start-column="13" selection-end-line="63" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1766#1767#0" expanded="false" />
-            <element signature="e#1822#1823#0" expanded="false" />
-            <element signature="e#1892#1893#0" expanded="false" />
-            <element signature="e#1956#1957#0" expanded="false" />
-            <element signature="e#2016#2017#0" expanded="false" />
-            <element signature="e#2071#2072#0" expanded="false" />
-            <element signature="e#2297#2298#0" expanded="false" />
-            <element signature="e#2358#2359#0" expanded="false" />
-            <element signature="e#2439#2440#0" expanded="false" />
-            <element signature="e#2504#2505#0" expanded="false" />
-            <element signature="e#2729#2730#0" expanded="false" />
-            <element signature="e#2792#2793#0" expanded="false" />
-            <element signature="e#3171#3172#0" expanded="false" />
-            <element signature="e#3232#3233#0" expanded="false" />
-            <element signature="e#3298#3299#0" expanded="false" />
-            <element signature="e#3369#3370#0" expanded="false" />
-            <element signature="e#3435#3436#0" expanded="false" />
-            <element signature="e#3494#3495#0" expanded="false" />
-            <element signature="e#3562#3563#0" expanded="false" />
-            <element signature="e#3624#3625#0" expanded="false" />
-            <element signature="e#3705#3706#0" expanded="false" />
-            <element signature="e#3770#3771#0" expanded="false" />
-            <element signature="e#3991#3992#0" expanded="false" />
-            <element signature="e#4054#4055#0" expanded="false" />
-            <element signature="e#4126#4127#0" expanded="false" />
-            <element signature="e#4201#4202#0" expanded="false" />
-            <element signature="e#4268#4269#0" expanded="false" />
-            <element signature="e#4334#4335#0" expanded="false" />
-            <element signature="e#4412#4413#0" expanded="false" />
-            <element signature="e#4475#4476#0" expanded="false" />
-            <element signature="e#4545#4546#0" expanded="false" />
-            <element signature="e#4619#4620#0" expanded="false" />
-            <element signature="e#4688#4689#0" expanded="false" />
-            <element signature="e#4749#4750#0" expanded="false" />
-            <element signature="e#4818#4819#0" expanded="false" />
-            <element signature="e#4891#4892#0" expanded="false" />
-            <element signature="e#4957#4958#0" expanded="false" />
-            <element signature="e#5022#5023#0" expanded="false" />
-            <element signature="e#6232#6233#0" expanded="false" />
-            <element signature="e#6280#6281#0" expanded="false" />
-            <element signature="e#6357#6358#0" expanded="false" />
-            <element signature="e#6417#6418#0" expanded="false" />
-            <element signature="e#6472#6473#0" expanded="false" />
-            <element signature="e#6525#6526#0" expanded="false" />
-            <element signature="e#6599#6600#0" expanded="false" />
-            <element signature="e#6650#6651#0" expanded="false" />
-            <element signature="e#6708#6709#0" expanded="false" />
-            <element signature="e#6779#6780#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2117,36 +1421,72 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="680">
           <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1666#1667#0" expanded="false" />
-            <element signature="e#1699#1700#0" expanded="false" />
-            <marker date="1499804559000" expanded="true" signature="1548:1628" ph="{...}" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/io/InputStreamReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="100" column="5" lean-forward="false" selection-start-line="100" selection-start-column="5" selection-end-line="102" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/client_secret.json.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="41" column="75" lean-forward="false" selection-start-line="41" selection-start-column="75" selection-end-line="41" selection-end-column="75" />
+        <state relative-caret-position="645">
+          <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/io/Reader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="77" column="0" lean-forward="false" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client_secret.json.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/Bot.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="4" lean-forward="true" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/QuickStart.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="26" column="12" lean-forward="false" selection-start-line="26" selection-start-column="7" selection-end-line="26" selection-end-column="12" />
+        <state relative-caret-position="238">
+          <caret line="33" column="86" lean-forward="false" selection-start-line="33" selection-start-column="86" selection-end-line="33" selection-end-column="86" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/io/InputStreamReader.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/SFWebhook.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="100" column="5" lean-forward="true" selection-start-line="100" selection-start-column="5" selection-end-line="102" selection-end-column="7" />
-          <folding />
+        <state relative-caret-position="356">
+          <caret line="373" column="8" lean-forward="false" selection-start-line="373" selection-start-column="8" selection-end-line="373" selection-end-column="8" />
+          <folding>
+            <element signature="docComment;class#SFWebhook#0" expanded="false" />
+            <element signature="e#2093#2125#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -369,6 +369,15 @@ public class SFWebhook
         }
 
 
+        if (input.getResult().getAction().equalsIgnoreCase("bot"))
+        {
+        
+
+
+        }
+
+
+
     }
 
     public static DeviceList getAllDevices()
