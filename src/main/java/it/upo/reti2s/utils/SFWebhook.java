@@ -17,6 +17,7 @@ import java.io.*;
 import java.net.URL;
 import java.nio.charset.Charset;
 
+import static it.upo.reti2s.utils.Util.getAllDevices;
 import static it.upo.reti2s.utils.Util.getDevice;
 import static spark.Spark.*;
 
@@ -51,6 +52,7 @@ public class SFWebhook
     final static int APERTURA_PORTE_ID = 13;
 
     final static int HOLDER_LAMPADINA = 18;
+    final static int HOLDER_LAMPADINA_ID20 = 20;
 
     final static int PRESA_PILOTATA = 0;
 
@@ -99,11 +101,9 @@ public class SFWebhook
             String finalJson = "Invocato il metodo per inviare un messaggio su telegram";
             System.out.println(finalJson);
             Util.sendMessage("attenzione ladro",TELEGRAM_RESPONSE_CHAT_ID,TELEGRAM_URL);
-            
 
             return finalJson;
         }, gson::toJson);
-
 
 
 
@@ -209,10 +209,6 @@ public class SFWebhook
 
         //In AIResponse input dobbiamo prendere un getResult e getAction, get action avrà lo stesso nome della action dell intent
         //text verrà utilizzato per il ritorno
-
-
-
-
         /*
         Holder della lampadina ha id=20
             Accendi la luce da  API.ai
@@ -220,37 +216,34 @@ public class SFWebhook
 
          */
 
-        //confronto con la action che mi interessa
+        //REFACTOR
         if (input.getResult().getAction().equalsIgnoreCase("accendiLuce"))
         {
             String text="";
-
-            text = "prova stampa";
-
             System.out.println(text);
-            DeviceList allDevice = zWayApi.getDevices();
-
+            DeviceList allDevice = getAllDevices();//aggiungo tutti i device dal metodo in util
             if(allDevice!=null)
             {
-                for(Device dev: allDevice.getAllDevices())
+                Device devDaAccendere = getDevice(SWITCHBINARY,HOLDER_LAMPADINA_ID20);
+                if(devDaAccendere!=null)
                 {
-                    if(dev.getDeviceType().equalsIgnoreCase("SwitchBynary") && dev.getNodeId() == 20)
-                    {
-                        dev.on();
-                        text="luce accesa";
-                    }
+                    devDaAccendere.on();
+                    text="Luce accesa";
+                }
+                else
+                {
+                    text = "Device non trovato";
                 }
             }
             else
             {
-                text = "device non trovato";
+                text = "Nessun device collegato trovato";
             }
 
             //faccio passare output come parametro senno posso fare la return lo ritorno nella classe chiamante
+            System.out.println(text);
             output.setSpeech(text);
             output.setDisplayText(text);
-
-
         }
 
          /*
@@ -320,16 +313,15 @@ public class SFWebhook
                     webcam.close();
 
 
-                } catch (IOException e) {
+                } catch (IOException e)
+                {
                     text="Problema con la cam";
-
                     e.printStackTrace();
                 }
             }
             else
             {
                 text = "No webcam detected";
-
             }
 
 
@@ -363,7 +355,6 @@ public class SFWebhook
             text="invocato il metodo accendiPresa per la stanza "+stanza;
             System.out.println(text);
 
-
             //faccio passare output come parametro senno posso fare la return lo ritorno nella classe chiamante
             output.setSpeech(text);
             output.setDisplayText(text);
@@ -373,37 +364,24 @@ public class SFWebhook
         if (input.getResult().getAction().equalsIgnoreCase("thread"))
         {
             String text="";
-
             Thread t = new Thread(new SimpleRunner());
             System.out.println( "\n I thread stanno per partire \n\n\n" );
             t.start();//faccio partire il thread per l interrogazione sottostante
             t.join();//attendo la terminazione di
 
-            //Thread.sleep(2000);//mette in attesa il thread corrente
+
 
             SimpleRunner r = new SimpleRunner();
             System.out.println("Finite thread");
-
-            //Scrivere immagine della cam su google drive
 
             //text="https://drive.google.com/file/d/0B1dKXnmV5OuKRk9weWkzRFV3MlE/view?usp=sharing";
             text="https://www.dropbox.com/s/v7arilbs00h4849/prova.png?dl=0";
 
             System.out.println(text);
 
-
             //faccio passare output come parametro senno posso fare la return lo ritorno nella classe chiamante
             output.setSpeech(text);
             output.setDisplayText(text);
         }
-
-
-
     }
-
-
-
-
-
-
 }

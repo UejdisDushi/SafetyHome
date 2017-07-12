@@ -4,12 +4,9 @@ version '1.0-SNAPSHOT'
 apply plugin: 'java'
 apply plugin: 'application'
 
-
 mainClassName = 'Quickstart'
 
 version = '1.0'
-
-
 
 repositories {
     mavenCentral()
