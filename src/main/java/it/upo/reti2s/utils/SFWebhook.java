@@ -254,19 +254,41 @@ public class SFWebhook
          */
 
 
-        //confronto con la action che mi interessa
+        //REFACTOR
         if (input.getResult().getAction().equalsIgnoreCase("spegniLuce"))
         {
             String text="";
-            text="Invocato il metodo spegni la luce";
             System.out.println(text);
+            DeviceList allDevice = getAllDevices();//aggiungo tutti i device dal metodo in util
+            if(allDevice!=null)
+            {
+                Device devDaSpegnere = getDevice(SWITCHBINARY,HOLDER_LAMPADINA_ID20);
+                if(devDaSpegnere!=null)
+                {
+                    //manca il controllo se la luce è accesa
 
-            DeviceList allDevice = zWayApi.getDevices();
-
-            Device dev = getDevice(SWITCHBINARY,20);
-            dev.off();
+                    if(devDaSpegnere.getMetrics().getLevel().equalsIgnoreCase("off"))//<--controllare il corretto funzionamento
+                    {
+                        devDaSpegnere.off();
+                        text="Luce accesa";
+                    }
+                    else
+                    {
+                        text = "Luce già spenta";
+                    }
+                }
+                else
+                {
+                    text = "Device non trovato";
+                }
+            }
+            else
+            {
+                text = "Nessun device collegato trovato";
+            }
 
             //faccio passare output come parametro senno posso fare la return lo ritorno nella classe chiamante
+            System.out.println(text);
             output.setSpeech(text);
             output.setDisplayText(text);
         }
