@@ -5,6 +5,11 @@ import ai.api.model.AIResponse;
 import ai.api.model.Fulfillment;
 import com.github.sarxos.webcam.Webcam;
 import com.google.gson.Gson;
+import com.pengrad.telegrambot.TelegramBot;
+import com.pengrad.telegrambot.TelegramBotAdapter;
+import com.pengrad.telegrambot.request.BaseRequest;
+import com.pengrad.telegrambot.request.SendMessage;
+import com.pengrad.telegrambot.response.BaseResponse;
 import de.fh_zwickau.informatik.sensor.IZWayApi;
 import de.fh_zwickau.informatik.sensor.ZWayApiHttp;
 import de.fh_zwickau.informatik.sensor.model.devices.Device;
@@ -344,15 +349,12 @@ public class SFWebhook
 
             Thread t = new Thread(new SimpleRunner());
             System.out.println( "\n I thread stanno per partire \n\n\n" );
-
             t.start();//faccio partire il thread per l interrogazione sottostante
             t.join();//attendo la terminazione di
 
             //Thread.sleep(2000);//mette in attesa il thread corrente
 
-
             SimpleRunner r = new SimpleRunner();
-
             System.out.println("Finite thread");
 
             //Scrivere immagine della cam su google drive
@@ -367,14 +369,25 @@ public class SFWebhook
             output.setSpeech(text);
             output.setDisplayText(text);
         }
-
-
+/*
         if (input.getResult().getAction().equalsIgnoreCase("bot"))
         {
-        
 
 
-        }
+           // TelegramBot safetyHomeBot = TelegramBotAdapter.build("423930159:AAF3ES_GcBxl5HmrV5HdfF137_XCfLXc1ZU");
+
+
+            //safetyHomeBot.
+//
+           // S/endMessage sendMessage = new SendMessage(safetyHomeBot,"messaggio di risposta");
+            //sendMessage.
+
+
+
+
+
+        }*/
+
 
 
 
