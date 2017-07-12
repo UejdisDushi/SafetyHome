@@ -59,6 +59,9 @@ public class SFWebhook
 
     final static String SWITCHBINARY = "SwitchBinary";
 
+    final static String SENSORBINARY = "SensorBinary";
+
+
 
     final static String ipAddress = "172.30.1.137";
     final static String username = "admin";
@@ -167,29 +170,24 @@ public class SFWebhook
             String returnGson = "";
             Gson gson1 = new Gson();
             //mi faccio restituire la lista di tutti i device
-            DeviceList allDevices = zWayApi.getDevices();
-            Device aperturaPorta = null;
+            DeviceList allDevices = getAllDevices();
             if(allDevices!=null)
             {
-
-                for (Device dev : allDevices.getAllDevices()) {
-            /*
-            SENSORE APERTURA PORTE
-             */
-
-                    if (dev.getNodeId() == 13 && dev.getDeviceType().equalsIgnoreCase("sensorBinary")) {
-                        aperturaPorta = dev;
-                    }
+                //apertura porta id 13
+                Device aperturaPorta = getDevice(SENSORBINARY,APERTURA_PORTE_ID);
+                if(aperturaPorta!=null)
+                {
                     returnGson = aperturaPorta.getMetrics().getLevel();
-
-                    if (returnGson == null)
-                    {
-                        returnGson = "sensore non trovato";
-                    }
+                }
+                else
+                {
+                    returnGson = "Sensore non trovato";
                 }
             }
-
-            returnGson = "device scollegato";
+            else
+            {
+                returnGson = "Nessun device trovato";
+            }
             return returnGson;
         },gson::toJson);
 
@@ -334,7 +332,6 @@ public class SFWebhook
                     text = "https://www.dropbox.com/s/v7arilbs00h4849/prova.png?dl=0";
                     webcam.close();
 
-
                 } catch (IOException e)
                 {
                     text="Problema con la cam";
@@ -346,10 +343,7 @@ public class SFWebhook
                 text = "No webcam detected";
             }
 
-
             System.out.print(text);
-            //faccio passare output come parametro senno posso fare la return lo ritorno nella classe chiamante
-
             output.setSpeech(text);
             output.setDisplayText(text);
         }
@@ -369,11 +363,10 @@ public class SFWebhook
 
             String stanza = input.getResult().getStringParameter("Stanza");
 
-            if(stanza == null)
+            if(stanza == null)//Se mancano parametri restituisco un halt
             {
                 halt(403);
             }
-
             text="invocato il metodo accendiPresa per la stanza "+stanza;
             System.out.println(text);
 
@@ -390,8 +383,6 @@ public class SFWebhook
             System.out.println( "\n I thread stanno per partire \n\n\n" );
             t.start();//faccio partire il thread per l interrogazione sottostante
             t.join();//attendo la terminazione di
-
-
 
             SimpleRunner r = new SimpleRunner();
             System.out.println("Finite thread");

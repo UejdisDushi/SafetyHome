@@ -104,6 +104,7 @@ public class Util
 
     }
 
+    //probtype può essere temperatura luminosita ecc
     public static  Device getDevice(String deviceType,String probeTitle, int id)
     {
         DeviceList lista = getAllDevices();
@@ -116,6 +117,17 @@ public class Util
             }
         }
         return null;
+    }
+
+
+    public static void accendiDevice(Device device)
+    {
+        device.on();
+    }
+
+    public static void spegniDevice(Device device)
+    {
+        device.off();
     }
 
 }
