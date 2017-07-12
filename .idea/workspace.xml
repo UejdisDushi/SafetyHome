@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="966f5009-a094-4c32-9990-c49804e0a537" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/telegrambots-2.4.4.3-jar-with-dependencies.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/telegrambots_2_4_4_3_jar_with_dependencies.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client_secret.json.json" afterPath="$PROJECT_DIR$/client_secret.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/client_secret.json.json" afterPath="$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/client_secret.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/it/upo/reti2s/utils/SFWebhook.class" afterPath="$PROJECT_DIR$/build/classes/main/it/upo/reti2s/utils/SFWebhook.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/SafetyHome.iml" afterPath="$PROJECT_DIR$/.idea/modules/SafetyHome.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/SafetyHome_main.iml" afterPath="$PROJECT_DIR$/.idea/modules/SafetyHome_main.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/SFWebhook.java" afterPath="$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/SFWebhook.java" />
     </list>
@@ -51,10 +47,12 @@
       <file leaf-file-name="SFWebhook.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/SFWebhook.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="39">
-              <caret line="417" column="18" lean-forward="true" selection-start-line="417" selection-start-column="18" selection-end-line="417" selection-end-column="18" />
+            <state relative-caret-position="-2952">
+              <caret line="60" column="36" lean-forward="false" selection-start-line="60" selection-start-column="24" selection-end-line="60" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#12442#12443#0" expanded="true" />
+                <element signature="e#12485#12486#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -123,6 +121,8 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>input</find>
+      <find>convert</find>
+      <find>messaggio</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -534,6 +534,8 @@
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/Bot.java" />
         <option value="$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/MyBots.java" />
+        <option value="$PROJECT_DIR$/lib/Util.java" />
+        <option value="$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/Util.java" />
         <option value="$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/SFWebhook.java" />
       </list>
     </option>
@@ -546,8 +548,7 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-9" />
-    <option name="y" value="-9" />
-    <option name="width" value="1938" />
+    <option name="width" value="1932" />
     <option name="height" value="1060" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -639,6 +640,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SafetyHome" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SafetyHome" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -650,27 +665,28 @@
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.43337196" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/MemoBot-master" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../MemoBot-master" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="it.upo.reti2s.utils" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\lucaf\Dropbox\Università 2016-17\Reti2Sperimentazioni\SafetyHome\src\main\java\it\upo\reti2s\utils" />
+      <recent name="C:\Users\Luca Franciscone\Dropbox\Università 2016-17\Reti2Sperimentazioni\SafetyHome\lib" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Luca Franciscone\Dropbox\Università 2016-17\Reti2Sperimentazioni\SafetyHome\lib" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="it.upo.reti2s.utils" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\lucaf\Dropbox\Università 2016-17\Reti2Sperimentazioni\SafetyHome\lib" />
       <recent name="C:\Users\Luca Franciscone\Dropbox\Università 2016-17\Reti2Sperimentazioni\SafetyHome\src\main\java\it\upo\reti2s\utils" />
       <recent name="C:\Users\Luca Franciscone\Dropbox\Università 2016-17\Reti2Sperimentazioni\SafetyHome" />
       <recent name="C:\Users\lucaf\Desktop\Spark reti\SafetyHome\lib" />
       <recent name="C:\Users\lucaf\Desktop\Spark reti\SafetyHome\src\main\java\it\upo\reti2s\utils" />
-      <recent name="C:\Users\lucaf\Desktop\Spark reti\SafetyHome\src\main\resources" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="it.upo.reti2s.utils" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="it.upo.reti2s.utils" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -685,7 +701,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.QuickStart">
+  <component name="RunManager" selected="Application.SFWebhook">
     <configuration default="false" name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="Main" />
@@ -1144,8 +1160,8 @@
     </list>
     <recent_temporary>
       <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="Application.QuickStart" />
-        <item index="1" class="java.lang.String" itemvalue="Application.SFWebhook" />
+        <item index="0" class="java.lang.String" itemvalue="Application.SFWebhook" />
+        <item index="1" class="java.lang.String" itemvalue="Application.QuickStart" />
         <item index="2" class="java.lang.String" itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -1186,12 +1202,13 @@
       <workItem from="1499845698704" duration="2863000" />
       <workItem from="1499852376028" duration="1944000" />
       <workItem from="1499857767885" duration="1132000" />
-      <workItem from="1499861013919" duration="120000" />
+      <workItem from="1499861013919" duration="2847000" />
+      <workItem from="1499865454318" duration="1021000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="57751000" />
+    <option name="totallyTimeSpent" value="61499000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1203,7 +1220,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1060" extended-state="6" />
+    <frame x="-9" y="0" width="1932" height="1060" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1223,10 +1241,10 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36883408" sideWeight="0.81519395" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28139013" sideWeight="0.81519395" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32922733" sideWeight="0.49784482" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21052632" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43555555" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -1300,7 +1318,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/UpoDevice.java" />
     <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1080">
@@ -1476,16 +1493,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/MyBots.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/SFWebhook.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="39">
-          <caret line="417" column="18" lean-forward="true" selection-start-line="417" selection-start-column="18" selection-end-line="417" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/io/Reader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1248">
@@ -1496,6 +1503,19 @@
             <element signature="e#1430#1431#0" expanded="false" />
             <element signature="e#6514#6515#0" expanded="false" />
             <element signature="e#6542#6543#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/Util.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/SFWebhook.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2952">
+          <caret line="60" column="36" lean-forward="false" selection-start-line="60" selection-start-column="24" selection-end-line="60" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#12442#12443#0" expanded="true" />
+            <element signature="e#12485#12486#0" expanded="true" />
           </folding>
         </state>
       </provider>

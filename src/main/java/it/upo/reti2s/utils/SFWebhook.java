@@ -1,22 +1,21 @@
 package it.upo.reti2s.utils;
 
+
 import ai.api.GsonFactory;
 import ai.api.model.AIResponse;
 import ai.api.model.Fulfillment;
 import com.github.sarxos.webcam.Webcam;
 import com.google.gson.Gson;
-import com.pengrad.telegrambot.TelegramBot;
-import com.pengrad.telegrambot.TelegramBotAdapter;
-import com.pengrad.telegrambot.request.BaseRequest;
-import com.pengrad.telegrambot.request.SendMessage;
-import com.pengrad.telegrambot.response.BaseResponse;
 import de.fh_zwickau.informatik.sensor.IZWayApi;
 import de.fh_zwickau.informatik.sensor.ZWayApiHttp;
 import de.fh_zwickau.informatik.sensor.model.devices.Device;
 import de.fh_zwickau.informatik.sensor.model.devices.DeviceList;
+
 import javax.imageio.ImageIO;
-import java.io.File;
-import java.io.IOException;
+import javax.net.ssl.HttpsURLConnection;
+import java.io.*;
+import java.net.URL;
+import java.nio.charset.Charset;
 import static spark.Spark.*;
 
 /**
@@ -59,6 +58,10 @@ public class SFWebhook
     final static String password = "raz4reti2";
     final static IZWayApi zWayApi = new ZWayApiHttp(ipAddress, 8083, "http", username, password, 0, false, new ZWaySimpleCallback());
 
+    static final String TELEGRAM_URL = "https://api.telegram.org/bot423930159:AAF3ES_GcBxl5HmrV5HdfF137_XCfLXc1ZU";
+    static final String TELEGRAM_TOKEN = "423930159:AAF3ES_GcBxl5HmrV5HdfF137_XCfLXc1ZU";
+    static final long TELEGRAM_RESPONSE_CHAT_ID = 102856586;
+
     public static void main(String[] args)
     {
 
@@ -80,6 +83,24 @@ public class SFWebhook
             //           output.setSpeech(text) output.setDisplayText(text);
             return output;
         }, gson::toJson);
+
+        //metodo testato per inviar e un messaggio
+        get("/sentMessage", (request, response) ->
+        {
+
+            Gson gson1 = new Gson();
+            response.status(200);//200 OK
+            response.type("application/json");
+            String finalJson = "messaggio di ritorno";
+            System.out.println("il metodo prova ritorno funziona");
+            sendMessage("attenzione ladro",TELEGRAM_RESPONSE_CHAT_ID);
+
+            return finalJson;
+        }, gson::toJson);
+
+
+
+
 
         /*
         METODO USATO COME TEST
@@ -381,14 +402,7 @@ public class SFWebhook
 //
            // S/endMessage sendMessage = new SendMessage(safetyHomeBot,"messaggio di risposta");
             //sendMessage.
-
-
-
-
-
         }*/
-
-
 
 
     }
@@ -428,6 +442,67 @@ public class SFWebhook
     }
 
 
+    //PRENDERE PER LA CONVERSIONE
+    /*
+     message è il messaggio in stringa da inviare
+     /chatid è l id dell utente a cui rispondere nella chat
+          */
+    private static void sendMessage(String message, long aChatId) throws SecurityException, IOException
+    {
+        String response = "";
+        String responseJSON = "";
+        String converted = "";
+
+        try
+        {
+            //convert message into utf-8
+            converted = convertToUtf(message);
+            responseJSON = "{ \"text\" : \"" + converted + "\", \"chat_id\" : " + aChatId+ " }";
+            response = eseguiPost(TELEGRAM_URL + "/sendMessage", responseJSON);
+        }
+        catch(Exception e)
+        {
+            //e.printStackTrace();
+        }
+    }
+
+    public static String convertToUtf(String s)
+    {
+        String[] INVALID_UTF8 = {"à", "è", "é", "ì", "ò", "ù", "À", "È", "É", "Ì", "Ò", "Ù"};
+        String[] VALIDATED_UTF8 = {"a'", "e'", "e'", "i'", "o'", "u'", "A'", "E'", "E'", "I'", "O'", "U'"};
+
+        for(int i=0; i<INVALID_UTF8.length; i++)
+            s = s.replace(INVALID_UTF8[i], VALIDATED_UTF8[i]);
+
+        byte[] bytes = s.getBytes( Charset.forName("UTF-16" ));
+        String ret = new String( bytes, Charset.forName("UTF-16") );
+        return ret;
+    }
 
 
+    //HTTP POST PARTE CHIAMATA PER L INVIO DEL MESSAGGIO
+    public static String eseguiPost(String url, String json) throws Exception
+    {
+        URL obj = new URL(url);
+        HttpsURLConnection con = (HttpsURLConnection) obj.openConnection();
+        con.setRequestMethod("POST");
+        con.setRequestProperty("Content-Type", "application/json");
+        con.setDoOutput(true);
+        DataOutputStream wr = new DataOutputStream(con.getOutputStream());
+        wr.writeBytes(json);
+        wr.flush();
+        wr.close();
+        return writeResp(con);
+    }
+
+    private static String writeResp(HttpsURLConnection con) throws IOException
+    {
+        BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+        String inputLine;
+        StringBuffer response = new StringBuffer();
+        while ((inputLine = in.readLine()) != null)
+            response.append(inputLine);
+        in.close();
+        return response.toString();
+    }
 }
