@@ -65,6 +65,5 @@
     <orderEntry type="library" name="Gradle: org.eclipse.jetty.websocket:websocket-client:9.4.4.v20170414" level="project" />
     <orderEntry type="library" name="Gradle: org.eclipse.jetty.websocket:websocket-api:9.4.4.v20170414" level="project" />
     <orderEntry type="library" name="Gradle: org.eclipse.jetty:jetty-client:9.4.4.v20170414" level="project" />
-    <orderEntry type="library" name="telegrambots-2.4.4.3-jar-with-dependencies" level="project" />
   </component>
 </module>

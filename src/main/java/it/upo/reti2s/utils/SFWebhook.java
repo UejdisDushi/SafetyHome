@@ -16,7 +16,12 @@ import javax.net.ssl.HttpsURLConnection;
 import java.io.*;
 import java.net.URL;
 import java.nio.charset.Charset;
+
+import static it.upo.reti2s.utils.Util.getDevice;
 import static spark.Spark.*;
+
+import com.google.api.services.calendar.Calendar;
+import com.google.api.services.calendar.model.Event;
 
 /**
  * api.ai Webhook example.
@@ -85,15 +90,16 @@ public class SFWebhook
         }, gson::toJson);
 
         //metodo testato per inviar e un messaggio
-        get("/sentMessage", (request, response) ->
+        get("/sendMessage", (request, response) ->
         {
 
             Gson gson1 = new Gson();
             response.status(200);//200 OK
             response.type("application/json");
-            String finalJson = "messaggio di ritorno";
-            System.out.println("il metodo prova ritorno funziona");
-            sendMessage("attenzione ladro",TELEGRAM_RESPONSE_CHAT_ID);
+            String finalJson = "Invocato il metodo per inviare un messaggio su telegram";
+            System.out.println(finalJson);
+            Util.sendMessage("attenzione ladro",TELEGRAM_RESPONSE_CHAT_ID,TELEGRAM_URL);
+            
 
             return finalJson;
         }, gson::toJson);
@@ -390,119 +396,14 @@ public class SFWebhook
             output.setSpeech(text);
             output.setDisplayText(text);
         }
-/*
-        if (input.getResult().getAction().equalsIgnoreCase("bot"))
-        {
 
-
-           // TelegramBot safetyHomeBot = TelegramBotAdapter.build("423930159:AAF3ES_GcBxl5HmrV5HdfF137_XCfLXc1ZU");
-
-
-            //safetyHomeBot.
-//
-           // S/endMessage sendMessage = new SendMessage(safetyHomeBot,"messaggio di risposta");
-            //sendMessage.
-        }*/
 
 
     }
 
-    public static DeviceList getAllDevices()
-    {
-        return zWayApi.getDevices();
-    }
-
-    public static Device getDevice(String deviceType, int id)
-    {
-        DeviceList lista = getAllDevices();
-
-        for(Device tmp : lista.getAllDevices())
-        {
-            if(tmp.getDeviceType().equalsIgnoreCase(deviceType) && tmp.getNodeId()== id)
-            {
-                return tmp;
-            }
-        }
-        return null;
-
-    }
-
-    public static  Device getDevice(String deviceType,String probeTitle, int id)
-    {
-        DeviceList lista = getAllDevices();
-
-        for(Device tmp : lista.getAllDevices())
-        {
-            if(tmp.getDeviceType().equalsIgnoreCase(deviceType) && tmp.getNodeId()== id && tmp.getMetrics().getProbeTitle().contains(probeTitle))
-            {
-                return tmp;
-            }
-        }
-        return null;
-    }
 
 
-    //PRENDERE PER LA CONVERSIONE
-    /*
-     message è il messaggio in stringa da inviare
-     /chatid è l id dell utente a cui rispondere nella chat
-          */
-    private static void sendMessage(String message, long aChatId) throws SecurityException, IOException
-    {
-        String response = "";
-        String responseJSON = "";
-        String converted = "";
-
-        try
-        {
-            //convert message into utf-8
-            converted = convertToUtf(message);
-            responseJSON = "{ \"text\" : \"" + converted + "\", \"chat_id\" : " + aChatId+ " }";
-            response = eseguiPost(TELEGRAM_URL + "/sendMessage", responseJSON);
-        }
-        catch(Exception e)
-        {
-            //e.printStackTrace();
-        }
-    }
-
-    public static String convertToUtf(String s)
-    {
-        String[] INVALID_UTF8 = {"à", "è", "é", "ì", "ò", "ù", "À", "È", "É", "Ì", "Ò", "Ù"};
-        String[] VALIDATED_UTF8 = {"a'", "e'", "e'", "i'", "o'", "u'", "A'", "E'", "E'", "I'", "O'", "U'"};
-
-        for(int i=0; i<INVALID_UTF8.length; i++)
-            s = s.replace(INVALID_UTF8[i], VALIDATED_UTF8[i]);
-
-        byte[] bytes = s.getBytes( Charset.forName("UTF-16" ));
-        String ret = new String( bytes, Charset.forName("UTF-16") );
-        return ret;
-    }
 
 
-    //HTTP POST PARTE CHIAMATA PER L INVIO DEL MESSAGGIO
-    public static String eseguiPost(String url, String json) throws Exception
-    {
-        URL obj = new URL(url);
-        HttpsURLConnection con = (HttpsURLConnection) obj.openConnection();
-        con.setRequestMethod("POST");
-        con.setRequestProperty("Content-Type", "application/json");
-        con.setDoOutput(true);
-        DataOutputStream wr = new DataOutputStream(con.getOutputStream());
-        wr.writeBytes(json);
-        wr.flush();
-        wr.close();
-        return writeResp(con);
-    }
 
-    private static String writeResp(HttpsURLConnection con) throws IOException
-    {
-        BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
-        String inputLine;
-        StringBuffer response = new StringBuffer();
-        while ((inputLine = in.readLine()) != null)
-            response.append(inputLine);
-        in.close();
-        return response.toString();
-    }
 }

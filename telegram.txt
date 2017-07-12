@@ -1,0 +1,91 @@
+/command [optional] [argument]
+
+/get_messages_stats
+/set_timer 10min Alarm!
+/get_timezone London, UK
+
+
+https://telegram.me/SafetyHome 
+
+il mio token 
+423930159:AAF3ES_GcBxl5HmrV5HdfF137_XCfLXc1ZU
+
+https://api.telegram.org/bot423930159:AAF3ES_GcBxl5HmrV5HdfF137_XCfLXc1ZU/getUpdates
+{"ok":false,"error_code":409,"description":"Conflict: can't use getUpdates method while webhook is active"}
+
+
+guida api garion
+
+https://core.telegram.org/bots/api
+
+
+
+info del bot
+
+https://api.telegram.org/bot423930159:AAF3ES_GcBxl5HmrV5HdfF137_XCfLXc1ZU/getme
+{"ok":true,"result":{"id":423930159,"first_name":"UpoSafetyHomeBOT","username":"UpoSafetyHomeBOT"}}
+oggetto json tornato
+
+get update non funziona
+https://api.telegram.org/bot423930159:AAF3ES_GcBxl5HmrV5HdfF137_XCfLXc1ZU/getupdate
+{"ok":false,"error_code":409,"descrdiption":"Conflict: can't use getUpdates method while webhook is active"}
+
+
+
+inviare un messaggio
+https://api.telegram.org/bot423930159:AAF3ES_GcBxl5HmrV5HdfF137_XCfLXc1ZU/sendmessage?
+
+
+https://www.youtube.com/watch?v=hJBYojK7DO4
+
+12:20
+
+
+chatid mio 
+102856586
+
+per inviare e riceve i messaggi ho usato postman in chrome 
+
+
+
+post("/login", (request, response) -> {
+    System.out.println(request.contentType()); // What type of data am I sending?
+    System.out.println(request.params()); // What are the params sent?
+    System.out.println(request.raw()); // What's the raw data sent?
+    // etc ..
+
+
+
+String urlParameters  = "param1=a&param2=b&param3=c";
+byte[] postData       = urlParameters.getBytes( StandardCharsets.UTF_8 );
+int    postDataLength = postData.length;
+String request        = "http://example.com/index.php";
+URL    url            = new URL( request );
+HttpURLConnection conn= (HttpURLConnection) url.openConnection();           
+conn.setDoOutput( true );
+conn.setInstanceFollowRedirects( false );
+conn.setRequestMethod( "POST" );
+conn.setRequestProperty( "Content-Type", "application/x-www-form-urlencoded"); 
+conn.setRequestProperty( "charset", "utf-8");
+conn.setRequestProperty( "Content-Length", Integer.toString( postDataLength ));
+conn.setUseCaches( false );
+try( DataOutputStream wr = new DataOutputStream( conn.getOutputStream())) {
+   wr.write( postData );
+}
+
+
+
+
+
+id del mio calendario
+20010057@studenti.uniupo.it
+
+
+
+GET https://www.googleapis.com/calendar/v3/calendars/calendarId/events/eventId
+
+GET https://www.googleapis.com/calendar/v3/calendars/20010057@studenti.uniupo.it/events
+
+
+
+https://www.googleapis.com/calendar/v3/calendars/20010057@studenti.uniupo.it/
