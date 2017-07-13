@@ -7,8 +7,17 @@ package it.upo.reti2s.utils;
 public class ThreadController
 {
     private SimpleRunner r = new SimpleRunner();
+
+    //creati da me
+    private ThreadSorveglianzaConImmagine sorveglianzaConImmagine  = new ThreadSorveglianzaConImmagine();
+    private ThreadSorveglianzaSenzaImmagine sorveglianzaSenzaImmagine  = new ThreadSorveglianzaSenzaImmagine();
+    //--fine creati da me s
+
     private Thread t = new Thread(r);
 
+
+
+    //private Thread tVideoSorveglianzaConImmagine = new Thread(ThreadSorveglianzaConImmagine);
     public void startThread()
     {
         System.out.println("Il thread inizia l esecuzione!");

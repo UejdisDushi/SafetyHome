@@ -140,6 +140,8 @@ public class Util
         return getDevice(SENSORMULTILEVEL,MULTILEVEL_LUMINESCENCE,MULTILEVEL_ID);
     }
 
+    //manca il metodo per acendere la spina
+
 
     public static void accendiDevice(Device device)
     {

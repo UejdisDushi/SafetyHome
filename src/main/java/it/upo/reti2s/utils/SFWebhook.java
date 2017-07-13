@@ -17,8 +17,7 @@ import java.io.*;
 import java.net.URL;
 import java.nio.charset.Charset;
 
-import static it.upo.reti2s.utils.Util.getAllDevices;
-import static it.upo.reti2s.utils.Util.getDevice;
+import static it.upo.reti2s.utils.Util.*;
 import static spark.Spark.*;
 
 import com.google.api.services.calendar.Calendar;
@@ -376,7 +375,6 @@ public class SFWebhook
             output.setDisplayText(text);
         }
 
-
         if (input.getResult().getAction().equalsIgnoreCase("thread"))
         {
             String text="";
@@ -397,5 +395,108 @@ public class SFWebhook
             output.setSpeech(text);
             output.setDisplayText(text);
         }
+
+        //SERVIZIO VERIFICA PRESENZA <-- verificare metodo per prelevare valori sensori presenza
+        if (input.getResult().getAction().equalsIgnoreCase("verificaPresenza"))
+        {
+            String text="";
+            Device sensorePrenza = getSensorePresenza();
+            if(sensorePrenza !=null)
+            {
+                //verificare se è corretto il metodo
+                if(sensorePrenza.getMetrics().getLevel().equalsIgnoreCase("on"))
+                {
+                    text = "Rilevata presenza";
+                }
+                else
+                {
+                    text="Nessuna presenza rilevata";
+                }
+            }
+            else
+            {
+                text="Sensore presenza non trovato";
+            }
+            System.out.println(text);
+
+            //faccio passare output come parametro senno posso fare la return lo ritorno nella classe chiamante
+            output.setSpeech(text);
+            output.setDisplayText(text);
+        }
+
+        //SERVIZIO VERIFICA APERTURA PORTA <-- verificare metodo per prelevare valori sensori presenza
+        if (input.getResult().getAction().equalsIgnoreCase("verificaPresenza"))
+        {
+            String text="";
+            Device sensoreAperturaPorta = getSensoreAperturaPorta();
+            if(sensoreAperturaPorta !=null)
+            {
+                //verificare se è corretto il metodo
+                if(sensoreAperturaPorta.getMetrics().getLevel().equalsIgnoreCase("on"))
+                {
+                    text = "Porta Aperta";
+                }
+                else
+                {
+                    text="Porta Chiusa";
+                }
+            }
+            else
+            {
+                text="Sensore presenza non trovato";
+            }
+            System.out.println(text);
+
+            //faccio passare output come parametro senno posso fare la return lo ritorno nella classe chiamante
+            output.setSpeech(text);
+            output.setDisplayText(text);
+        }
+
+
+
+        // da adattare ai nuovi thread creati
+        if (input.getResult().getAction().equalsIgnoreCase("attivaServizioMonitoraggioSenzaImmagine"))
+        {
+            String text="";
+            Thread t = new Thread(new SimpleRunner());
+            System.out.println( "\n I thread stanno per partire \n\n\n" );
+            t.start();//faccio partire il thread per l interrogazione sottostante
+            t.join();//attendo la terminazione di
+
+            SimpleRunner r = new SimpleRunner();
+            System.out.println("Finite thread");
+
+            //text="https://drive.google.com/file/d/0B1dKXnmV5OuKRk9weWkzRFV3MlE/view?usp=sharing";
+            text="https://www.dropbox.com/s/v7arilbs00h4849/prova.png?dl=0";
+
+            System.out.println(text);
+
+            //faccio passare output come parametro senno posso fare la return lo ritorno nella classe chiamante
+            output.setSpeech(text);
+            output.setDisplayText(text);
+        }
+
+        // da adattare ai nuovi thread creati
+        if (input.getResult().getAction().equalsIgnoreCase("attivaServizioMonitoraggioConImmagine"))
+        {
+            String text="";
+            Thread t = new Thread(new SimpleRunner());
+            System.out.println( "\n I thread stanno per partire \n\n\n" );
+            t.start();//faccio partire il thread per l interrogazione sottostante
+            t.join();//attendo la terminazione di
+
+            SimpleRunner r = new SimpleRunner();
+            System.out.println("Finite thread");
+
+            //text="https://drive.google.com/file/d/0B1dKXnmV5OuKRk9weWkzRFV3MlE/view?usp=sharing";
+            text="https://www.dropbox.com/s/v7arilbs00h4849/prova.png?dl=0";
+
+            System.out.println(text);
+
+            //faccio passare output come parametro senno posso fare la return lo ritorno nella classe chiamante
+            output.setSpeech(text);
+            output.setDisplayText(text);
+        }
+
     }
 }
