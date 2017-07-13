@@ -89,3 +89,10 @@ GET https://www.googleapis.com/calendar/v3/calendars/20010057@studenti.uniupo.it
 
 
 https://www.googleapis.com/calendar/v3/calendars/20010057@studenti.uniupo.it/
+
+-------
+
+
+calendar autentication page url 
+http://localhost:60617/Callback?code=4/g2432kilUACuvRQR5oLxIh5plbkQ2rV373dEK60LAv0#
+Credentials saved to C:\Users\lucaf\.credentials\calendar-java-quickstart
