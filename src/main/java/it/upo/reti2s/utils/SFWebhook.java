@@ -5,13 +5,6 @@ import ai.api.GsonFactory;
 import ai.api.model.AIResponse;
 import ai.api.model.Fulfillment;
 import com.github.sarxos.webcam.Webcam;
-import com.google.api.client.googleapis.auth.oauth2.GoogleAuthorizationCodeFlow;
-import com.google.api.client.googleapis.auth.oauth2.GoogleClientSecrets;
-import com.google.api.client.googleapis.javanet.GoogleNetHttpTransport;
-import com.google.api.client.http.HttpTransport;
-import com.google.api.client.json.JsonFactory;
-import com.google.api.client.json.jackson2.JacksonFactory;
-import com.google.api.client.util.store.FileDataStoreFactory;
 import com.google.gson.Gson;
 import de.fh_zwickau.informatik.sensor.IZWayApi;
 import de.fh_zwickau.informatik.sensor.ZWayApiHttp;
@@ -19,51 +12,13 @@ import de.fh_zwickau.informatik.sensor.model.devices.Device;
 import de.fh_zwickau.informatik.sensor.model.devices.DeviceList;
 
 import javax.imageio.ImageIO;
-import javax.net.ssl.HttpsURLConnection;
 import java.io.*;
-import java.net.URL;
-import java.nio.charset.Charset;
-import java.util.Collections;
 
 import static it.upo.reti2s.utils.Util.*;
 import static spark.Spark.*;
 
 
-
-
-
-
-import com.google.api.client.auth.oauth2.Credential;
-import com.google.api.client.extensions.java6.auth.oauth2.AuthorizationCodeInstalledApp;
-import com.google.api.client.extensions.jetty.auth.oauth2.LocalServerReceiver;
-import com.google.api.client.googleapis.auth.oauth2.GoogleAuthorizationCodeFlow;
-import com.google.api.client.googleapis.auth.oauth2.GoogleClientSecrets;
-import com.google.api.client.googleapis.batch.BatchRequest;
-import com.google.api.client.googleapis.batch.json.JsonBatchCallback;
-import com.google.api.client.googleapis.javanet.GoogleNetHttpTransport;
-import com.google.api.client.googleapis.json.GoogleJsonError;
-import com.google.api.client.http.HttpHeaders;
-import com.google.api.client.http.HttpTransport;
-import com.google.api.client.json.JsonFactory;
-import com.google.api.client.json.jackson2.JacksonFactory;
-import com.google.api.client.util.DateTime;
-import com.google.api.client.util.Lists;
-import com.google.api.client.util.store.DataStoreFactory;
-import com.google.api.client.util.store.FileDataStoreFactory;
-import com.google.api.services.calendar.CalendarScopes;
-import com.google.api.services.calendar.model.Calendar;
-import com.google.api.services.calendar.model.CalendarList;
-import com.google.api.services.calendar.model.Event;
-import com.google.api.services.calendar.model.EventDateTime;
-import com.google.api.services.calendar.model.Events;
-
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.Collections;
-import java.util.Date;
-import java.util.TimeZone;
-
-import com.google.api.services.calendar.model.Event;
 
 /**
  * api.ai Webhook example.
@@ -79,28 +34,34 @@ public class SFWebhook
 
     final static String PATH_IMMAGINE = "Images/prova.png";
     final static String FORMATO_IMMAGINE = "PNG";
-            //
-    final static String SENSORMULTILEVEL = "SensorMultilevel";
+    final static String PATH_IMMAGINE_DROPBOX = "https://www.dropbox.com/s/v7arilbs00h4849/prova.png?dl=0";
 
-    final static int MULTILEVEL_ID = 6;
-    final static String MULTILEVEL_LUMINESCENCE = "Luminiscence";
-
-    final static String MULTILEVEL_PURPOSE = "purpose";
+    //
 
 
 
-    final static int APERTURA_PORTE_ID = 13;
+//ID CHE MI SERVONO
 
-    final static int HOLDER_LAMPADINA = 18;
-    final static int HOLDER_LAMPADINA_ID20 = 20;
 
-    final static int PRESA_PILOTATA = 0;
+    final static int ID_APERTURAPORTE = 13;//CORRETTO
+    final static int ID_PRESAPILOTATA = 3;// CORRETTO PRESA PILOTATA PER RADIO
+    final static int ID_HOLDERLAMPADINA = 21;//CORRETTO EVERSPRING WALL PLUG
+    final static int ID_MULTILEVEL_PURPOSE = 6;//CORRETTO DA USARE PER PURPOSE E LUMINOSITA
+
+
+
+
+
+
+    //final static int HOLDER_LAMPADINA_ID20 = 20;//NO
+
 
 
     final static String SWITCHBINARY = "SwitchBinary";
-
     final static String SENSORBINARY = "SensorBinary";
-
+    final static String SENSORMULTILEVEL = "SensorMultilevel";
+    final static String MULTILEVEL_LUMINESCENCE = "Luminiscence";
+    final static String MULTILEVEL_PURPOSE = "purpose";
 
 
 
@@ -153,6 +114,8 @@ public class SFWebhook
 
 
 
+
+
         /*
         METODO USATO COME TEST
             http://localhost:4567/provaRitorno
@@ -182,24 +145,31 @@ public class SFWebhook
                 webcam.open();
                 try {
                     ImageIO.write(webcam.getImage(), FORMATO_IMMAGINE, new File(PATH_IMMAGINE));
+                    webcam.close();
                     finalJson = "Immagine scattata";
+                    Util.sendMessage(PATH_IMMAGINE_DROPBOX,TELEGRAM_RESPONSE_CHAT_ID,TELEGRAM_URL);
+
 
 
                 } catch (IOException e)
                 {
                     text = "Problema con la cam";
-
+                    Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID,TELEGRAM_URL);
                     e.printStackTrace();
                 }
                 if (finalJson == null)
                 {
                     finalJson = "Problema con la cam";
+                    Util.sendMessage(finalJson,TELEGRAM_RESPONSE_CHAT_ID,TELEGRAM_URL);
+
                 }
                 System.out.print(text);
             }
             else
             {
                 finalJson = "No webcam detected";
+                Util.sendMessage(finalJson,TELEGRAM_RESPONSE_CHAT_ID,TELEGRAM_URL);
+
                 System.out.println();
             }
             return finalJson;
@@ -210,25 +180,38 @@ public class SFWebhook
         get("/statoPorta",(request, response) ->
         {
             String returnGson = "";
+            String statoPorta ="";
             Gson gson1 = new Gson();
             //mi faccio restituire la lista di tutti i device
             DeviceList allDevices = getAllDevices();
             if(allDevices!=null)
             {
                 //apertura porta id 13
-                Device aperturaPorta = getDevice(SENSORBINARY,APERTURA_PORTE_ID);
+                Device aperturaPorta = getSensoreAperturaPorta();
                 if(aperturaPorta!=null)
                 {
-                    returnGson = aperturaPorta.getMetrics().getLevel();
+                    statoPorta = getPortaAperta(aperturaPorta);
+                    if(statoPorta.equalsIgnoreCase("off"))
+                    {
+                        returnGson ="Porta chiusa, valore : off";
+                    }
+                    else
+                    {
+                        returnGson ="Porta aperta, valore : on";
+                    }
+                    Util.sendMessage(returnGson,TELEGRAM_RESPONSE_CHAT_ID,TELEGRAM_URL);
+
                 }
                 else
                 {
                     returnGson = "Sensore non trovato";
+                    Util.sendMessage(returnGson,TELEGRAM_RESPONSE_CHAT_ID,TELEGRAM_URL);
                 }
             }
             else
             {
                 returnGson = "Nessun device trovato";
+                Util.sendMessage(returnGson,TELEGRAM_RESPONSE_CHAT_ID,TELEGRAM_URL);
             }
             return returnGson;
         },gson::toJson);
@@ -239,9 +222,31 @@ public class SFWebhook
 
         /*calendario
         */
+/*
+        get("/calendar", (request, response) ->
+        {
+
+            Gson gson1 = new Gson();
+            response.status(200);//200 OK
+            response.type("application/json");
+
+            Calendar service = new Timeout.Builder(httpTransport, jsonFactory, credentials)
+                    .setApplicationName("applicationName").build();
+
+            Event allEvent = service.event
 
 
+
+            String finalJson = "Invocato il metodo per inviare un messaggio su telegram";
+            System.out.println(finalJson);
+            Util.sendMessage("attenzione ladro",TELEGRAM_RESPONSE_CHAT_ID,TELEGRAM_URL);
+
+            return finalJson;
+        }, gson::toJson);
+
+*/
     }//chiude main
+
 
 
 
@@ -252,8 +257,7 @@ public class SFWebhook
      * @param input  the request body that comes from api.ai
      * @param output the @link(Fulfillment) response to be sent to api.ai
      */
-    private static void doWebhook(AIResponse input, Fulfillment output) throws InterruptedException
-    {
+    private static void doWebhook(AIResponse input, Fulfillment output) throws InterruptedException, IOException {
 
         //In AIResponse input dobbiamo prendere un getResult e getAction, get action avrà lo stesso nome della action dell intent
         //text verrà utilizzato per il ritorno
@@ -267,16 +271,17 @@ public class SFWebhook
         //REFACTOR
         if (input.getResult().getAction().equalsIgnoreCase("accendiLuce"))
         {
-            String text="";
+            String text="Nessun device collegato trovato";
             System.out.println(text);
             DeviceList allDevice = getAllDevices();//aggiungo tutti i device dal metodo in util
             if(allDevice!=null)
             {
-                Device devDaAccendere = getDevice(SWITCHBINARY,HOLDER_LAMPADINA_ID20);
+                Device devDaAccendere = getDevice(SWITCHBINARY, ID_HOLDERLAMPADINA);
                 if(devDaAccendere!=null)
                 {
                     devDaAccendere.on();
                     text="Luce accesa";
+
                 }
                 else
                 {
@@ -290,6 +295,8 @@ public class SFWebhook
 
             //faccio passare output come parametro senno posso fare la return lo ritorno nella classe chiamante
             System.out.println(text);
+            Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID,TELEGRAM_URL);
+
             output.setSpeech(text);
             output.setDisplayText(text);
         }
@@ -310,20 +317,23 @@ public class SFWebhook
             DeviceList allDevice = getAllDevices();//aggiungo tutti i device dal metodo in util
             if(allDevice!=null)
             {
-                Device devDaSpegnere = getDevice(SWITCHBINARY,HOLDER_LAMPADINA_ID20);
-                if(devDaSpegnere!=null)
+                Device holderLampadina = getHolederLampadina();
+                if(holderLampadina!=null)
                 {
-                    //manca il controllo se la luce è accesa
+                    holderLampadina.off();
+                    text="Luce accesa";
 
-                    if(devDaSpegnere.getMetrics().getLevel().equalsIgnoreCase("off"))//<--controllare il corretto funzionamento
+                    //manca il controllo se la luce è accesa
+                    /*
+                    if(holderLampadina.getMetrics().getLevel().equalsIgnoreCase("off"))//<--controllare il corretto funzionamento
                     {
-                        devDaSpegnere.off();
+                        holderLampadina.off();
                         text="Luce accesa";
                     }
                     else
                     {
                         text = "Luce già spenta";
-                    }
+                    }*/
                 }
                 else
                 {
@@ -340,8 +350,6 @@ public class SFWebhook
             output.setSpeech(text);
             output.setDisplayText(text);
         }
-
-
 
 
         /*
@@ -361,7 +369,7 @@ public class SFWebhook
             //faccio passare output come parametro senno posso fare la return lo ritorno nella classe chiamante
 
             output.setSpeech(text);
-           output.setDisplayText(text);
+            output.setDisplayText(text);
         }
 
 
@@ -379,18 +387,24 @@ public class SFWebhook
                 webcam.open();
                 try {
                     ImageIO.write(webcam.getImage(), "PNG", new File("Images/prova.png"));
-                    text = "https://www.dropbox.com/s/v7arilbs00h4849/prova.png?dl=0";
                     webcam.close();
+                    text = "https://www.dropbox.com/s/v7arilbs00h4849/prova.png?dl=0";
+                    Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID,TELEGRAM_URL);
+
 
                 } catch (IOException e)
                 {
                     text="Problema con la cam";
                     e.printStackTrace();
+                    Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID,TELEGRAM_URL);
+
                 }
             }
             else
             {
                 text = "No webcam detected";
+                Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID,TELEGRAM_URL);
+
             }
 
             System.out.print(text);
@@ -411,19 +425,60 @@ public class SFWebhook
         {
             String text="";
 
-            String stanza = input.getResult().getStringParameter("Stanza");
-
+            //String stanza = input.getResult().getStringParameter("Stanza");
+/*
             if(stanza == null)//Se mancano parametri restituisco un halt
             {
                 halt(403);
             }
-            text="invocato il metodo accendiPresa per la stanza "+stanza;
+            */
+
+            Device presaPilotata = getPresaPilotata();
+            if(presaPilotata!=null)
+            {
+                accendiDevice(presaPilotata);
+                //text = "Accesa Presa Corrente per la stanza: "+stanza;
+                text = "Accesa Presa Corrente per la stanza: ";
+            }
+            else
+            {
+               // text="Device non trovato Non e stato possibile accendere la presa nella "+stanza;
+                text="Device non trovato Non e stato possibile accendere la presa nella ";
+                Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID,TELEGRAM_URL);
+
+            }
             System.out.println(text);
 
             //faccio passare output come parametro senno posso fare la return lo ritorno nella classe chiamante
             output.setSpeech(text);
             output.setDisplayText(text);
         }
+
+
+
+
+
+        if (input.getResult().getAction().equalsIgnoreCase("spegniPresa"))
+        {
+            String text="";
+            Device presaPilotata = getPresaPilotata();
+            if(presaPilotata!=null)
+            {
+                accendiDevice(presaPilotata);
+                text = "Accesa Presa Corrente per la stanza: ";
+            }
+            else
+            {
+                // text="Device non trovato Non e stato possibile accendere la presa nella "+stanza;
+                text="Device non trovato Non e stato possibile accendere la presa nella ";
+            }
+            System.out.println(text);
+            //faccio passare output come parametro senno posso fare la return lo ritorno nella classe chiamante
+            Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID,TELEGRAM_URL);
+            output.setSpeech(text);
+            output.setDisplayText(text);
+        }
+
 
         if (input.getResult().getAction().equalsIgnoreCase("thread"))
         {
@@ -437,7 +492,7 @@ public class SFWebhook
             System.out.println("Finite thread");
 
             //text="https://drive.google.com/file/d/0B1dKXnmV5OuKRk9weWkzRFV3MlE/view?usp=sharing";
-            text="https://www.dropbox.com/s/v7arilbs00h4849/prova.png?dl=0";
+            text=PATH_IMMAGINE_DROPBOX;
 
             System.out.println(text);
 
@@ -468,6 +523,7 @@ public class SFWebhook
                 text="Sensore presenza non trovato";
             }
             System.out.println(text);
+            Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID,TELEGRAM_URL);
 
             //faccio passare output come parametro senno posso fare la return lo ritorno nella classe chiamante
             output.setSpeech(text);
@@ -475,9 +531,9 @@ public class SFWebhook
         }
 
         //SERVIZIO VERIFICA APERTURA PORTA <-- verificare metodo per prelevare valori sensori presenza
-        if (input.getResult().getAction().equalsIgnoreCase("verificaPresenza"))
+        if (input.getResult().getAction().equalsIgnoreCase("verificaPorta"))
         {
-            String text="";
+            String text="Errore";
             Device sensoreAperturaPorta = getSensoreAperturaPorta();
             if(sensoreAperturaPorta !=null)
             {
@@ -493,7 +549,7 @@ public class SFWebhook
             }
             else
             {
-                text="Sensore presenza non trovato";
+                text="Sensore porta non trovato";
             }
             System.out.println(text);
 
@@ -517,7 +573,7 @@ public class SFWebhook
             System.out.println("Finite thread");
 
             //text="https://drive.google.com/file/d/0B1dKXnmV5OuKRk9weWkzRFV3MlE/view?usp=sharing";
-            text="https://www.dropbox.com/s/v7arilbs00h4849/prova.png?dl=0";
+            text=PATH_IMMAGINE_DROPBOX;
 
             System.out.println(text);
 
@@ -539,7 +595,7 @@ public class SFWebhook
             System.out.println("Finite thread");
 
             //text="https://drive.google.com/file/d/0B1dKXnmV5OuKRk9weWkzRFV3MlE/view?usp=sharing";
-            text="https://www.dropbox.com/s/v7arilbs00h4849/prova.png?dl=0";
+            text=PATH_IMMAGINE_DROPBOX;
 
             System.out.println(text);
 

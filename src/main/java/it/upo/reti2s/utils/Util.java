@@ -89,6 +89,22 @@ public class Util
         return zWayApi.getDevices();
     }
 
+    public static Device getDevice(int id)
+    {
+        DeviceList lista = getAllDevices();
+        if(lista!=null)
+        {
+            for(Device tmp : lista.getAllDevices())
+            {
+                if(tmp.getNodeId()== id)
+                {
+                    return tmp;
+                }
+            }
+        }
+        return null;
+    }
+
     public static Device getDevice(String deviceType, int id)
     {
         DeviceList lista = getAllDevices();
@@ -119,28 +135,93 @@ public class Util
         return null;
     }
 
+
     public static  Device getSensorePresenza()
     {
-        return getDevice(SENSORBINARY,MULTILEVEL_PURPOSE,MULTILEVEL_ID);
+        DeviceList lista = getAllDevices();
+        if(lista!=null)
+        {
+            for(Device tmp : lista.getAllDevices())
+            {
+                if(tmp.getNodeId() == ID_MULTILEVEL_PURPOSE &&
+                        tmp.getDeviceType().equalsIgnoreCase(SENSORBINARY) &&
+                        tmp.getMetrics().getProbeTitle().contains(MULTILEVEL_PURPOSE))
+                {
+                    return tmp;
+                }
+            }
+        }
+        return null;
+
+
+        /*
+        dev.getNodeId()==6 && dev.getDeviceType().equalsIgnoreCase("SensorBinary") &&
+                  dev.getMetrics().getProbeTitle().contains("purpose")
+         */
+
     }
 
     public static Device getSensoreAperturaPorta()
     {
-        return getDevice(SENSORBINARY,APERTURA_PORTE_ID);
+        /*
+        if(dev.getNodeId()==13 && dev.getDeviceType().equalsIgnoreCase("sensorBinary"))
+         */
+        return getDevice(SENSORBINARY, ID_APERTURAPORTE);
 
+    }
+
+    public static String getPortaAperta(Device aperturaPorta)
+    {
+        return aperturaPorta.getMetrics().getLevel();
     }
 
     public static Device getHolederLampadina()
     {
-        return getDevice(SWITCHBINARY,HOLDER_LAMPADINA);
+        /*if(dev.getNodeId()==21 && dev.getDeviceType().equalsIgnoreCase("SwitchBinary") )
+            {
+                dev.on();
+                {
+                    logger.info("sensore lampadina");
+                }
+            }
+
+         */
+        return getDevice(SWITCHBINARY, ID_HOLDERLAMPADINA);
     }
 
     public static Device getSensoreLuminosita()
     {
-        return getDevice(SENSORMULTILEVEL,MULTILEVEL_LUMINESCENCE,MULTILEVEL_ID);
+        DeviceList lista = getAllDevices();
+        if(lista!=null)
+        {
+            for(Device tmp : lista.getAllDevices())
+            {
+                if(tmp.getNodeId() == ID_MULTILEVEL_PURPOSE &&
+                        tmp.getMetrics().getProbeTitle().contains(MULTILEVEL_LUMINESCENCE))
+                {
+                    return tmp;
+                }
+            }
+        }
+        return null;
+
+        /*
+        dev.getMetrics.Contains("Luminescence") && dev.getNodeId()==6);
+        per prendere quantia luce uso         dev.getMetrics().getLevel()
+        per il titolo dell unita di misura uso dev.getMetrics().getProbeTitle
+
+         */
+       // return getDevice(SENSORMULTILEVEL,MULTILEVEL_LUMINESCENCE, ID_MULTILEVEL_PURPOSE);
     }
 
     //manca il metodo per acendere la spina
+
+    public static Device getPresaPilotata()
+    {
+
+        return getDevice(SWITCHBINARY,ID_PRESAPILOTATA);
+    }
+
 
 
     public static void accendiDevice(Device device)
