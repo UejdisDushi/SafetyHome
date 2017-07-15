@@ -164,10 +164,6 @@ public class CalendarSample {
 
                    System.out.println("STRINGA FINALE \n"+convertiPerDataFreeBusy(eventStart));
 
-
-
-
-
                 }
                 pageToken = events.getNextPageToken();
             } while (pageToken != null);
@@ -354,13 +350,16 @@ public class CalendarSample {
 
     public static String convertiPerDataFreeBusy(String dataInStringa)
     {
-        int anno = Integer.parseInt(dataInStringa.subSequence(0,4).toString());
-        int mese = Integer.parseInt(dataInStringa.subSequence(5,7).toString());
-        int giorno = Integer.parseInt(dataInStringa.subSequence(8,10).toString());
-        int ora = Integer.parseInt(dataInStringa.subSequence(0,2).toString());
-        int minuti = Integer.parseInt(dataInStringa.subSequence(3,5).toString());
+        //  Esempio String input "2015-09-10 19:00:00";
+
+        String data_fisica = dataInStringa.substring(13,23);
+        String orario = dataInStringa.substring(24,29);
+        String anno = data_fisica.subSequence(0,4).toString();
+        String mese = data_fisica.subSequence(5,7).toString();
+        String giorno = data_fisica.subSequence(8,10).toString();
+        String ora = orario.subSequence(0,2).toString();
+        String minuti = orario.subSequence(3,5).toString();
         String finale = anno+"-"+mese+"-"+giorno+" "+ora+":"+minuti+":"+"00";
-        //  String dIn = "2015-09-10 19:00:00";
         return finale;
     }
 }
