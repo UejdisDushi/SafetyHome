@@ -120,15 +120,22 @@ public class CalendarSample {
             */
 
             // Initialize Calendar service with valid OAuth credentials
-            /*
-            Calendar service = new Calendar.Builder(httpTransport, JSON_FACTORY, credential)
+
+            com.google.api.services.calendar.Calendar service = new com.google.api.services.calendar.Calendar.Builder(httpTransport, JSON_FACTORY, credential)
                     .setApplicationName("applicationName").build();
 
 // Retrieve the calendar
             com.google.api.services.calendar.model.Calendar calendar =
-                    service.calendars().get('primary').execute();
+                    service.calendars().get("primary").execute();
 
-            System.out.println(calendar.getSummary());*/
+            System.out.println(calendar.getSummary());
+
+
+
+            // Retrieve an event
+            Event event = service.events().get("primary", "eventId").execute();
+
+            System.out.println(event.getSummary());
 
         } catch (IOException e) {
             System.err.println(e.getMessage());
