@@ -86,7 +86,12 @@ public class Util
 
     public static DeviceList getAllDevices()
     {
-        return zWayApi.getDevices();
+        DeviceList lista = zWayApi.getDevices();
+        if(lista!=null)
+        {
+            return lista;
+        }
+        return null;
     }
 
     public static Device getDevice(int id)
@@ -108,16 +113,21 @@ public class Util
     public static Device getDevice(String deviceType, int id)
     {
         DeviceList lista = getAllDevices();
-
-        for(Device tmp : lista.getAllDevices())
+        if(lista!=null)
         {
-            if(tmp.getDeviceType().equalsIgnoreCase(deviceType) && tmp.getNodeId()== id)
+            for(Device tmp : lista.getAllDevices())
             {
-                return tmp;
+                if(tmp.getDeviceType().equalsIgnoreCase(deviceType) && tmp.getNodeId()== id)
+                {
+                    return tmp;
+                }
             }
         }
+        else
+        {
+            return null;
+        }
         return null;
-
     }
 
     //probtype può essere temperatura luminosita ecc

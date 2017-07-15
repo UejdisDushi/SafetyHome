@@ -9,8 +9,8 @@ public class ThreadController
     private SimpleRunner r = new SimpleRunner();
 
     //creati da me
-    private ThreadSorveglianzaConImmagine sorveglianzaConImmagine  = new ThreadSorveglianzaConImmagine();
-    private ThreadSorveglianzaSenzaImmagine sorveglianzaSenzaImmagine  = new ThreadSorveglianzaSenzaImmagine();
+    //private ThreadSorveglianzaConImmagine sorveglianzaConImmagine  = new ThreadSorveglianzaConImmagine();
+    private ThreadSorveglianzaSenzaImmagine sorveglianzaSenzaImmagine  = new ThreadSorveglianzaSenzaImmagine(20);
     //--fine creati da me s
 
     private Thread t = new Thread(r);

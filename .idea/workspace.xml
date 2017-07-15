@@ -4,10 +4,15 @@
     <list default="true" id="966f5009-a094-4c32-9990-c49804e0a537" name="Default" comment="Iniziato progetto">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Images/prova.png" afterPath="$PROJECT_DIR$/Images/prova.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/it/upo/reti2s/utils/SFWebhook.class" afterPath="$PROJECT_DIR$/build/classes/main/it/upo/reti2s/utils/SFWebhook.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/it/upo/reti2s/utils/ThreadController.class" afterPath="$PROJECT_DIR$/build/classes/main/it/upo/reti2s/utils/ThreadController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/it/upo/reti2s/utils/ThreadSorveglianzaConImmagine.class" afterPath="$PROJECT_DIR$/build/classes/main/it/upo/reti2s/utils/ThreadSorveglianzaConImmagine.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/it/upo/reti2s/utils/ThreadSorveglianzaSenzaImmagine.class" afterPath="$PROJECT_DIR$/build/classes/main/it/upo/reti2s/utils/ThreadSorveglianzaSenzaImmagine.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/it/upo/reti2s/utils/Util.class" afterPath="$PROJECT_DIR$/build/classes/main/it/upo/reti2s/utils/Util.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/SFWebhook.java" afterPath="$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/SFWebhook.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/ThreadController.java" afterPath="$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/ThreadController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/ThreadSorveglianzaConImmagine.java" afterPath="$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/ThreadSorveglianzaConImmagine.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/ThreadSorveglianzaSenzaImmagine.java" afterPath="$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/ThreadSorveglianzaSenzaImmagine.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/Util.java" afterPath="$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/Util.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -21,7 +26,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/SafetyHome$SFWebhook.coverage" NAME="SFWebhook Coverage Results" MODIFIED="1500039839648" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/SafetyHome$SFWebhook.coverage" NAME="SFWebhook Coverage Results" MODIFIED="1500105822184" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>it.upo.reti2s.utils.*</FILTER>
     </SUITE>
   </component>
@@ -55,8 +60,8 @@
       <file leaf-file-name="SFWebhook.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/SFWebhook.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6327">
-              <caret line="494" column="38" lean-forward="false" selection-start-line="494" selection-start-column="38" selection-end-line="494" selection-end-column="38" />
+            <state relative-caret-position="446">
+              <caret line="627" column="37" lean-forward="true" selection-start-line="627" selection-start-column="37" selection-end-line="627" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -65,9 +70,32 @@
       <file leaf-file-name="Util.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/Util.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="177" column="22" lean-forward="true" selection-start-line="177" selection-start-column="22" selection-end-line="177" selection-end-column="22" />
-              <folding />
+            <state relative-caret-position="1968">
+              <caret line="93" column="20" lean-forward="false" selection-start-line="93" selection-start-column="20" selection-end-line="93" selection-end-column="20" />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#5336#5337#0" expanded="false" />
+                <element signature="e#5396#5397#0" expanded="false" />
+                <element signature="e#6800#6801#0" expanded="false" />
+                <element signature="e#6827#6828#0" expanded="false" />
+                <element signature="e#6885#6886#0" expanded="false" />
+                <element signature="e#6913#6914#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ThreadSorveglianzaConImmagine.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/ThreadSorveglianzaConImmagine.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1106">
+              <caret line="99" column="25" lean-forward="true" selection-start-line="99" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
+              <folding>
+                <element signature="e#757#758#0" expanded="true" />
+                <element signature="e#807#808#0" expanded="true" />
+                <element signature="e#3506#3507#0" expanded="true" />
+                <element signature="e#3539#3540#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -501,13 +529,13 @@
         <option value="$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/MyBots.java" />
         <option value="$PROJECT_DIR$/lib/Util.java" />
         <option value="$PROJECT_DIR$/build.gradle" />
-        <option value="$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/ThreadSorveglianzaSenzaImmagine.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/ThreadController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/ThreadSorveglianzaConImmagine.java" />
         <option value="$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/View.java" />
         <option value="$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/CalendarSample.java" />
         <option value="$PROJECT_DIR$/src/main/resources/client_secret2.json" />
         <option value="$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/Util.java" />
+        <option value="$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/ThreadController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/ThreadSorveglianzaConImmagine.java" />
+        <option value="$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/ThreadSorveglianzaSenzaImmagine.java" />
         <option value="$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/SFWebhook.java" />
       </list>
     </option>
@@ -540,8 +568,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -568,9 +595,54 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SafetyHome" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SafetyHome" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SafetyHome" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SafetyHome" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="utils" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -580,7 +652,7 @@
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.43337196" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/zway-java-mastermodedi" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="extract.method.default.visibility" value="public" />
   </component>
   <component name="RecentsManager">
@@ -1154,11 +1226,14 @@
       <workItem from="1500023900218" duration="1679000" />
       <workItem from="1500037008203" duration="2730000" />
       <workItem from="1500039762598" duration="3677000" />
+      <workItem from="1500057509039" duration="660000" />
+      <workItem from="1500102803721" duration="3674000" />
+      <workItem from="1500107847752" duration="2392000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84677000" />
+    <option name="totallyTimeSpent" value="91403000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1174,29 +1249,28 @@
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36575052" sideWeight="0.18480603" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39910313" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32769555" sideWeight="0.49568966" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32735425" sideWeight="0.49568966" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36575052" sideWeight="0.18480603" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22197309" sideWeight="0.81519395" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32975295" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32922733" sideWeight="0.49784482" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2953813" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0810956" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39910313" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1204,6 +1278,7 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297414" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1220,7 +1295,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="7" />
+      <option name="time" value="10" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1326,15 +1401,6 @@
     <entry file="file://$PROJECT_DIR$/client_secret.json" />
     <entry file="file://$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/Bot.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/MyBots.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/ThreadController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="32" column="1" lean-forward="false" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/ThreadSorveglianzaSenzaImmagine.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/ThreadSorveglianzaConImmagine.java" />
     <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="731">
@@ -1342,7 +1408,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/View.java" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/io/Reader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-697">
@@ -1351,13 +1416,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/client_secret2.json" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/CalendarSample.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="38" column="13" lean-forward="false" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/client_secret.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1372,33 +1430,90 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/QuickStart.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="777">
-          <caret line="109" column="0" lean-forward="false" selection-start-line="109" selection-start-column="0" selection-end-line="109" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.8.1/c10732c97eccba635e20596a02c3824fef0605bf/gson-2.8.1-sources.jar!/com/google/gson/JsonArray.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
           <caret line="221" column="0" lean-forward="false" selection-start-line="221" selection-start-column="0" selection-end-line="221" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/QuickStart.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="109" column="0" lean-forward="false" selection-start-line="109" selection-start-column="0" selection-end-line="109" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/View.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-356">
+          <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/Util.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="177" column="22" lean-forward="true" selection-start-line="177" selection-start-column="22" selection-end-line="177" selection-end-column="22" />
+        <state relative-caret-position="1968">
+          <caret line="93" column="20" lean-forward="false" selection-start-line="93" selection-start-column="20" selection-end-line="93" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#5336#5337#0" expanded="false" />
+            <element signature="e#5396#5397#0" expanded="false" />
+            <element signature="e#6800#6801#0" expanded="false" />
+            <element signature="e#6827#6828#0" expanded="false" />
+            <element signature="e#6885#6886#0" expanded="false" />
+            <element signature="e#6913#6914#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/CalendarSample.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="38" column="13" lean-forward="false" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/ThreadController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="12" column="52" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/ThreadSorveglianzaConImmagine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1106">
+          <caret line="99" column="25" lean-forward="true" selection-start-line="99" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
+          <folding>
+            <element signature="e#757#758#0" expanded="true" />
+            <element signature="e#807#808#0" expanded="true" />
+            <element signature="e#3506#3507#0" expanded="true" />
+            <element signature="e#3539#3540#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/ThreadSorveglianzaSenzaImmagine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1203">
+          <caret line="77" column="5" lean-forward="false" selection-start-line="77" selection-start-column="5" selection-end-line="77" selection-end-column="5" />
+          <folding>
+            <element signature="e#843#844#0" expanded="true" />
+            <element signature="e#893#894#0" expanded="true" />
+            <element signature="e#2546#2547#0" expanded="true" />
+            <element signature="e#2579#2580#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/SFWebhook.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6327">
-          <caret line="494" column="38" lean-forward="false" selection-start-line="494" selection-start-column="38" selection-end-line="494" selection-end-column="38" />
+        <state relative-caret-position="446">
+          <caret line="627" column="37" lean-forward="true" selection-start-line="627" selection-start-column="37" selection-end-line="627" selection-end-column="37" />
           <folding />
         </state>
       </provider>

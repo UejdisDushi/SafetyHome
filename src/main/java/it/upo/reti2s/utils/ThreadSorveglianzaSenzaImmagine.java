@@ -17,46 +17,65 @@ import static it.upo.reti2s.utils.Util.getSensorePresenza;
  */
 public class ThreadSorveglianzaSenzaImmagine implements Runnable
 {
+    private Thread thread;
     private boolean stopThread = false;
+    int durataSecondi;
+    int durata = durataSecondi/10;
+    String text = "";
+
+
+    //imposta quanto dura la sorveglianza
+    public ThreadSorveglianzaSenzaImmagine(int durataSecondi)
+    {
+        this.durataSecondi = durataSecondi;
+    }
+
+
     public void run()
     {
 
-        String text = "";
         Device sensoreAperturaPorta = getSensoreAperturaPorta();
         Device sensorePresenza  = getSensorePresenza();
 
         if(sensoreAperturaPorta == null || sensorePresenza==null)
         {
-            System.out.println("Nessun sensore rilevato ");
+            text = "Nessun sensore rilevato ";
+            System.out.println(text);
+            try {
+                Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID,TELEGRAM_URL);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
             this.stopRunning();
         }
         else
         {
-            while (!stopThread) {
+            while (!stopThread)
+            {
             /*
             attivo per 10 minuti con aggiornamento  ogni10 sec
              */
-                for (int i = 0; i < 300; i++)//attivo per 5 minuti
+                for (int i = 0; i < durataSecondi; i++)//attivo per 5 minuti
                 {
                 //verificare il metodo
                     try {
-                        Thread.sleep(10000);//10 sec
+                        Thread.sleep(1000);//10 sec
                         if(sensoreAperturaPorta.getMetrics().getLevel().equalsIgnoreCase("on")
                                 || sensorePresenza.getMetrics().getLevel().equalsIgnoreCase("on"))
                         {
                             Util.sendMessage("Rilevata Presenza",TELEGRAM_RESPONSE_CHAT_ID,TELEGRAM_URL);
-
                         }
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
+                    this.stopRunning();
                 }//chiusura for
             }//chiusura while
         }//chiusura else
     }
-
 
     public void stopRunning()
     {

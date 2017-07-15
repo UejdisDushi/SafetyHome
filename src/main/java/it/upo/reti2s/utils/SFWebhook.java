@@ -559,29 +559,32 @@ public class SFWebhook
         }
 
 
+        //simplirunner non andava
+
 
         // da adattare ai nuovi thread creati
-        if (input.getResult().getAction().equalsIgnoreCase("attivaServizioMonitoraggioSenzaImmagine"))
+        if (input.getResult().getAction().equalsIgnoreCase("attivaServizioMonitoraggioConImmagine"))
         {
-            String text="";
-            Thread t = new Thread(new SimpleRunner());
-            System.out.println( "\n I thread stanno per partire \n\n\n" );
+           // String text="";
+            Thread t = new Thread(new ThreadSorveglianzaConImmagine(10));
+            //System.out.println( "\n I thread stanno per partire \n\n\n" );
             t.start();//faccio partire il thread per l interrogazione sottostante
-            t.join();//attendo la terminazione di
+            //t.join();//attendo la terminazione di
 
-            SimpleRunner r = new SimpleRunner();
-            System.out.println("Finite thread");
+
+            //SimpleRunner r = new SimpleRunner();
+            //System.out.println("Finite thread");
 
             //text="https://drive.google.com/file/d/0B1dKXnmV5OuKRk9weWkzRFV3MlE/view?usp=sharing";
-            text=PATH_IMMAGINE_DROPBOX;
+            //text=PATH_IMMAGINE_DROPBOX;
 
-            System.out.println(text);
+            //System.out.println(text);
 
             //faccio passare output come parametro senno posso fare la return lo ritorno nella classe chiamante
-            output.setSpeech(text);
-            output.setDisplayText(text);
+            //output.setSpeech(text);
+            //output.setDisplayText(text);
         }
-
+/*
         // da adattare ai nuovi thread creati
         if (input.getResult().getAction().equalsIgnoreCase("attivaServizioMonitoraggioConImmagine"))
         {
@@ -603,6 +606,31 @@ public class SFWebhook
             output.setSpeech(text);
             output.setDisplayText(text);
         }
+        */
+
+
+        // da adattare ai nuovi thread creati
+        if (input.getResult().getAction().equalsIgnoreCase("attivaServizioMonitoraggioSenzaImmagine"))
+        {
+            String text="";
+            Thread threadSoverglianza = new Thread(new ThreadSorveglianzaSenzaImmagine(10));
+            threadSoverglianza.start();//faccio partire il thread per l interrogazione sottostante
+            text="Thread attivato";
+
+            //threadSoverglianza.join();//attendo la terminazione di
+
+            //SimpleRunner r = new SimpleRunner();
+
+            //text="https://drive.google.com/file/d/0B1dKXnmV5OuKRk9weWkzRFV3MlE/view?usp=sharing";
+
+
+            //faccio passare output come parametro senno posso fare la return lo ritorno nella classe chiamante
+            //output.setSpeech(text);
+            //output.setDisplayText(text);
+        }
+
+
+
 
     }
 }
