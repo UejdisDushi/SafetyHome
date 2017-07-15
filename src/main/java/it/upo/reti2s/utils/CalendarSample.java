@@ -20,8 +20,9 @@ import com.google.api.client.util.DateTime;
 import com.google.api.client.util.Lists;
 import com.google.api.client.util.store.DataStoreFactory;
 import com.google.api.client.util.store.FileDataStoreFactory;
-import com.google.api.services.calendar.CalendarScopes;
+import com.google.api.services.calendar.*;
 import com.google.api.services.calendar.model.*;
+import com.google.api.services.calendar.model.Calendar;
 
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -162,7 +163,32 @@ public class CalendarSample {
 
                    /*TEST METODO OCCUPATO O NO */
 
-                   System.out.println("STRINGA FINALE \n"+convertiPerDataFreeBusy(eventStart));
+                   //System.out.println("STRINGA FINALE \n"+convertiPerDataFreeBusy(eventStart));
+                    //https://stackoverflow.com/questions/32632560/how-do-i-use-the-freebusyresponse-in-google-calendar-java-api
+
+                    String dIn = convertiPerDataFreeBusy(eventStart);
+                    String dIne = convertiPerDataFreeBusy(eventStart);
+                    DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
+                    Date d = df.parse(dIn);
+                    DateTime startTime = new DateTime(d, TimeZone.getDefault());
+
+                    Date de = df.parse(dIne);
+                    DateTime endTime = new DateTime(de, TimeZone.getDefault());
+
+                    FreeBusyRequest req = new FreeBusyRequest();
+                    req.setTimeMin(startTime);
+                    req.setTimeMax(endTime);
+                    com.google.api.services.calendar.Calendar.Freebusy.Query fbq = client.freebusy().query(req);
+
+                    FreeBusyResponse fbresponse = fbq.execute();
+                    System.out.println(fbresponse.toString());
+
+
+
+
+
+
 
                 }
                 pageToken = events.getNextPageToken();
@@ -351,7 +377,6 @@ public class CalendarSample {
     public static String convertiPerDataFreeBusy(String dataInStringa)
     {
         //  Esempio String input "2015-09-10 19:00:00";
-
         String data_fisica = dataInStringa.substring(13,23);
         String orario = dataInStringa.substring(24,29);
         String anno = data_fisica.subSequence(0,4).toString();
