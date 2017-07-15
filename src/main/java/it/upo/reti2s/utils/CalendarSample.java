@@ -21,16 +21,15 @@ import com.google.api.client.util.Lists;
 import com.google.api.client.util.store.DataStoreFactory;
 import com.google.api.client.util.store.FileDataStoreFactory;
 import com.google.api.services.calendar.CalendarScopes;
-import com.google.api.services.calendar.model.Calendar;
-import com.google.api.services.calendar.model.CalendarList;
-import com.google.api.services.calendar.model.Event;
-import com.google.api.services.calendar.model.EventDateTime;
-import com.google.api.services.calendar.model.Events;
+import com.google.api.services.calendar.model.*;
 
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Collections;
 import java.util.Date;
+import java.util.List;
 import java.util.TimeZone;
 
 
@@ -126,16 +125,53 @@ public class CalendarSample {
 
 // Retrieve the calendar
             com.google.api.services.calendar.model.Calendar calendar =
-                    service.calendars().get("primary").execute();
+                    service.calendars().get("20010057@studenti.uniupo.it").execute();
 
             System.out.println(calendar.getSummary());
 
 
-
+/*
             // Retrieve an event
             Event event = service.events().get("primary", "eventId").execute();
 
             System.out.println(event.getSummary());
+
+*/
+
+            // Iterate over the events in the specified calendar
+            String pageToken = null;
+            do {
+                Events events = service.events().list("20010057@studenti.uniupo.it").setPageToken(pageToken).execute();
+                List<Event> items = events.getItems();
+                for (Event event1 : items) {
+
+
+
+                    System.out.println(event1.getSummary());
+                    String eventStart = String.valueOf(event1.getStart());
+                    String eventEnd =  String.valueOf(event1.getEnd());
+
+                    System.out.print(eventEnd.toString()+"fine dell eveneto");
+
+                   // Date date = new Date(String.valueOf(event1.getStart()));//no bene
+                    //System.out.println(date);
+                   //String dd=String.valueOf(event1.getStart());
+                   java.util.Calendar dataConvertitaInizio = dataConvertita(String.valueOf(event1.getStart()));
+                   java.util.Calendar dataConvertitaFine = dataConvertita(String.valueOf(event1.getEnd()));
+                   System.out.println(dataConvertitaInizio.getTime());
+
+                   /*TEST METODO OCCUPATO O NO */
+
+                   System.out.println("STRINGA FINALE \n"+convertiPerDataFreeBusy(eventStart));
+
+
+
+
+
+                }
+                pageToken = events.getNextPageToken();
+            } while (pageToken != null);
+
 
         } catch (IOException e) {
             System.err.println(e.getMessage());
@@ -248,5 +284,83 @@ public class CalendarSample {
     private static void deleteCalendar(Calendar calendar) throws IOException {
         View.header("Delete Calendar");
         client.calendars().delete(calendar.getId()).execute();
+    }
+
+    public static java.util.Calendar dataConvertita(String dataInStringa)
+    {
+
+        String data_fisica = dataInStringa.substring(13,23);
+
+        String orario = dataInStringa.substring(24,29);
+        System.out.println(orario);
+        String nuovaOra = data_fisica.concat(" "+orario);
+        System.out.println(nuovaOra);
+        int anno = Integer.parseInt(nuovaOra.subSequence(0,4).toString());
+        int mese = Integer.parseInt(nuovaOra.subSequence(5,7).toString());
+        int giorno = Integer.parseInt(nuovaOra.subSequence(8,10).toString());
+        //System.out.println(anno);
+        //System.out.println(mese);
+        //System.out.println(giorno);
+        //System.out.println("\n\n"+orario+"\n\n");
+
+        int ora = Integer.parseInt(orario.subSequence(0,2).toString());
+        int minuti = Integer.parseInt(orario.subSequence(3,5).toString());
+        //System.out.println(ora + "    " + minuti);
+
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        java.util.Calendar cal = java.util.Calendar.getInstance();
+        cal.set(java.util.Calendar.YEAR, anno);
+        cal.set(java.util.Calendar.MONTH, mese - 1); // <-- months start
+        cal.set(java.util.Calendar.DAY_OF_MONTH, giorno);
+        cal.set(java.util.Calendar.HOUR_OF_DAY,ora);
+        cal.set(java.util.Calendar.MINUTE,minuti);
+        cal.set(java.util.Calendar.SECOND,0);
+        //System.out.println(cal.getTime());
+        return cal;
+    }
+
+    public static java.util.Calendar dataFreeBusy(String dataInStringa)
+    {
+
+        String data_fisica = dataInStringa.substring(13,23);
+
+        String orario = dataInStringa.substring(24,29);
+        System.out.println(orario);
+        String nuovaOra = data_fisica.concat(" "+orario);
+        System.out.println(nuovaOra);
+        int anno = Integer.parseInt(nuovaOra.subSequence(0,4).toString());
+        int mese = Integer.parseInt(nuovaOra.subSequence(5,7).toString());
+        int giorno = Integer.parseInt(nuovaOra.subSequence(8,10).toString());
+        //System.out.println(anno);
+        //System.out.println(mese);
+        //System.out.println(giorno);
+        //System.out.println("\n\n"+orario+"\n\n");
+
+        int ora = Integer.parseInt(orario.subSequence(0,2).toString());
+        int minuti = Integer.parseInt(orario.subSequence(3,5).toString());
+        //System.out.println(ora + "    " + minuti);
+
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        java.util.Calendar cal = java.util.Calendar.getInstance();
+        cal.set(java.util.Calendar.YEAR, anno);
+        cal.set(java.util.Calendar.MONTH, mese - 1); // <-- months start
+        cal.set(java.util.Calendar.DAY_OF_MONTH, giorno);
+        cal.set(java.util.Calendar.HOUR_OF_DAY,ora);
+        cal.set(java.util.Calendar.MINUTE,minuti);
+        cal.set(java.util.Calendar.SECOND,0);
+        //System.out.println(cal.getTime());
+        return cal;
+    }
+
+    public static String convertiPerDataFreeBusy(String dataInStringa)
+    {
+        int anno = Integer.parseInt(dataInStringa.subSequence(0,4).toString());
+        int mese = Integer.parseInt(dataInStringa.subSequence(5,7).toString());
+        int giorno = Integer.parseInt(dataInStringa.subSequence(8,10).toString());
+        int ora = Integer.parseInt(dataInStringa.subSequence(0,2).toString());
+        int minuti = Integer.parseInt(dataInStringa.subSequence(3,5).toString());
+        String finale = anno+"-"+mese+"-"+giorno+" "+ora+":"+minuti+":"+"00";
+        //  String dIn = "2015-09-10 19:00:00";
+        return finale;
     }
 }
