@@ -24,6 +24,7 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.List;
 
+//Lanciare per creare autenticazione partendo dal json client_secrets.json, crea file autenticazione in C:\Users\lucaf\.credentials\calendar-java-quickstart
 public class QuickStart {
     /** Application name. */
     private static final String APPLICATION_NAME =
