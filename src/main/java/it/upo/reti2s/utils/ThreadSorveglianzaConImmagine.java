@@ -7,7 +7,7 @@ import javax.imageio.ImageIO;
 import java.io.File;
 import java.io.IOException;
 
-import static it.upo.reti2s.utils.SFWebhook.*;
+import static it.upo.reti2s.utils.SafetyHomeWebhook.*;
 import static it.upo.reti2s.utils.Util.getSensoreAperturaPorta;
 import static it.upo.reti2s.utils.Util.getSensorePresenza;
 
@@ -58,6 +58,7 @@ public class ThreadSorveglianzaConImmagine implements Runnable
             }
             try {
                 Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID,TELEGRAM_URL);
+                Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID_EDI,TELEGRAM_URL);
                 System.out.println(text);
 
                 this.stopRunning();
@@ -86,8 +87,11 @@ public class ThreadSorveglianzaConImmagine implements Runnable
                             ImageIO.write(webcam.getImage(), FORMATO_IMMAGINE, new File(PATH_IMMAGINE));
                             webcam.close();
                             Util.sendMessage("Rilevata Presenza",TELEGRAM_RESPONSE_CHAT_ID,TELEGRAM_URL);
+                            Util.sendMessage("Rilevata Presenza",TELEGRAM_RESPONSE_CHAT_ID_EDI,TELEGRAM_URL);
                             Util.sendMessage("Immagine disponibile al seguente indirizzo",TELEGRAM_RESPONSE_CHAT_ID,TELEGRAM_URL);
+                            Util.sendMessage("Immagine disponibile al seguente indirizzo",TELEGRAM_RESPONSE_CHAT_ID_EDI,TELEGRAM_URL);
                             Util.sendMessage("https://www.dropbox.com/s/v7arilbs00h4849/prova.png?dl=0",TELEGRAM_RESPONSE_CHAT_ID,TELEGRAM_URL);
+                            Util.sendMessage("https://www.dropbox.com/s/v7arilbs00h4849/prova.png?dl=0",TELEGRAM_RESPONSE_CHAT_ID_EDI,TELEGRAM_URL);
                         }
                     } catch (InterruptedException e)
                     {

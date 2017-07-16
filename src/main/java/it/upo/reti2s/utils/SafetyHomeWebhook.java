@@ -29,113 +29,53 @@ import java.io.IOException;
  * @author <a href="mailto:luigi.derussis@uniupo.it">Luigi De Russis</a>
  * @version 1.0 (21/05/2017)
  */
-public class SFWebhook
+public class SafetyHomeWebhook
 {
+    //Settaggi cam
     final static String PATH_IMMAGINE = "Images/prova.png";
     final static String FORMATO_IMMAGINE = "PNG";
     final static String PATH_IMMAGINE_DROPBOX = "https://www.dropbox.com/s/v7arilbs00h4849/prova.png?dl=0";
-//ID CHE MI SERVONO
+
+    // Identificatori singoli Device
     final static int ID_APERTURAPORTE = 13;//CORRETTO
     final static int ID_PRESAPILOTATA = 3;// CORRETTO PRESA PILOTATA PER RADIO
     final static int ID_HOLDERLAMPADINA = 21;//CORRETTO EVERSPRING WALL PLUG
     final static int ID_MULTILEVEL_PURPOSE = 6;//CORRETTO DA USARE PER PURPOSE E LUMINOSITA
-    //final static int HOLDER_LAMPADINA_ID20 = 20;//NO
+
+    //Nome del getProbeTitle() del Device
     final static String SWITCHBINARY = "SwitchBinary";
     final static String SENSORBINARY = "SensorBinary";
     final static String SENSORMULTILEVEL = "SensorMultilevel";
     final static String MULTILEVEL_LUMINESCENCE = "Luminiscence";
     final static String MULTILEVEL_PURPOSE = "purpose";
+
+    //Settaggi connessione rete Zway
     final static String ipAddress = "172.30.1.137";
     final static String username = "admin";
     final static String password = "raz4reti2";
     final static IZWayApi zWayApi = new ZWayApiHttp(ipAddress, 8083, "http", username, password, 0, false, new ZWaySimpleCallback());
-    static final String TELEGRAM_URL = "https://api.telegram.org/bot423930159:AAF3ES_GcBxl5HmrV5HdfF137_XCfLXc1ZU";
-    static final String TELEGRAM_TOKEN = "423930159:AAF3ES_GcBxl5HmrV5HdfF137_XCfLXc1ZU";
-    static final long TELEGRAM_RESPONSE_CHAT_ID = 102856586;
+
+    //Settaggi per utilizzo Telegram
+    static final String TELEGRAM_URL = "https://api.telegram.org/bot423930159:AAF3ES_GcBxl5HmrV5HdfF137_XCfLXc1ZU";//link del bot
+    //composto in questa maniera  https://api.telegram.org/bot
+    //token 423930159:AAF3ES_GcBxl5HmrV5HdfF137_XCfLXc1ZU
+
+    static final String TELEGRAM_TOKEN = "423930159:AAF3ES_GcBxl5HmrV5HdfF137_XCfLXc1ZU";//token accesso bothfather
+    static final long TELEGRAM_RESPONSE_CHAT_ID = 102856586;//id/username Luca
+    static final long TELEGRAM_RESPONSE_CHAT_ID_EDI = 128905829;//id/username Edi
 
     public static void main(String[] args)
     {
         Gson gson = GsonFactory.getDefaultFactory().getGson();
+        //Usato per catturare Post da API.ai
         post("/", (request, response) -> {
             Fulfillment output = new Fulfillment();
-            // the "real" stuff happens here
-            // notice that the webook request is a superset of the AIResponse class
-            // and it should be created to tackle the differences
             doWebhook(gson.fromJson(request.body(), AIResponse.class), output);
             response.type("application/json");
-            // output is automatically converted in JSON thanks to gson
-            //output contiene
-            //           output.setSpeech(text) output.setDisplayText(text);
             return output;
-        }, gson::toJson);
-
-        //metodo testato per inviar e un messaggio
-        get("/sendMessage", (request, response) ->
-        {
-            Gson gson1 = new Gson();
-            response.status(200);//200 OK
-            response.type("application/json");
-            String finalJson = "Invocato il metodo per inviare un messaggio su telegram";
-            System.out.println(finalJson);
-            Util.sendMessage("attenzione ladro",TELEGRAM_RESPONSE_CHAT_ID,TELEGRAM_URL);
-            return finalJson;
-        }, gson::toJson);
-
-        /*
-        METODO USATO COME TEST http://localhost:4567/provaRitorno
-         */
-        get("/provaRitorno", (request, response) ->
-        {
-
-            Gson gson1 = new Gson();
-            response.status(200);//200 OK
-            response.type("application/json");
-            String finalJson = "messaggio di ritorno";
-            System.out.println("il metodo prova ritorno funziona");
-            return finalJson;
-        }, gson::toJson);
+        }, gson::toJson);//gson::toJson serve per prendere il contenuto della return e mapparlo in un oggetto json
 
 
-        get("/scattaFoto", (request, response) ->
-        {
-            String text = "";
-            Gson gson1 = new Gson();
-            response.status(200);//200 OK
-            response.type("application/json");
-            String finalJson = "messaggio di ritorno";
-            Webcam webcam = Webcam.getDefault();
-            if (webcam != null) {
-                System.out.println("Webcam: " + webcam.getName());
-                webcam.open();
-                try {
-                    ImageIO.write(webcam.getImage(), FORMATO_IMMAGINE, new File(PATH_IMMAGINE));
-                    webcam.close();
-                    finalJson = "Immagine scattata";
-                    Util.sendMessage(PATH_IMMAGINE_DROPBOX,TELEGRAM_RESPONSE_CHAT_ID,TELEGRAM_URL);
-                }
-                catch (IOException e)
-                {
-                    text = "Problema con la cam";
-                    Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID,TELEGRAM_URL);
-                    e.printStackTrace();
-                }
-                if (finalJson == null)
-                {
-                    finalJson = "Problema con la cam";
-                    Util.sendMessage(finalJson,TELEGRAM_RESPONSE_CHAT_ID,TELEGRAM_URL);
-                }
-                System.out.print(text);
-            }
-            else
-            {
-                finalJson = "No webcam detected";
-                Util.sendMessage(finalJson,TELEGRAM_RESPONSE_CHAT_ID,TELEGRAM_URL);
-                System.out.println();
-            }
-            return finalJson;
-        }, gson::toJson);
-
-        //
 
         get("/statoPorta",(request, response) ->
         {
@@ -158,17 +98,20 @@ public class SFWebhook
                         returnGson ="Porta aperta, valore : on";
                     }
                     Util.sendMessage(returnGson,TELEGRAM_RESPONSE_CHAT_ID,TELEGRAM_URL);
+                    Util.sendMessage(returnGson,TELEGRAM_RESPONSE_CHAT_ID_EDI,TELEGRAM_URL);
                 }
                 else
                 {
                     returnGson = "Sensore non trovato";
                     Util.sendMessage(returnGson,TELEGRAM_RESPONSE_CHAT_ID,TELEGRAM_URL);
+                    Util.sendMessage(returnGson,TELEGRAM_RESPONSE_CHAT_ID_EDI,TELEGRAM_URL);
                 }
             }
             else
             {
                 returnGson = "Nessun device trovato";
                 Util.sendMessage(returnGson,TELEGRAM_RESPONSE_CHAT_ID,TELEGRAM_URL);
+                Util.sendMessage(returnGson,TELEGRAM_RESPONSE_CHAT_ID_EDI,TELEGRAM_URL);
             }
             return returnGson;
         },gson::toJson);
@@ -178,22 +121,16 @@ public class SFWebhook
 /*
         get("/calendar", (request, response) ->
         {
-
             Gson gson1 = new Gson();
             response.status(200);//200 OK
             response.type("application/json");
-
             Calendar service = new Timeout.Builder(httpTransport, jsonFactory, credentials)
                     .setApplicationName("applicationName").build();
 
             Event allEvent = service.event
-
-
-
             String finalJson = "Invocato il metodo per inviare un messaggio su telegram";
             System.out.println(finalJson);
             Util.sendMessage("attenzione ladro",TELEGRAM_RESPONSE_CHAT_ID,TELEGRAM_URL);
-
             return finalJson;
         }, gson::toJson);
 
@@ -207,6 +144,8 @@ public class SFWebhook
      * @param input  the request body that comes from api.ai
      * @param output the @link(Fulfillment) response to be sent to api.ai
      */
+
+    //tutte le action sono mappate dentro doWebhook
     private static void doWebhook(AIResponse input, Fulfillment output) throws InterruptedException, IOException {
 
         //In AIResponse input dobbiamo prendere un getResult e getAction, get action avrà lo stesso nome della action dell intent
@@ -241,6 +180,7 @@ public class SFWebhook
             //faccio passare output come parametro senno posso fare la return lo ritorno nella classe chiamante
             System.out.println(text);
             Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID,TELEGRAM_URL);
+            Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID_EDI,TELEGRAM_URL);
             output.setSpeech(text);
             output.setDisplayText(text);
         }
@@ -286,26 +226,7 @@ public class SFWebhook
         }
 
 
-        /*
-            Metodo prova da Telegram
-            MEtodo prova da API.ai
-            Risposta settata per il metodo telegram
-         */
-
-        //confronto con la action che mi interessa
-
-        if (input.getResult().getAction().equalsIgnoreCase("prova"))
-        {
-            String text="";
-            text = "risposta del metodo prova";
-            System.out.print(text);
-            //faccio passare output come parametro senno posso fare la return lo ritorno nella classe chiamante
-            output.setSpeech(text);
-            output.setDisplayText(text);
-        }
-
         //                  OK  ---------
-
         if (input.getResult().getAction().equalsIgnoreCase("scattaFoto"))
         {
             String text="";
@@ -320,18 +241,21 @@ public class SFWebhook
                     webcam.close();
                     text = "https://www.dropbox.com/s/v7arilbs00h4849/prova.png?dl=0";
                     Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID,TELEGRAM_URL);
+                    Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID_EDI,TELEGRAM_URL);
 
                 } catch (IOException e)
                 {
                     text="Problema con la cam";
                     e.printStackTrace();
                     Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID,TELEGRAM_URL);
+                    Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID_EDI,TELEGRAM_URL);
                 }
             }
             else
             {
                 text = "No webcam detected";
                 Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID,TELEGRAM_URL);
+                Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID_EDI,TELEGRAM_URL);
             }
 
             System.out.print(text);
@@ -360,16 +284,16 @@ public class SFWebhook
             {
                 accendiDevice(presaPilotata);
                 //text = "Accesa Presa Corrente per la stanza: "+stanza;
-                text = "Accesa Presa Corrente per la stanza: ";
+                text = "Accesa Presa Corrente: ";
             }
             else
             {
                // text="Device non trovato Non e stato possibile accendere la presa nella "+stanza;
-                text="Device non trovato Non e stato possibile accendere la presa nella ";
-                Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID,TELEGRAM_URL);
-
+                text="Device accendi presa non trovato";
             }
             System.out.println(text);
+            Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID,TELEGRAM_URL);
+            Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID_EDI,TELEGRAM_URL);
 
             //faccio passare output come parametro senno posso fare la return lo ritorno nella classe chiamante
             output.setSpeech(text);
@@ -383,37 +307,22 @@ public class SFWebhook
             if(presaPilotata!=null)
             {
                 accendiDevice(presaPilotata);
-                text = "Accesa Presa Corrente per la stanza: ";
+                text = "Spenta Presa ";
             }
             else
             {
                 // text="Device non trovato Non e stato possibile accendere la presa nella "+stanza;
-                text="Device non trovato Non e stato possibile accendere la presa nella ";
+                text="Device spegni presa non trovato";
             }
             System.out.println(text);
             //faccio passare output come parametro senno posso fare la return lo ritorno nella classe chiamante
             Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID,TELEGRAM_URL);
+            Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID_EDI,TELEGRAM_URL);
             output.setSpeech(text);
             output.setDisplayText(text);
         }
 
 
-        if (input.getResult().getAction().equalsIgnoreCase("thread"))
-        {
-            String text="";
-            Thread t = new Thread(new SimpleRunner());
-            System.out.println( "\n I thread stanno per partire \n\n\n" );
-            t.start();//faccio partire il thread per l interrogazione sottostante
-            t.join();//attendo la terminazione di
-            SimpleRunner r = new SimpleRunner();
-            System.out.println("Finite thread");
-            //text="https://drive.google.com/file/d/0B1dKXnmV5OuKRk9weWkzRFV3MlE/view?usp=sharing";
-            text=PATH_IMMAGINE_DROPBOX;
-            System.out.println(text);
-            //faccio passare output come parametro senno posso fare la return lo ritorno nella classe chiamante
-            output.setSpeech(text);
-            output.setDisplayText(text);
-        }
 
         //SERVIZIO VERIFICA PRESENZA <-- verificare metodo per prelevare valori sensori presenza
         if (input.getResult().getAction().equalsIgnoreCase("verificaPresenza"))
@@ -438,6 +347,7 @@ public class SFWebhook
             }
             System.out.println(text);
             Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID,TELEGRAM_URL);
+            Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID_EDI,TELEGRAM_URL);
 
             //faccio passare output come parametro senno posso fare la return lo ritorno nella classe chiamante
             output.setSpeech(text);
@@ -465,7 +375,10 @@ public class SFWebhook
             {
                 text="Sensore porta non trovato";
             }
+
             System.out.println(text);
+            Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID,TELEGRAM_URL);
+            Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID_EDI,TELEGRAM_URL);
 
             //faccio passare output come parametro senno posso fare la return lo ritorno nella classe chiamante
             output.setSpeech(text);
@@ -479,49 +392,10 @@ public class SFWebhook
         // da adattare ai nuovi thread creati
         if (input.getResult().getAction().equalsIgnoreCase("attivaServizioMonitoraggioConImmagine"))
         {
-           // String text="";
             Thread t = new Thread(new ThreadSorveglianzaConImmagine(10));
-            //System.out.println( "\n I thread stanno per partire \n\n\n" );
             t.start();//faccio partire il thread per l interrogazione sottostante
-            //t.join();//attendo la terminazione di
 
-
-            //SimpleRunner r = new SimpleRunner();
-            //System.out.println("Finite thread");
-
-            //text="https://drive.google.com/file/d/0B1dKXnmV5OuKRk9weWkzRFV3MlE/view?usp=sharing";
-            //text=PATH_IMMAGINE_DROPBOX;
-
-            //System.out.println(text);
-
-            //faccio passare output come parametro senno posso fare la return lo ritorno nella classe chiamante
-            //output.setSpeech(text);
-            //output.setDisplayText(text);
         }
-/*
-        // da adattare ai nuovi thread creati
-        if (input.getResult().getAction().equalsIgnoreCase("attivaServizioMonitoraggioConImmagine"))
-        {
-            String text="";
-            Thread t = new Thread(new SimpleRunner());
-            System.out.println( "\n I thread stanno per partire \n\n\n" );
-            t.start();//faccio partire il thread per l interrogazione sottostante
-            t.join();//attendo la terminazione di
-
-            SimpleRunner r = new SimpleRunner();
-            System.out.println("Finite thread");
-
-            //text="https://drive.google.com/file/d/0B1dKXnmV5OuKRk9weWkzRFV3MlE/view?usp=sharing";
-            text=PATH_IMMAGINE_DROPBOX;
-
-            System.out.println(text);
-
-            //faccio passare output come parametro senno posso fare la return lo ritorno nella classe chiamante
-            output.setSpeech(text);
-            output.setDisplayText(text);
-        }
-        */
-
 
         // da adattare ai nuovi thread creati
         if (input.getResult().getAction().equalsIgnoreCase("attivaServizioMonitoraggioSenzaImmagine"))
@@ -529,21 +403,9 @@ public class SFWebhook
             String text="";
             Thread threadSoverglianza = new Thread(new ThreadSorveglianzaSenzaImmagine(10));
             threadSoverglianza.start();//faccio partire il thread per l interrogazione sottostante
-            text="Thread attivato";
+            //text="Thread attivato";
 
-            //threadSoverglianza.join();//attendo la terminazione di
-
-            //SimpleRunner r = new SimpleRunner();
-
-            //text="https://drive.google.com/file/d/0B1dKXnmV5OuKRk9weWkzRFV3MlE/view?usp=sharing";
-
-
-            //faccio passare output come parametro senno posso fare la return lo ritorno nella classe chiamante
-            //output.setSpeech(text);
-            //output.setDisplayText(text);
         }
-
-
 
 
     }

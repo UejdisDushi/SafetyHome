@@ -95,18 +95,14 @@ public class CalendarSample {
         try {
             // initialize the transport
             httpTransport = GoogleNetHttpTransport.newTrustedTransport();
-
             // initialize the data store factory
             dataStoreFactory = new FileDataStoreFactory(DATA_STORE_DIR);
-
             // authorization
             Credential credential = authorize();
-
             // set up global Calendar instance
             client = new com.google.api.services.calendar.Calendar.Builder(
                     httpTransport, JSON_FACTORY, credential).setApplicationName(APPLICATION_NAME).build();
-
-            // run commands
+            // ------------------------run commands
 
             /*
             showCalendars();
@@ -129,66 +125,102 @@ public class CalendarSample {
                     service.calendars().get("20010057@studenti.uniupo.it").execute();
 
             System.out.println(calendar.getSummary());
+            //Java API GUIDA
+            //https://developers.google.com/google-apps/calendar/v3/reference/calendarList/get
 
-
+            // raccessRole	string freeBusyReade
 /*
-            // Retrieve an event
+            // Metodo usato per recuperare un evento con un dato id
             Event event = service.events().get("primary", "eventId").execute();
-
             System.out.println(event.getSummary());
-
 */
 
-            // Iterate over the events in the specified calendar
+            // Metodo usato per iterare tra vari eventi in un calendario specifico
             String pageToken = null;
             do {
                 Events events = service.events().list("20010057@studenti.uniupo.it").setPageToken(pageToken).execute();
                 List<Event> items = events.getItems();
                 for (Event event1 : items) {
+                    //tiro su l ide del corrente evento
+                    String eventId = event1.getId();
 
 
 
-                    System.out.println(event1.getSummary());
-                    String eventStart = String.valueOf(event1.getStart());
-                    String eventEnd =  String.valueOf(event1.getEnd());
 
-                    System.out.print(eventEnd.toString()+"fine dell eveneto");
+
+
+                    System.out.println("ID DELL'EVENTO: "+eventId+" RISULTATO GET SUMMARY : "+event1.getSummary());
+                    System.out.println("Inizio dell'evento : "+String.valueOf(event1.getStart()));
+                    System.out.println("Fine dell'evento : "+String.valueOf(event1.getEnd()));
+
+                    //java.util.GregorianCalendar now = new java.util.GregorianCalendar();
+                    //System.out.println(now);
+
+                   // int anno = now.YEAR;
+                   // int mese = now.MONTH;
+
+                    EventDateTime immediato = new EventDateTime();
+
+                    //Formato della data sdf guardare qui
+                    //https://stackoverflow.com/questions/30431762/setting-date-in-google-calendar-event
+
+
+
+                    System.out.println(immediato);
+
+                    // int ora = now.getTime().getHours();
+                    //int minuti = now.getTime().getMinutes();
+                   // int secondi =  now.getTime().getSeconds();;
+                   // System.out.println( anno + " "+mese+" "+giorno);
+
+
+                    //System.out.print(eventEnd.toString()+"Inizio dell'evento");
+                    //System.out.print(eventEnd.toString()+"Fine dell'evento");
 
                    // Date date = new Date(String.valueOf(event1.getStart()));//no bene
                     //System.out.println(date);
                    //String dd=String.valueOf(event1.getStart());
-                   java.util.Calendar dataConvertitaInizio = dataConvertita(String.valueOf(event1.getStart()));
-                   java.util.Calendar dataConvertitaFine = dataConvertita(String.valueOf(event1.getEnd()));
-                   System.out.println(dataConvertitaInizio.getTime());
+                   //java.util.Calendar dataConvertitaInizio = dataConvertita(String.valueOf(event1.getStart()));
+                  // java.util.Calendar dataConvertitaFine = dataConvertita(String.valueOf(event1.getEnd()));
+                   //System.out.println(dataConvertitaInizio.getTime());
+
+
+                    //System.out.println("\n\n\n\n metodo freebusy \n\n");
+
+
+
 
                    /*TEST METODO OCCUPATO O NO */
 
                    //System.out.println("STRINGA FINALE \n"+convertiPerDataFreeBusy(eventStart));
                     //https://stackoverflow.com/questions/32632560/how-do-i-use-the-freebusyresponse-in-google-calendar-java-api
-
-                    String dIn = convertiPerDataFreeBusy(eventStart);
-                    String dIne = convertiPerDataFreeBusy(eventStart);
+                    //Da {"dateTime":"2017-07-15T21:30:00.000+02:00"}
+                    //A  Esempio String input "2015-09-10 19:00:00";
+                    //String dIn = convertiPerDataFreeBusy(eventStart);
+                    //String dIne = convertiPerDataFreeBusy(eventStart);
+/*
                     DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
-                    Date d = df.parse(dIn);
+                    //Date d = df.parse(dIn);
+                    Date d = df.parse("2017-07-15 10:00:00");
                     DateTime startTime = new DateTime(d, TimeZone.getDefault());
 
-                    Date de = df.parse(dIne);
+                    //Date de = df.parse(dIne);
+                    Date de = df.parse("2017-07-15 23:00:00");
                     DateTime endTime = new DateTime(de, TimeZone.getDefault());
 
                     FreeBusyRequest req = new FreeBusyRequest();
+//https://github.com/google/google-api-dotnet-client/issues/288
+                    FreeBusyRequestItem calid = new FreeBusyRequestItem();
+                    calid.setId("20010057@studenti.uniupo.it");
                     req.setTimeMin(startTime);
                     req.setTimeMax(endTime);
+
                     com.google.api.services.calendar.Calendar.Freebusy.Query fbq = client.freebusy().query(req);
 
                     FreeBusyResponse fbresponse = fbq.execute();
                     System.out.println(fbresponse.toString());
-
-
-
-
-
-
+                    */
 
                 }
                 pageToken = events.getNextPageToken();
@@ -310,9 +342,7 @@ public class CalendarSample {
 
     public static java.util.Calendar dataConvertita(String dataInStringa)
     {
-
         String data_fisica = dataInStringa.substring(13,23);
-
         String orario = dataInStringa.substring(24,29);
         System.out.println(orario);
         String nuovaOra = data_fisica.concat(" "+orario);
@@ -376,7 +406,8 @@ public class CalendarSample {
 
     public static String convertiPerDataFreeBusy(String dataInStringa)
     {
-        //  Esempio String input "2015-09-10 19:00:00";
+        //Da {"dateTime":"2017-07-15T21:30:00.000+02:00"}
+        //A  Esempio String input "2015-09-10 19:00:00";
         String data_fisica = dataInStringa.substring(13,23);
         String orario = dataInStringa.substring(24,29);
         String anno = data_fisica.subSequence(0,4).toString();

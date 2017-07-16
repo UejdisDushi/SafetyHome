@@ -1,14 +1,12 @@
 package it.upo.reti2s.utils;
 
-import com.github.sarxos.webcam.Webcam;
 import de.fh_zwickau.informatik.sensor.model.devices.Device;
 
-import javax.imageio.ImageIO;
-import java.io.File;
 import java.io.IOException;
 
-import static it.upo.reti2s.utils.SFWebhook.TELEGRAM_RESPONSE_CHAT_ID;
-import static it.upo.reti2s.utils.SFWebhook.TELEGRAM_URL;
+import static it.upo.reti2s.utils.SafetyHomeWebhook.TELEGRAM_RESPONSE_CHAT_ID;
+import static it.upo.reti2s.utils.SafetyHomeWebhook.TELEGRAM_RESPONSE_CHAT_ID_EDI;
+import static it.upo.reti2s.utils.SafetyHomeWebhook.TELEGRAM_URL;
 import static it.upo.reti2s.utils.Util.getSensoreAperturaPorta;
 import static it.upo.reti2s.utils.Util.getSensorePresenza;
 
@@ -43,6 +41,7 @@ public class ThreadSorveglianzaSenzaImmagine implements Runnable
             System.out.println(text);
             try {
                 Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID,TELEGRAM_URL);
+                Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID_EDI,TELEGRAM_URL);
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -65,6 +64,7 @@ public class ThreadSorveglianzaSenzaImmagine implements Runnable
                                 || sensorePresenza.getMetrics().getLevel().equalsIgnoreCase("on"))
                         {
                             Util.sendMessage("Rilevata Presenza",TELEGRAM_RESPONSE_CHAT_ID,TELEGRAM_URL);
+                            Util.sendMessage("Rilevata Presenza",TELEGRAM_RESPONSE_CHAT_ID_EDI,TELEGRAM_URL);
                         }
                     } catch (InterruptedException e) {
                         e.printStackTrace();
