@@ -134,12 +134,16 @@ public class CalendarSample {
                     System.out.println("Inizio dell'evento : "+String.valueOf(tmp.getStart()));
                     System.out.println("Fine dell'evento : "+String.valueOf(tmp.getEnd()));
 
+                    System.out.println("\n\n INIZIO METODO VERIFICA \n\n");
+
+
                     Date now = new Date(java.util.Calendar.getInstance().getTime().getTime());
                     DateTime now_convertita = new DateTime(now);
 
+                    Boolean attivareServizio = false;
 
                     //Prendo la stringa della data di partenza
-                    String data_partenza = String.valueOf(tmp.getStart()).substring(13,42);//<--formato ok
+                    //String data_partenza = String.valueOf(tmp.getStart()).substring(13,42);//<--formato ok
 
 
                     System.out.println(now_convertita);
@@ -176,7 +180,32 @@ public class CalendarSample {
 
 
 
+                if(aaaa_now>=aaaa_inizioEvento && aaaa_now<=aaaa_fineEvento)//controllo anni
+                {
+                    if(mm_now>= mm_inizioEvento && mm_now <=mm_fineEvento)//controllo mese
+                    {
+                        if(gg_now>=gg_inizioEvento && gg_now <=gg_fineEvento)//controllo giorni
+                        {
+                            if(hh_now>=hh_inizioEvento && hh_now<=hh_fineEvento)//controllo ora
+                            {
+                                if(min_now>= min_inizioEvento && min_now<=min_fineEvento)//controllo minuti
+                                {
+                                    if(sec_now >= sec_inizioEvento && sec_now<=sec_fineEvento)
+                                    {
+                                        attivareServizio = true;
+                                        System.out.println(attivareServizio);
+                                    }
 
+                                }//fine controllo minuti
+
+                            }//fine controllo ora
+
+                        }//fine controllo giorni
+
+                    }//fine controllo mese
+
+                }//fine controllo anni
+                    System.out.println(attivareServizio);
 
 
 
