@@ -24,6 +24,7 @@ import com.google.api.services.calendar.*;
 import com.google.api.services.calendar.model.*;
 import com.google.api.services.calendar.model.Calendar;
 
+import javax.sound.midi.SysexMessage;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.text.DateFormat;
@@ -340,13 +341,26 @@ public class CalendarSample {
     }
     public static boolean attivaServizio(String data_inizio,String data_fine)
     {
+
+        System.out.println("INIZIO METODO ATTIVA SERVIZIO \n\n");
+        //System.out.println("lunghezza data inizio: "+ data_inizio.length() + " lunghezza data fine: " +data_fine.length());ù
+
+
+
+
         Date now = new Date(java.util.Calendar.getInstance().getTime().getTime());
         DateTime now_convertita = new DateTime(now);
 
         Boolean attivareServizio = false;
         Boolean eventoGiornata = false;
 
-        //Prendo la stringa della data di partenza
+        if(data_inizio.length()==21)
+        {
+            eventoGiornata=true;
+        }
+
+
+            //Prendo la stringa della data di partenza
         //String data_partenza = String.valueOf(tmp.getStart()).substring(13,42);//<--formato ok
 
 
@@ -356,13 +370,20 @@ public class CalendarSample {
         String data_fineEvento = data_fine;
 
 
+        System.out.println("DATA NOW VALE: "+data_now+"\n DATA INIZIO VALE : "+data_inizioEvento+"\n DATA FINE VALE : "+data_fineEvento+"\n\n");
+
+
         //Data separata Evento now generato
-        int aaaa_now = Integer.valueOf(data_now.substring(0,4));
-        int mm_now = Integer.valueOf(data_now.substring(5,7));
-        int gg_now = Integer.valueOf(data_now.substring(8,10));
-        int hh_now = Integer.valueOf(data_now.substring(11,13));
-        int min_now=Integer.valueOf(data_now.substring(14,16));
-        int sec_now = Integer.valueOf(data_now.substring(17,19));
+        int aaaa_now = 0;
+        int mm_now = 0;
+        int gg_now = 0;
+        int hh_now = 0;
+        int min_now = 0;
+        int sec_now = 0;
+
+
+
+
 
 
 
@@ -382,47 +403,70 @@ public class CalendarSample {
         int sec_fineEvento=0;
 
 
-        //Data separata Evento inizio
+
+    //parsing data now passa
+        if(data_fineEvento.length()==21)
+        {
+            aaaa_now = Integer.valueOf(data_now.substring(0,4));
+            mm_now = Integer.valueOf(data_now.substring(5,7));
+            gg_now = Integer.valueOf(data_now.substring(8,10));
+            System.out.println("DATA NOW SEPARATA = "+aaaa_now+" "+mm_now+" "+gg_now);
+        }
+        else//data vale 44
+        {
+            aaaa_now = Integer.valueOf(data_now.substring(0,4));
+            mm_now = Integer.valueOf(data_now.substring(5,7));
+            gg_now = Integer.valueOf(data_now.substring(8,10));
+            hh_now = Integer.valueOf(data_now.substring(11,13));
+            min_now=Integer.valueOf(data_now.substring(14,16));
+            sec_now = Integer.valueOf(data_now.substring(17,19));
+            System.out.println("DATA NOW SEPARATA = "+aaaa_now+" "+mm_now+" "+gg_now+" "+hh_now+" "+min_now+" "+sec_now);
+        }
+
+
+        //Data separata Evento inizio PASSA
         if(data_inizioEvento.length()==21)//evento che dura una giornata
         {
             eventoGiornata= true;
             System.out.println("data di 21");
-            aaaa_inizioEvento = Integer.valueOf(data_inizioEvento.substring(13,17));
-            mm_inizioEvento = Integer.valueOf(data_inizioEvento.substring(18,20));
-            gg_inizioEvento = Integer.valueOf(data_inizioEvento.substring(21,23));
+            aaaa_inizioEvento = Integer.valueOf(data_inizioEvento.substring(9,13));
+            mm_inizioEvento = Integer.valueOf(data_inizioEvento.substring(14,16));
+            gg_inizioEvento = Integer.valueOf(data_inizioEvento.substring(17,19));
+            System.out.println("DATA INIZIO EVENTO SEPARATA = "+aaaa_inizioEvento+" "+mm_inizioEvento+" "+gg_inizioEvento);
         }
-        else//evento con data inizio e fine in giornata
+        else//evento con data inizio NON PASSA
         {
-            eventoGiornata=false;
+
             aaaa_inizioEvento = Integer.valueOf(data_inizioEvento.substring(13,17));
             mm_inizioEvento = Integer.valueOf(data_inizioEvento.substring(18,20));
             gg_inizioEvento = Integer.valueOf(data_inizioEvento.substring(21,23));
             hh_inizioEvento = Integer.valueOf(data_inizioEvento.substring(24,26));
             min_inizioEvento =Integer.valueOf(data_inizioEvento.substring(27,29));
             sec_inizioEvento = Integer.valueOf(data_inizioEvento.substring(30,32));
+            System.out.println("DATA INIZIO EVENTO SEPARATA = "+aaaa_inizioEvento+" "+mm_inizioEvento+" "+gg_inizioEvento+" "+hh_inizioEvento+" "+min_inizioEvento+" "+sec_inizioEvento);
         }
 
 
 
 
-        //Data separata Evento fine
+        //Data separata Evento fine non passa
         if(data_fineEvento.length()==21)//evento che dura una giornata
         {
             eventoGiornata= true;
-            aaaa_fineEvento = Integer.valueOf(data_fineEvento.substring(13,17));
-            mm_fineEvento = Integer.valueOf(data_fineEvento.substring(18,20));
-            gg_fineEvento = Integer.valueOf(data_fineEvento.substring(21,23));
+            aaaa_fineEvento = Integer.valueOf(data_fineEvento.substring(9,13));
+            mm_fineEvento = Integer.valueOf(data_fineEvento.substring(14,16));
+            gg_fineEvento = Integer.valueOf(data_fineEvento.substring(17,19));
+            System.out.println("DATA FINE EVENTO SEPARATA = "+aaaa_fineEvento+" "+mm_fineEvento+" "+gg_fineEvento);
         }
         else
         {
-
             aaaa_fineEvento = Integer.valueOf(data_fineEvento.substring(13,17));
             mm_fineEvento = Integer.valueOf(data_fineEvento.substring(18,20));
             gg_fineEvento = Integer.valueOf(data_fineEvento.substring(21,23));
             hh_fineEvento = Integer.valueOf(data_fineEvento.substring(24,26));
             min_fineEvento = Integer.valueOf(data_fineEvento.substring(27,29));
             sec_fineEvento = Integer.valueOf(data_fineEvento.substring(30,32));
-
+            System.out.println("DATA FINE EVENTO SEPARATA = "+aaaa_fineEvento+" "+mm_fineEvento+" "+gg_fineEvento+" "+hh_fineEvento+" "+min_fineEvento+" "+sec_fineEvento);
         }
 
 
@@ -443,15 +487,14 @@ public class CalendarSample {
                                     attivareServizio = true;
                                     System.out.println(attivareServizio);
                                 }
-                                attivareServizio=false;
+
                             }//fine controllo minuti
-                            attivareServizio=false;
+
 
                         }//fine controllo ora
-                        attivareServizio=false;
+
 
                     }//fine controllo giorni
-                    attivareServizio=false;
 
 
                 }//fine controllo mese
@@ -459,21 +502,24 @@ public class CalendarSample {
 
 
             }//fine controllo anni
-            else//se non è giornata
+           if(eventoGiornata==true)
             {
-                if (aaaa_now >= aaaa_inizioEvento && aaaa_now <= aaaa_fineEvento)//controllo anni
+                if (aaaa_now >=aaaa_inizioEvento && aaaa_now<=aaaa_fineEvento)//controllo anni
                 {
-                    if (mm_now >= mm_inizioEvento && mm_now <= mm_fineEvento)//controllo mese
+                    if (mm_now>=mm_inizioEvento && mm_now<=mm_fineEvento)//controllo mese
                     {
-                        if (gg_now >= gg_inizioEvento && gg_now <= gg_fineEvento)//controllo giorni
+                        if (gg_now>=gg_inizioEvento && gg_now<=gg_fineEvento)//controllo giorni
                         {
                             attivareServizio = true;
                             System.out.println(attivareServizio);
                         }
-                        attivareServizio=false;
-                    }attivareServizio=false;
-                }attivareServizio=false;
+
+                    }
+                }
             }
+
+
+            System.out.println("-------------------------------------------------------");
             return attivareServizio;
 
 
