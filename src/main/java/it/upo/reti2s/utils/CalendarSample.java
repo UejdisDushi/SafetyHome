@@ -93,25 +93,9 @@ public class CalendarSample {
             // authorization
             Credential credential = authorize();
 
-
-            // ------------------------run commands
-
-            /*
-            showCalendars();
-            addCalendarsUsingBatch();
-            Calendar calendar = addCalendar();
-            updateCalendar(calendar);
-            addEvent(calendar);
-            showEvents(calendar);
-            deleteCalendarsUsingBatch();
-            deleteCalendar(calendar);
-            */
-
             // Initialize Calendar service with valid OAuth credentials
-
             com.google.api.services.calendar.Calendar service = new com.google.api.services.calendar.Calendar.Builder(httpTransport, JSON_FACTORY, credential)
                     .setApplicationName("applicationName").build();
-
         // Retrieve the calendar
             com.google.api.services.calendar.model.Calendar calendar20010057 =
                     service.calendars().get("20010057@studenti.uniupo.it").execute();
@@ -135,12 +119,12 @@ public class CalendarSample {
                     System.out.println("Inizio dell'evento : "+String.valueOf(tmp.getStart()));
                     System.out.println("Fine dell'evento : "+String.valueOf(tmp.getEnd()));
 
-                    System.out.println("\n\n INIZIO METODO VERIFICA \n\n");
+                   // System.out.println("\n\n INIZIO METODO VERIFICA \n\n");
 
-                    String.valueOf(tmp.getEnd());
-                    boolean n =attivaServizio(String.valueOf(tmp.getStart()),String.valueOf(tmp.getEnd()));
+                    //String.valueOf(tmp.getEnd());
+                   // boolean n = attivaServizio(String.valueOf(tmp.getStart()),String.valueOf(tmp.getEnd()));
 
-                   System.out.println(n);
+                   System.out.println("evento = "+tmp.getSummary()+" attivare vale : "+ attivaServizio(String.valueOf(tmp.getStart()),String.valueOf(tmp.getEnd())));
 
 
                 }
@@ -410,7 +394,7 @@ public class CalendarSample {
             aaaa_now = Integer.valueOf(data_now.substring(0,4));
             mm_now = Integer.valueOf(data_now.substring(5,7));
             gg_now = Integer.valueOf(data_now.substring(8,10));
-            System.out.println("DATA NOW SEPARATA = "+aaaa_now+" "+mm_now+" "+gg_now);
+            //System.out.println("DATA NOW SEPARATA = "+aaaa_now+" "+mm_now+" "+gg_now);
         }
         else//data vale 44
         {
@@ -420,7 +404,7 @@ public class CalendarSample {
             hh_now = Integer.valueOf(data_now.substring(11,13));
             min_now=Integer.valueOf(data_now.substring(14,16));
             sec_now = Integer.valueOf(data_now.substring(17,19));
-            System.out.println("DATA NOW SEPARATA = "+aaaa_now+" "+mm_now+" "+gg_now+" "+hh_now+" "+min_now+" "+sec_now);
+            //System.out.println("DATA NOW SEPARATA = "+aaaa_now+" "+mm_now+" "+gg_now+" "+hh_now+" "+min_now+" "+sec_now);
         }
 
 
@@ -428,11 +412,11 @@ public class CalendarSample {
         if(data_inizioEvento.length()==21)//evento che dura una giornata
         {
             eventoGiornata= true;
-            System.out.println("data di 21");
+            //System.out.println("data di 21");
             aaaa_inizioEvento = Integer.valueOf(data_inizioEvento.substring(9,13));
             mm_inizioEvento = Integer.valueOf(data_inizioEvento.substring(14,16));
             gg_inizioEvento = Integer.valueOf(data_inizioEvento.substring(17,19));
-            System.out.println("DATA INIZIO EVENTO SEPARATA = "+aaaa_inizioEvento+" "+mm_inizioEvento+" "+gg_inizioEvento);
+            //System.out.println("DATA INIZIO EVENTO SEPARATA = "+aaaa_inizioEvento+" "+mm_inizioEvento+" "+gg_inizioEvento);
         }
         else//evento con data inizio NON PASSA
         {
@@ -443,7 +427,7 @@ public class CalendarSample {
             hh_inizioEvento = Integer.valueOf(data_inizioEvento.substring(24,26));
             min_inizioEvento =Integer.valueOf(data_inizioEvento.substring(27,29));
             sec_inizioEvento = Integer.valueOf(data_inizioEvento.substring(30,32));
-            System.out.println("DATA INIZIO EVENTO SEPARATA = "+aaaa_inizioEvento+" "+mm_inizioEvento+" "+gg_inizioEvento+" "+hh_inizioEvento+" "+min_inizioEvento+" "+sec_inizioEvento);
+            //System.out.println("DATA INIZIO EVENTO SEPARATA = "+aaaa_inizioEvento+" "+mm_inizioEvento+" "+gg_inizioEvento+" "+hh_inizioEvento+" "+min_inizioEvento+" "+sec_inizioEvento);
         }
 
 
@@ -456,7 +440,7 @@ public class CalendarSample {
             aaaa_fineEvento = Integer.valueOf(data_fineEvento.substring(9,13));
             mm_fineEvento = Integer.valueOf(data_fineEvento.substring(14,16));
             gg_fineEvento = Integer.valueOf(data_fineEvento.substring(17,19));
-            System.out.println("DATA FINE EVENTO SEPARATA = "+aaaa_fineEvento+" "+mm_fineEvento+" "+gg_fineEvento);
+            //System.out.println("DATA FINE EVENTO SEPARATA = "+aaaa_fineEvento+" "+mm_fineEvento+" "+gg_fineEvento);
         }
         else
         {
@@ -466,11 +450,31 @@ public class CalendarSample {
             hh_fineEvento = Integer.valueOf(data_fineEvento.substring(24,26));
             min_fineEvento = Integer.valueOf(data_fineEvento.substring(27,29));
             sec_fineEvento = Integer.valueOf(data_fineEvento.substring(30,32));
-            System.out.println("DATA FINE EVENTO SEPARATA = "+aaaa_fineEvento+" "+mm_fineEvento+" "+gg_fineEvento+" "+hh_fineEvento+" "+min_fineEvento+" "+sec_fineEvento);
+            //System.out.println("DATA FINE EVENTO SEPARATA = "+aaaa_fineEvento+" "+mm_fineEvento+" "+gg_fineEvento+" "+hh_fineEvento+" "+min_fineEvento+" "+sec_fineEvento);
         }
 
+        //System.out.println(" inizio verifica - evento giornata vale: "+eventoGiornata);
 
-        if(eventoGiornata==false)//controllo se è un evento giornata
+
+
+
+        if(eventoGiornata==true)
+        {
+            if (aaaa_now >=aaaa_inizioEvento && aaaa_now<=aaaa_fineEvento)//controllo anni
+            {
+                if (mm_now>=mm_inizioEvento && mm_now<=mm_fineEvento)//controllo mese
+                {
+                    if (gg_now>=gg_inizioEvento && gg_now<=gg_fineEvento)//controllo giorni
+                    {
+                        attivareServizio = true;
+                        //System.out.println("attivare il servizio vale: "+attivareServizio);
+                        return true;
+                    }
+
+                }
+            }
+        }
+        else//controllo se è un evento giornata
         {
             if(aaaa_now>=aaaa_inizioEvento && aaaa_now<=aaaa_fineEvento)//controllo anni
             {
@@ -485,48 +489,25 @@ public class CalendarSample {
                                 if(sec_now >= sec_inizioEvento && sec_now<=sec_fineEvento)
                                 {
                                     attivareServizio = true;
-                                    System.out.println(attivareServizio);
+                                    //System.out.println(attivareServizio);
+                                    return true;
                                 }
 
                             }//fine controllo minuti
 
-
                         }//fine controllo ora
-
 
                     }//fine controllo giorni
 
-
                 }//fine controllo mese
-                attivareServizio=false;
-
-
             }//fine controllo anni
-           if(eventoGiornata==true)
-            {
-                if (aaaa_now >=aaaa_inizioEvento && aaaa_now<=aaaa_fineEvento)//controllo anni
-                {
-                    if (mm_now>=mm_inizioEvento && mm_now<=mm_fineEvento)//controllo mese
-                    {
-                        if (gg_now>=gg_inizioEvento && gg_now<=gg_fineEvento)//controllo giorni
-                        {
-                            attivareServizio = true;
-                            System.out.println(attivareServizio);
-                        }
-
-                    }
-                }
-            }
-
-
-            System.out.println("-------------------------------------------------------");
-            return attivareServizio;
+            //System.out.println("aaainizio vale"+aaaa_inizioEvento+" fine evento vale "+aaaa_fineEvento+" aanow vale "+aaaa_now);
+           // System.out.println("-------------------------------------------------------");
+            //return attivareServizio;
+            return false;
 
 
         }
-
-
-
 
         return false;
     }
