@@ -73,13 +73,16 @@ public class UtilCalendario
                         return true;
                     }
                 }
+                if(items.size()==0) return false;
                 pageToken = events.getNextPageToken();
             } while (pageToken != null);
 
 
         } catch (IOException e) {
+
             System.err.println(e.getMessage());
         } catch (Throwable t) {
+
             t.printStackTrace();
         }
         System.exit(1);
@@ -286,9 +289,9 @@ public class UtilCalendario
                     {
                         if(hh_now>=hh_inizioEvento && hh_now<=hh_fineEvento)//controllo ora
                         {
-                            if(min_now>= min_inizioEvento && min_now<=min_fineEvento)//controllo minuti
+                            if(min_now>= min_inizioEvento)//controllo minuti
                             {
-                                if(sec_now >= sec_inizioEvento && sec_now<=sec_fineEvento)
+                                if(sec_now >= sec_inizioEvento)
                                 {
                                     attivareServizio = true;
                                     //System.out.println(attivareServizio);

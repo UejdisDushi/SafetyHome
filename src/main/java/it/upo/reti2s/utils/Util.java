@@ -134,6 +134,7 @@ public class Util
         return null;
     }
 
+    /*
     //probtype può essere temperatura luminosita ecc
     public static  Device getDevice(String deviceType,String probeTitle, int id)
     {
@@ -148,10 +149,26 @@ public class Util
         }
         return null;
     }
+    */
 
 
     public static  Device getSensorePresenza()
     {
+
+        DeviceList lista = zWayApi.getDevices();
+        if(lista!=null)
+        {
+            for(Device tmp : lista.getAllDevices())
+            {
+                if(tmp.getNodeId() == ID_MULTILEVEL_PURPOSE &&
+                        tmp.getDeviceType().equalsIgnoreCase(SENSORBINARY) &&
+                        tmp.getMetrics().getProbeTitle().contains(MULTILEVEL_PURPOSE))
+                {
+                    return tmp;
+                }
+            }
+        }
+        return null;/*
         DeviceList lista = getAllDevices();
         if(lista!=null)
         {
@@ -165,7 +182,7 @@ public class Util
                 }
             }
         }
-        return null;
+        return null;*/
 
 
         /*
@@ -177,10 +194,21 @@ public class Util
 
     public static Device getSensoreAperturaPorta()
     {
+        DeviceList lista = zWayApi.getDevices();
+        if(lista!=null) {
+            for (Device tmp : lista.getAllDevices())
+            {
+                if (tmp.getNodeId() == ID_APERTURAPORTE && tmp.getDeviceType().equalsIgnoreCase(SENSORBINARY))
+                {
+                    return tmp;
+                }
+            }
+        }
+        return null;
         /*
         if(dev.getNodeId()==13 && dev.getDeviceType().equalsIgnoreCase("sensorBinary"))
          */
-        return getDevice(SENSORBINARY, ID_APERTURAPORTE);
+        //return getDevice(SENSORBINARY, ID_APERTURAPORTE);
 
     }
 
@@ -191,6 +219,20 @@ public class Util
 
     public static Device getHolederLampadina()
     {
+        DeviceList lista = zWayApi.getDevices();
+        if(lista!=null)
+        {
+            for (Device tmp : lista.getAllDevices())
+            {
+                if (tmp.getNodeId() == ID_APERTURAPORTE && tmp.getDeviceType().equalsIgnoreCase(SWITCHBINARY))
+                {
+                    return tmp;
+                }
+            }
+        }
+        return null;
+
+
         /*if(dev.getNodeId()==21 && dev.getDeviceType().equalsIgnoreCase("SwitchBinary") )
             {
                 dev.on();
@@ -200,7 +242,7 @@ public class Util
             }
 
          */
-        return getDevice(SWITCHBINARY, ID_HOLDERLAMPADINA);
+        //return getDevice(SWITCHBINARY, ID_HOLDERLAMPADINA);
     }
 
     public static Device getSensoreLuminosita()
@@ -232,7 +274,20 @@ public class Util
 
     public static Device getPresaPilotata()
     {
-
+        /*
+        DeviceList lista = zWayApi.getDevices();
+        if(lista!=null)
+        {
+            for(Device tmp : lista.getAllDevices())
+            {
+                if(tmp.getNodeId() == ID_PRESAPILOTATA &&
+                        tmp.getMetrics().getProbeTitle().contains(MULTILEVEL_LUMINESCENCE))
+                {
+                    return tmp;
+                }
+            }
+        }
+        return null;*/
         return getDevice(SWITCHBINARY,ID_PRESAPILOTATA);
     }
 

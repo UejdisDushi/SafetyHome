@@ -8,8 +8,7 @@ import java.io.File;
 import java.io.IOException;
 
 import static it.upo.reti2s.utils.SafetyHomeWebhook.*;
-import static it.upo.reti2s.utils.Util.getSensoreAperturaPorta;
-import static it.upo.reti2s.utils.Util.getSensorePresenza;
+import static it.upo.reti2s.utils.Util.*;
 
 /**
  * Created by Luca Franciscone on 11/07/2017.
@@ -30,15 +29,21 @@ public class ThreadSorveglianzaConImmagine implements Runnable
     }
 
 
+
     public void run()
     {
+        System.out.println("monitoraggio attivoper : "+durataSecondi);
 
         Device sensoreAperturaPorta = getSensoreAperturaPorta();
         //System.out.println("Passata assegnazione sensore apertura porta");
         Device sensorePresenza  = getSensorePresenza();
        // System.out.println("Passata assegnazione sensore apertura presenza");
 
-        System.out.println("valore apertura porta : "+sensoreAperturaPorta + "     valore presenza:"+sensorePresenza);
+
+        Device sensoreLuminosita = getSensoreLuminosita();
+        Device holderLampadina = getDevice(SWITCHBINARY, ID_HOLDERLAMPADINA);
+
+       // System.out.println("valore apertura porta : "+sensoreAperturaPorta + "     valore presenza:"+sensorePresenza);
 
 
 
@@ -46,7 +51,7 @@ public class ThreadSorveglianzaConImmagine implements Runnable
         //System.out.println("Passata assegnazione webcam");
 
 
-        if(sensoreAperturaPorta == null || sensorePresenza==null)
+        if(sensoreAperturaPorta == null || sensorePresenza==null || sensoreLuminosita==null ||holderLampadina==null)
         {
             if(webcam==null)
             {
@@ -79,13 +84,22 @@ public class ThreadSorveglianzaConImmagine implements Runnable
                 //verificare il metodo
                     try {
                         Thread.sleep(1000);//10 sec
-                        if(sensoreAperturaPorta.getMetrics().getLevel().equalsIgnoreCase("on")
-                                || sensorePresenza.getMetrics().getLevel().equalsIgnoreCase("on"))
+                        if(getPortaAperta(sensoreAperturaPorta).equalsIgnoreCase("on") || sensorePresenza.getMetrics().getLevel().equalsIgnoreCase("on"))//
                         {
+                            if( Double.parseDouble(sensoreLuminosita.getMetrics().getLevel()) <200)
+                            {//accendo luce
+                                holderLampadina.on();
+                            }
+                            else
+                            {
+                                holderLampadina.off();
+                            }
+
                             //scatta foto
                             webcam.open();
                             ImageIO.write(webcam.getImage(), FORMATO_IMMAGINE, new File(PATH_IMMAGINE));
                             webcam.close();
+                            holderLampadina.off();
                             Util.sendMessage("Rilevata Presenza",TELEGRAM_RESPONSE_CHAT_ID,TELEGRAM_URL);
                             Util.sendMessage("Rilevata Presenza",TELEGRAM_RESPONSE_CHAT_ID_EDI,TELEGRAM_URL);
                             Util.sendMessage("Immagine disponibile al seguente indirizzo",TELEGRAM_RESPONSE_CHAT_ID,TELEGRAM_URL);

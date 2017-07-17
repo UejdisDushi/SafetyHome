@@ -485,9 +485,9 @@ public class CalendarSample {
                     {
                         if(hh_now>=hh_inizioEvento && hh_now<=hh_fineEvento)//controllo ora
                         {
-                            if(min_now>= min_inizioEvento && min_now<=min_fineEvento)//controllo minuti
+                            if(min_now>= min_inizioEvento)//controllo minuti
                             {
-                                if(sec_now >= sec_inizioEvento && sec_now<=sec_fineEvento)
+                                if(sec_now >= sec_inizioEvento)
                                 {
                                     attivareServizio = true;
                                     //System.out.println(attivareServizio);

@@ -64,8 +64,29 @@ public class SafetyHomeWebhook
     static final long TELEGRAM_RESPONSE_CHAT_ID = 102856586;//id/username Luca
     static final long TELEGRAM_RESPONSE_CHAT_ID_EDI = 128905829;//id/username Edi
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) throws IOException {
+        String text="";
+
+        if(UtilCalendario.attivazioneServizio()==true)
+        {
+            Thread threadSoverglianza = new Thread(new ThreadSorveglianzaConImmagine(10));
+            threadSoverglianza.start();//faccio partire il thread per l interrogazione sottostante
+
+        }
+        else
+        {
+            text="Nessun evento in programma";
+            Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID,TELEGRAM_URL);
+            Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID_EDI,TELEGRAM_URL);
+        }
+
+        //Thread threadSoverglianza = new Thread(new ThreadSorveglianzaSenzaImmagine(10));
+        //threadSoverglianza.start();//faccio partire il thread per l interrogazione sottostante
+        //text="Thread attivato";
+
+
+
+
         Gson gson = GsonFactory.getDefaultFactory().getGson();
         //Usato per catturare Post da API.ai
         post("/", (request, response) -> {
@@ -199,37 +220,17 @@ public class SafetyHomeWebhook
         {
             String text="";
             System.out.println(text);
-            DeviceList allDevice = getAllDevices();//aggiungo tutti i device dal metodo in util
-            if(allDevice!=null)
+            Device devDaSpegnere = getDevice(SWITCHBINARY, ID_HOLDERLAMPADINA);
+            if(devDaSpegnere!=null)
             {
-                Device holderLampadina = getHolederLampadina();
-                if(holderLampadina!=null)
-                {
-                    holderLampadina.off();
-                    text="Luce accesa";
-                    //manca il controllo se la luce è accesa che non funziona
-                    /*
-                    if(holderLampadina.getMetrics().getLevel().equalsIgnoreCase("off"))//<--controllare il corretto funzionamento
-                    {
-                        holderLampadina.off();
-                        text="Luce accesa";
-                    }
-                    else
-                    {
-                        text = "Luce già spenta";
-                    }*/
-                }
-                else
-                {
-                    text = "Device non trovato";
-                }
+                devDaSpegnere.off();
+                text="Luce accesa";
             }
             else
             {
-                text = "Nessun device collegato trovato";
+                text = "Device non trovato";
             }
 
-            //faccio passare output come parametro senno posso fare la return lo ritorno nella classe chiamante
             System.out.println(text);
             output.setSpeech(text);
             output.setDisplayText(text);
@@ -239,16 +240,33 @@ public class SafetyHomeWebhook
         //                  OK  ---------
         if (input.getResult().getAction().equalsIgnoreCase("scattaFoto"))
         {
+            Device sensoreLuminosita = getSensoreLuminosita();
+            Device holderLampadina = getDevice(SWITCHBINARY, ID_HOLDERLAMPADINA);
+
             String text="";
             Webcam webcam = Webcam.getDefault();
-            if (webcam != null)
+            if (webcam != null && sensoreLuminosita!=null && holderLampadina!=null)
             {
-                System.out.println("Webcam: " + webcam.getName());
+
+                if( Double.parseDouble(sensoreLuminosita.getMetrics().getLevel()) <200)
+                {//accendo luce
+                    holderLampadina.on();
+                }
+                else
+                {
+                    holderLampadina.off();
+                }
+
+                //System.out.println("Webcam: " + webcam.getName());
+
                 webcam.open();
                 try
                 {
                     ImageIO.write(webcam.getImage(), "PNG", new File("Images/prova.png"));
+
                     webcam.close();
+                    holderLampadina.off();
+
                     text = "https://www.dropbox.com/s/v7arilbs00h4849/prova.png?dl=0";
                     Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID,TELEGRAM_URL);
                     Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID_EDI,TELEGRAM_URL);
@@ -292,7 +310,7 @@ public class SafetyHomeWebhook
             Device presaPilotata = getPresaPilotata();
             if(presaPilotata!=null)
             {
-                accendiDevice(presaPilotata);
+                presaPilotata.on();
                 //text = "Accesa Presa Corrente per la stanza: "+stanza;
                 text = "Accesa Presa Corrente: ";
             }
@@ -307,7 +325,7 @@ public class SafetyHomeWebhook
 
             //faccio passare output come parametro senno posso fare la return lo ritorno nella classe chiamante
             output.setSpeech(text);
-            output.setDisplayText(text);
+           output.setDisplayText(text);
         }
 
         if (input.getResult().getAction().equalsIgnoreCase("spegniPresa"))
@@ -316,7 +334,7 @@ public class SafetyHomeWebhook
             Device presaPilotata = getPresaPilotata();
             if(presaPilotata!=null)
             {
-                accendiDevice(presaPilotata);
+                presaPilotata.off();
                 text = "Spenta Presa ";
             }
             else
@@ -337,6 +355,7 @@ public class SafetyHomeWebhook
         //SERVIZIO VERIFICA PRESENZA <-- verificare metodo per prelevare valori sensori presenza
         if (input.getResult().getAction().equalsIgnoreCase("verificaPresenza"))
         {
+            //6	SensoreAmbientale_SafetyHome	General purpose  	Idle/trigered  	 	02:44 PM
             String text="";
             Device sensorePrenza = getSensorePresenza();
             if(sensorePrenza !=null)
@@ -413,6 +432,51 @@ public class SafetyHomeWebhook
             String text="";
             Thread threadSoverglianza = new Thread(new ThreadSorveglianzaSenzaImmagine(10));
             threadSoverglianza.start();//faccio partire il thread per l interrogazione sottostante
+            //text="Thread attivato";
+
+        }
+
+
+        if (input.getResult().getAction().equalsIgnoreCase("attivaMonitoraggioCalendarioConImmagine"))
+        {
+            String text="";
+
+            if(UtilCalendario.attivazioneServizio()==true)
+            {
+                Thread threadSoverglianza = new Thread(new ThreadSorveglianzaConImmagine(10));
+                threadSoverglianza.start();//faccio partire il thread per l interrogazione sottostante
+            }
+            else
+            {
+                text="Nessun evento in programma";
+                Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID,TELEGRAM_URL);
+                Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID_EDI,TELEGRAM_URL);
+            }
+
+            //Thread threadSoverglianza = new Thread(new ThreadSorveglianzaSenzaImmagine(10));
+            //threadSoverglianza.start();//faccio partire il thread per l interrogazione sottostante
+            //text="Thread attivato";
+
+        }
+
+        if (input.getResult().getAction().equalsIgnoreCase("attivaMonitoraggioCalendarioSenzaImmagine"))
+        {
+            String text="";
+
+            if(UtilCalendario.attivazioneServizio()==true)
+            {
+                Thread threadSoverglianza = new Thread(new ThreadSorveglianzaSenzaImmagine(2));
+                threadSoverglianza.start();//faccio partire il thread per l interrogazione sottostante
+            }
+            else
+            {
+                text="Nessun evento in programma";
+                Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID,TELEGRAM_URL);
+                Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID_EDI,TELEGRAM_URL);
+            }
+
+            //Thread threadSoverglianza = new Thread(new ThreadSorveglianzaSenzaImmagine(10));
+            //threadSoverglianza.start();//faccio partire il thread per l interrogazione sottostante
             //text="Thread attivato";
 
         }
