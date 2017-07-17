@@ -18,23 +18,18 @@ public class ThreadSorveglianzaSenzaImmagine implements Runnable
     private Thread thread;
     private boolean stopThread = false;
     int durataSecondi;
-    int durata = durataSecondi/10;
     String text = "";
 
-
-    //imposta quanto dura la sorveglianza
     public ThreadSorveglianzaSenzaImmagine(int durataSecondi)
     {
         this.durataSecondi = durataSecondi;
     }
-
 
     public void run()
     {
 
         Device sensoreAperturaPorta = getSensoreAperturaPorta();
         Device sensorePresenza  = getSensorePresenza();
-
         if(sensoreAperturaPorta == null || sensorePresenza==null)
         {
             text = "Nessun sensore rilevato ";
@@ -45,19 +40,14 @@ public class ThreadSorveglianzaSenzaImmagine implements Runnable
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
             this.stopRunning();
         }
         else
         {
             while (!stopThread)
             {
-            /*
-            attivo per 10 minuti con aggiornamento  ogni10 sec
-             */
-                for (int i = 0; i < durataSecondi; i++)//attivo per 5 minuti
+                for (int i = 0; i < durataSecondi; i++)
                 {
-                //verificare il metodo
                     try {
                         Thread.sleep(1000);//10 sec
                         if(sensoreAperturaPorta.getMetrics().getLevel().equalsIgnoreCase("on")
@@ -72,9 +62,9 @@ public class ThreadSorveglianzaSenzaImmagine implements Runnable
                         e.printStackTrace();
                     }
                     this.stopRunning();
-                }//chiusura for
-            }//chiusura while
-        }//chiusura else
+                }
+            }
+        }
     }
 
     public void stopRunning()

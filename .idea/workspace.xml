@@ -2,20 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="966f5009-a094-4c32-9990-c49804e0a537" name="Default" comment="Iniziato progetto">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/main/it/upo/reti2s/utils/CalendarSample$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/main/it/upo/reti2s/utils/CalendarSample$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/main/it/upo/reti2s/utils/CalendarSample.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/main/it/upo/reti2s/utils/SimpleRunner.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/main/it/upo/reti2s/utils/ThreadController.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/main/it/upo/reti2s/utils/View.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/CalendarSample.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/SimpleRunner.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/ThreadController.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/View.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/main/it/upo/reti2s/utils/QuickStart.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/main/it/upo/reti2s/utils/ZWaySimpleCallback.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/QuickStart.java" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/ZWaySimpleCallback.java" afterPath="$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/ZWayLib/ZWaySimpleCallback.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Images/prova.png" afterPath="$PROJECT_DIR$/Images/prova.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/it/upo/reti2s/utils/UtilCalendario.class" afterPath="$PROJECT_DIR$/build/classes/main/it/upo/reti2s/utils/UtilCalendario.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/it/upo/reti2s/utils/SafetyHomeWebhook.class" afterPath="$PROJECT_DIR$/build/classes/main/it/upo/reti2s/utils/SafetyHomeWebhook.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/it/upo/reti2s/utils/ThreadSorveglianzaConImmagine.class" afterPath="$PROJECT_DIR$/build/classes/main/it/upo/reti2s/utils/ThreadSorveglianzaConImmagine.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/it/upo/reti2s/utils/ThreadSorveglianzaSenzaImmagine.class" afterPath="$PROJECT_DIR$/build/classes/main/it/upo/reti2s/utils/ThreadSorveglianzaSenzaImmagine.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/it/upo/reti2s/utils/Util.class" afterPath="$PROJECT_DIR$/build/classes/main/it/upo/reti2s/utils/Util.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/UtilCalendario.java" afterPath="$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/UtilCalendario.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/SafetyHomeWebhook.java" afterPath="$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/SafetyHomeWebhook.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/ThreadSorveglianzaConImmagine.java" afterPath="$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/ThreadSorveglianzaConImmagine.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/ThreadSorveglianzaSenzaImmagine.java" afterPath="$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/ThreadSorveglianzaSenzaImmagine.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/Util.java" afterPath="$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/Util.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -62,22 +62,69 @@
       <file leaf-file-name="Util.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/Util.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5760">
-              <caret line="290" column="8" lean-forward="false" selection-start-line="290" selection-start-column="8" selection-end-line="290" selection-end-column="8" />
-              <folding>
-                <element signature="method#convertToUtf#0;class#Util#0" expanded="false" />
-                <element signature="method#writeResp#0;class#Util#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="357">
+              <caret line="30" column="14" lean-forward="true" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UtilCalendario.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/UtilCalendario.java">
+      <file leaf-file-name="ZWaySimpleCallback.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/ZWayLib/ZWaySimpleCallback.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="83" column="35" lean-forward="false" selection-start-line="83" selection-start-column="35" selection-end-line="83" selection-end-column="35" />
-              <folding />
+            <state relative-caret-position="3912">
+              <caret line="229" column="56" lean-forward="false" selection-start-line="229" selection-start-column="52" selection-end-line="229" selection-end-column="56" />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#1774#1775#0" expanded="false" />
+                <element signature="e#1830#1831#0" expanded="false" />
+                <element signature="e#1900#1901#0" expanded="false" />
+                <element signature="e#1964#1965#0" expanded="false" />
+                <element signature="e#2024#2025#0" expanded="false" />
+                <element signature="e#2079#2080#0" expanded="false" />
+                <element signature="e#2305#2306#0" expanded="false" />
+                <element signature="e#2366#2367#0" expanded="false" />
+                <element signature="e#2447#2448#0" expanded="false" />
+                <element signature="e#2512#2513#0" expanded="false" />
+                <element signature="e#2737#2738#0" expanded="false" />
+                <element signature="e#2800#2801#0" expanded="false" />
+                <element signature="e#3179#3180#0" expanded="false" />
+                <element signature="e#3240#3241#0" expanded="false" />
+                <element signature="e#3306#3307#0" expanded="false" />
+                <element signature="e#3377#3378#0" expanded="false" />
+                <element signature="e#3443#3444#0" expanded="false" />
+                <element signature="e#3502#3503#0" expanded="false" />
+                <element signature="e#3570#3571#0" expanded="false" />
+                <element signature="e#3632#3633#0" expanded="false" />
+                <element signature="e#3713#3714#0" expanded="false" />
+                <element signature="e#3778#3779#0" expanded="false" />
+                <element signature="e#3999#4000#0" expanded="false" />
+                <element signature="e#4062#4063#0" expanded="false" />
+                <element signature="e#4134#4135#0" expanded="false" />
+                <element signature="e#4209#4210#0" expanded="false" />
+                <element signature="e#4276#4277#0" expanded="false" />
+                <element signature="e#4342#4343#0" expanded="false" />
+                <element signature="e#4420#4421#0" expanded="false" />
+                <element signature="e#4483#4484#0" expanded="false" />
+                <element signature="e#4553#4554#0" expanded="false" />
+                <element signature="e#4627#4628#0" expanded="false" />
+                <element signature="e#4696#4697#0" expanded="false" />
+                <element signature="e#4757#4758#0" expanded="false" />
+                <element signature="e#4826#4827#0" expanded="false" />
+                <element signature="e#4899#4900#0" expanded="false" />
+                <element signature="e#4965#4966#0" expanded="false" />
+                <element signature="e#5030#5031#0" expanded="false" />
+                <element signature="e#6240#6241#0" expanded="false" />
+                <element signature="e#6288#6289#0" expanded="false" />
+                <element signature="e#6365#6366#0" expanded="false" />
+                <element signature="e#6425#6426#0" expanded="false" />
+                <element signature="e#6480#6481#0" expanded="false" />
+                <element signature="e#6533#6534#0" expanded="false" />
+                <element signature="e#6607#6608#0" expanded="false" />
+                <element signature="e#6658#6659#0" expanded="false" />
+                <element signature="e#6716#6717#0" expanded="false" />
+                <element signature="e#6787#6788#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -85,9 +132,15 @@
       <file leaf-file-name="ThreadSorveglianzaConImmagine.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/ThreadSorveglianzaConImmagine.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-              <folding />
+            <state relative-caret-position="1632">
+              <caret line="79" column="37" lean-forward="false" selection-start-line="79" selection-start-column="37" selection-end-line="79" selection-end-column="37" />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#647#648#0" expanded="false" />
+                <element signature="e#697#698#0" expanded="false" />
+                <element signature="e#3955#3956#0" expanded="false" />
+                <element signature="e#3988#3989#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -95,9 +148,11 @@
       <file leaf-file-name="SafetyHomeWebhook.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/SafetyHomeWebhook.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="185">
-              <caret line="142" column="69" lean-forward="true" selection-start-line="142" selection-start-column="69" selection-end-line="142" selection-end-column="69" />
-              <folding />
+            <state relative-caret-position="5424">
+              <caret line="244" column="37" lean-forward="false" selection-start-line="244" selection-start-column="37" selection-end-line="244" selection-end-column="37" />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -105,8 +160,8 @@
       <file leaf-file-name="ThreadSorveglianzaSenzaImmagine.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/ThreadSorveglianzaSenzaImmagine.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-192">
-              <caret line="7" column="52" lean-forward="false" selection-start-line="7" selection-start-column="52" selection-end-line="7" selection-end-column="52" />
+            <state relative-caret-position="1464">
+              <caret line="75" column="0" lean-forward="false" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -134,6 +189,7 @@
       <find>getDe</find>
       <find>accendi</find>
       <find>porta</find>
+      <find>simp</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -535,7 +591,6 @@
         <option value="$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/TaskDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/TaskWebhook.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/ZWaySimpleCallback.java" />
         <option value="$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/AIResponse.java" />
         <option value="$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/SimpleRunner.java" />
         <option value="C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/io/InputStreamReader.java" />
@@ -549,14 +604,16 @@
         <option value="$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/ThreadController.java" />
         <option value="$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/SFWebhook.java" />
         <option value="$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/QuickStart.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/Util.java" />
         <option value="$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/CalendarSample.java" />
         <option value="$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/SafetyHomeWebhook.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/ThreadSorveglianzaConImmagine.java" />
         <option value="$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/UtilCalendario.java" />
         <option value="$PROJECT_DIR$/src/main/java/it/uniupo/reti2s/thread/ThreadSorveglianzaSenzaImmagine.java" />
         <option value="$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/Thread/ThreadSorveglianzaSenzaImmagine.java" />
+        <option value="$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/ZWaySimpleCallback.java" />
+        <option value="$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/ZWayLib/ZWaySimpleCallback.java" />
+        <option value="$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/ThreadSorveglianzaConImmagine.java" />
         <option value="$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/ThreadSorveglianzaSenzaImmagine.java" />
+        <option value="$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/Util.java" />
       </list>
     </option>
   </component>
@@ -568,9 +625,9 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-9" />
-    <option name="y" value="40" />
-    <option name="width" value="1775" />
-    <option name="height" value="1010" />
+    <option name="y" value="-9" />
+    <option name="width" value="1938" />
+    <option name="height" value="1060" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -588,8 +645,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -661,8 +716,40 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SafetyHome" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SafetyHome" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="utils" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ZWayLib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -676,11 +763,11 @@
     <property name="extract.method.default.visibility" value="public" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\lucaf\Dropbox\Università 2016-17\Reti2Sperimentazioni\SafetyHome\src\main\java\it\upo\reti2s\utils" />
-      <recent name="C:\Users\Luca Franciscone\Dropbox\Università 2016-17\Reti2Sperimentazioni\SafetyHome\lib" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="it.upo.reti2s.utils" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="it.upo.reti2s.utils.ZWayLib" />
       <recent name="it.upo.reti2s.utils.Thread" />
       <recent name="it.uniupo.reti2s.thread" />
       <recent name="" />
@@ -695,8 +782,9 @@
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="it.upo.reti2s.utils" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="it.upo.reti2s.utils" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\lucaf\Dropbox\Università 2016-17\Reti2Sperimentazioni\SafetyHome\src\main\java\it\upo\reti2s\utils" />
+      <recent name="C:\Users\Luca Franciscone\Dropbox\Università 2016-17\Reti2Sperimentazioni\SafetyHome\lib" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -1276,11 +1364,13 @@
       <workItem from="1500295802549" duration="559000" />
       <workItem from="1500296378387" duration="2281000" />
       <workItem from="1500299127165" duration="1587000" />
+      <workItem from="1500302141111" duration="1129000" />
+      <workItem from="1500303293758" duration="103000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="134310000" />
+    <option name="totallyTimeSpent" value="135542000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1292,7 +1382,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="40" width="1775" height="1010" extended-state="0" />
+    <frame x="-9" y="-9" width="1938" height="1060" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1313,10 +1403,10 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3551069" sideWeight="0.81519395" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3542601" sideWeight="0.81519395" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32922733" sideWeight="0.49784482" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2960565" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2414966" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2781955" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2410314" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
@@ -1342,7 +1432,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="53" />
+      <option name="time" value="54" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1407,13 +1497,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/ZWaySimpleCallback.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="63" column="13" lean-forward="false" selection-start-line="63" selection-start-column="13" selection-end-line="63" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/io/InputStreamReader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
@@ -1447,13 +1530,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/View.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-356">
-          <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/View.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/client_secret_backup.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1468,20 +1545,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/QuickStart.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="26" column="156" lean-forward="false" selection-start-line="26" selection-start-column="156" selection-end-line="26" selection-end-column="156" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/SimpleRunner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/QuickStart.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/SimpleRunner.java" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/lang/NumberFormatException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -1503,62 +1568,110 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/ThreadController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/ThreadController.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/CalendarSample.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/ThreadSorveglianzaSenzaImmagine.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="8" column="12" lean-forward="false" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/CalendarSample.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1254">
-          <caret line="144" column="8" lean-forward="false" selection-start-line="144" selection-start-column="8" selection-end-line="144" selection-end-column="8" />
+        <state relative-caret-position="1464">
+          <caret line="75" column="0" lean-forward="false" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/UtilCalendario.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
+        <state relative-caret-position="672">
           <caret line="83" column="35" lean-forward="false" selection-start-line="83" selection-start-column="35" selection-end-line="83" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/SafetyHomeWebhook.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="142" column="69" lean-forward="true" selection-start-line="142" selection-start-column="69" selection-end-line="142" selection-end-column="69" />
-          <folding />
+        <state relative-caret-position="5424">
+          <caret line="244" column="37" lean-forward="false" selection-start-line="244" selection-start-column="37" selection-end-line="244" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/ZWayLib/ZWaySimpleCallback.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3912">
+          <caret line="229" column="56" lean-forward="false" selection-start-line="229" selection-start-column="52" selection-end-line="229" selection-end-column="56" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#1774#1775#0" expanded="false" />
+            <element signature="e#1830#1831#0" expanded="false" />
+            <element signature="e#1900#1901#0" expanded="false" />
+            <element signature="e#1964#1965#0" expanded="false" />
+            <element signature="e#2024#2025#0" expanded="false" />
+            <element signature="e#2079#2080#0" expanded="false" />
+            <element signature="e#2305#2306#0" expanded="false" />
+            <element signature="e#2366#2367#0" expanded="false" />
+            <element signature="e#2447#2448#0" expanded="false" />
+            <element signature="e#2512#2513#0" expanded="false" />
+            <element signature="e#2737#2738#0" expanded="false" />
+            <element signature="e#2800#2801#0" expanded="false" />
+            <element signature="e#3179#3180#0" expanded="false" />
+            <element signature="e#3240#3241#0" expanded="false" />
+            <element signature="e#3306#3307#0" expanded="false" />
+            <element signature="e#3377#3378#0" expanded="false" />
+            <element signature="e#3443#3444#0" expanded="false" />
+            <element signature="e#3502#3503#0" expanded="false" />
+            <element signature="e#3570#3571#0" expanded="false" />
+            <element signature="e#3632#3633#0" expanded="false" />
+            <element signature="e#3713#3714#0" expanded="false" />
+            <element signature="e#3778#3779#0" expanded="false" />
+            <element signature="e#3999#4000#0" expanded="false" />
+            <element signature="e#4062#4063#0" expanded="false" />
+            <element signature="e#4134#4135#0" expanded="false" />
+            <element signature="e#4209#4210#0" expanded="false" />
+            <element signature="e#4276#4277#0" expanded="false" />
+            <element signature="e#4342#4343#0" expanded="false" />
+            <element signature="e#4420#4421#0" expanded="false" />
+            <element signature="e#4483#4484#0" expanded="false" />
+            <element signature="e#4553#4554#0" expanded="false" />
+            <element signature="e#4627#4628#0" expanded="false" />
+            <element signature="e#4696#4697#0" expanded="false" />
+            <element signature="e#4757#4758#0" expanded="false" />
+            <element signature="e#4826#4827#0" expanded="false" />
+            <element signature="e#4899#4900#0" expanded="false" />
+            <element signature="e#4965#4966#0" expanded="false" />
+            <element signature="e#5030#5031#0" expanded="false" />
+            <element signature="e#6240#6241#0" expanded="false" />
+            <element signature="e#6288#6289#0" expanded="false" />
+            <element signature="e#6365#6366#0" expanded="false" />
+            <element signature="e#6425#6426#0" expanded="false" />
+            <element signature="e#6480#6481#0" expanded="false" />
+            <element signature="e#6533#6534#0" expanded="false" />
+            <element signature="e#6607#6608#0" expanded="false" />
+            <element signature="e#6658#6659#0" expanded="false" />
+            <element signature="e#6716#6717#0" expanded="false" />
+            <element signature="e#6787#6788#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/ThreadSorveglianzaConImmagine.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/ThreadSorveglianzaSenzaImmagine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-192">
-          <caret line="7" column="52" lean-forward="false" selection-start-line="7" selection-start-column="52" selection-end-line="7" selection-end-column="52" />
-          <folding />
+        <state relative-caret-position="1632">
+          <caret line="79" column="37" lean-forward="false" selection-start-line="79" selection-start-column="37" selection-end-line="79" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#647#648#0" expanded="false" />
+            <element signature="e#697#698#0" expanded="false" />
+            <element signature="e#3955#3956#0" expanded="false" />
+            <element signature="e#3988#3989#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/Util.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5760">
-          <caret line="290" column="8" lean-forward="false" selection-start-line="290" selection-start-column="8" selection-end-line="290" selection-end-column="8" />
-          <folding>
-            <element signature="method#convertToUtf#0;class#Util#0" expanded="false" />
-            <element signature="method#writeResp#0;class#Util#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="357">
+          <caret line="30" column="14" lean-forward="true" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
+          <folding />
         </state>
       </provider>
     </entry>

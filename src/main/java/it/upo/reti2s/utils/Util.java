@@ -18,7 +18,6 @@ import static it.upo.reti2s.utils.SafetyHomeWebhook.*;
  */
 public class Util
 {
-
     //METODI PER INVIARE MESSAGGI CON TELEGRAM
     //Metodo usato per inviare messaggio a telegram senza webhook mediante post
     /*
@@ -30,17 +29,15 @@ public class Util
         String response = "";
         String responseJSON = "";
         String converted = "";
-
         try
         {
-            //utilizzato
             converted = convertToUtf(message);
             responseJSON = "{ \"text\" : \"" + converted + "\", \"chat_id\" : " + aChatId+ " }";
             response = eseguiPost(telegram_url + "/sendMessage", responseJSON);
         }
         catch(Exception e)
         {
-            //e.printStackTrace();
+            e.printStackTrace();
         }
     }
 
@@ -98,21 +95,6 @@ public class Util
         return null;
     }
 
-    public static Device getDevice(int id)
-    {
-        DeviceList lista = getAllDevices();
-        if(lista!=null)
-        {
-            for(Device tmp : lista.getAllDevices())
-            {
-                if(tmp.getNodeId()== id)
-                {
-                    return tmp;
-                }
-            }
-        }
-        return null;
-    }
 
     public static Device getDevice(String deviceType, int id)
     {
@@ -134,62 +116,19 @@ public class Util
         return null;
     }
 
-    /*
-    //probtype può essere temperatura luminosita ecc
-    public static  Device getDevice(String deviceType,String probeTitle, int id)
-    {
-        DeviceList lista = getAllDevices();
 
-        for(Device tmp : lista.getAllDevices())
-        {
-            if(tmp.getDeviceType().equalsIgnoreCase(deviceType) && tmp.getNodeId()== id && tmp.getMetrics().getProbeTitle().contains(probeTitle))
-            {
-                return tmp;
+    public static  Device getSensorePresenza() {
+        DeviceList lista = zWayApi.getDevices();
+        if (lista != null) {
+            for (Device tmp : lista.getAllDevices()) {
+                if (tmp.getNodeId() == ID_MULTILEVEL_PURPOSE &&
+                        tmp.getDeviceType().equalsIgnoreCase(SENSORBINARY) &&
+                        tmp.getMetrics().getProbeTitle().contains(MULTILEVEL_PURPOSE)) {
+                    return tmp;
+                }
             }
         }
         return null;
-    }
-    */
-
-
-    public static  Device getSensorePresenza()
-    {
-
-        DeviceList lista = zWayApi.getDevices();
-        if(lista!=null)
-        {
-            for(Device tmp : lista.getAllDevices())
-            {
-                if(tmp.getNodeId() == ID_MULTILEVEL_PURPOSE &&
-                        tmp.getDeviceType().equalsIgnoreCase(SENSORBINARY) &&
-                        tmp.getMetrics().getProbeTitle().contains(MULTILEVEL_PURPOSE))
-                {
-                    return tmp;
-                }
-            }
-        }
-        return null;/*
-        DeviceList lista = getAllDevices();
-        if(lista!=null)
-        {
-            for(Device tmp : lista.getAllDevices())
-            {
-                if(tmp.getNodeId() == ID_MULTILEVEL_PURPOSE &&
-                        tmp.getDeviceType().equalsIgnoreCase(SENSORBINARY) &&
-                        tmp.getMetrics().getProbeTitle().contains(MULTILEVEL_PURPOSE))
-                {
-                    return tmp;
-                }
-            }
-        }
-        return null;*/
-
-
-        /*
-        dev.getNodeId()==6 && dev.getDeviceType().equalsIgnoreCase("SensorBinary") &&
-                  dev.getMetrics().getProbeTitle().contains("purpose")
-         */
-
     }
 
     public static Device getSensoreAperturaPorta()
@@ -205,11 +144,6 @@ public class Util
             }
         }
         return null;
-        /*
-        if(dev.getNodeId()==13 && dev.getDeviceType().equalsIgnoreCase("sensorBinary"))
-         */
-        //return getDevice(SENSORBINARY, ID_APERTURAPORTE);
-
     }
 
     public static String getPortaAperta(Device aperturaPorta)
@@ -217,33 +151,6 @@ public class Util
         return aperturaPorta.getMetrics().getLevel();
     }
 
-    public static Device getHolederLampadina()
-    {
-        DeviceList lista = zWayApi.getDevices();
-        if(lista!=null)
-        {
-            for (Device tmp : lista.getAllDevices())
-            {
-                if (tmp.getNodeId() == ID_APERTURAPORTE && tmp.getDeviceType().equalsIgnoreCase(SWITCHBINARY))
-                {
-                    return tmp;
-                }
-            }
-        }
-        return null;
-
-
-        /*if(dev.getNodeId()==21 && dev.getDeviceType().equalsIgnoreCase("SwitchBinary") )
-            {
-                dev.on();
-                {
-                    logger.info("sensore lampadina");
-                }
-            }
-
-         */
-        //return getDevice(SWITCHBINARY, ID_HOLDERLAMPADINA);
-    }
 
     public static Device getSensoreLuminosita()
     {
@@ -260,47 +167,12 @@ public class Util
             }
         }
         return null;
-
-        /*
-        dev.getMetrics.Contains("Luminescence") && dev.getNodeId()==6);
-        per prendere quantia luce uso         dev.getMetrics().getLevel()
-        per il titolo dell unita di misura uso dev.getMetrics().getProbeTitle
-
-         */
-       // return getDevice(SENSORMULTILEVEL,MULTILEVEL_LUMINESCENCE, ID_MULTILEVEL_PURPOSE);
     }
 
     //manca il metodo per acendere la spina
 
     public static Device getPresaPilotata()
     {
-        /*
-        DeviceList lista = zWayApi.getDevices();
-        if(lista!=null)
-        {
-            for(Device tmp : lista.getAllDevices())
-            {
-                if(tmp.getNodeId() == ID_PRESAPILOTATA &&
-                        tmp.getMetrics().getProbeTitle().contains(MULTILEVEL_LUMINESCENCE))
-                {
-                    return tmp;
-                }
-            }
-        }
-        return null;*/
         return getDevice(SWITCHBINARY,ID_PRESAPILOTATA);
     }
-
-
-
-    public static void accendiDevice(Device device)
-    {
-        device.on();
-    }
-
-    public static void spegniDevice(Device device)
-    {
-        device.off();
-    }
-
 }

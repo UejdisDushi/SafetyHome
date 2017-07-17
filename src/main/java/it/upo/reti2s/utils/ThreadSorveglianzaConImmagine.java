@@ -18,38 +18,20 @@ public class ThreadSorveglianzaConImmagine implements Runnable
     private Thread thread;
     private boolean stopThread = false;
     int durataSecondi;
-    int durata = durataSecondi/10;
     String text = "";
-
-
     //imposta quanto dura la sorveglianza
     public ThreadSorveglianzaConImmagine(int durataSecondi)
     {
         this.durataSecondi = durataSecondi;
     }
 
-
-
     public void run()
     {
-        System.out.println("monitoraggio attivoper : "+durataSecondi);
-
         Device sensoreAperturaPorta = getSensoreAperturaPorta();
-        //System.out.println("Passata assegnazione sensore apertura porta");
         Device sensorePresenza  = getSensorePresenza();
-       // System.out.println("Passata assegnazione sensore apertura presenza");
-
-
         Device sensoreLuminosita = getSensoreLuminosita();
         Device holderLampadina = getDevice(SWITCHBINARY, ID_HOLDERLAMPADINA);
-
-       // System.out.println("valore apertura porta : "+sensoreAperturaPorta + "     valore presenza:"+sensorePresenza);
-
-
-
         Webcam webcam = Webcam.getDefault();
-        //System.out.println("Passata assegnazione webcam");
-
 
         if(sensoreAperturaPorta == null || sensorePresenza==null || sensoreLuminosita==null ||holderLampadina==null)
         {
@@ -72,30 +54,25 @@ public class ThreadSorveglianzaConImmagine implements Runnable
                 e.printStackTrace();
             }
             this.stopRunning();
-
         }
         else
         {
             while (!stopThread)
             {
-
                 for (int i = 0; i < durataSecondi; i++)//attivo per 5 minuti
                 {
-                //verificare il metodo
                     try {
-                        Thread.sleep(1000);//10 sec
+                        Thread.sleep(1000);
                         if(getPortaAperta(sensoreAperturaPorta).equalsIgnoreCase("on") || sensorePresenza.getMetrics().getLevel().equalsIgnoreCase("on"))//
                         {
                             if( Double.parseDouble(sensoreLuminosita.getMetrics().getLevel()) <200)
-                            {//accendo luce
+                            {
                                 holderLampadina.on();
                             }
                             else
                             {
                                 holderLampadina.off();
                             }
-
-                            //scatta foto
                             webcam.open();
                             ImageIO.write(webcam.getImage(), FORMATO_IMMAGINE, new File(PATH_IMMAGINE));
                             webcam.close();
@@ -114,12 +91,11 @@ public class ThreadSorveglianzaConImmagine implements Runnable
                     {
                         e.printStackTrace();
                     }
-                }//chiusura for
+                }
                 this.stopRunning();
-            }//chiusura while
-        }//chiusura else
+            }
+        }
     }
-
 
     public void stopRunning()
     {

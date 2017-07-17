@@ -1,4 +1,4 @@
-package it.upo.reti2s.utils;
+package it.upo.reti2s.utils.ZWayLib;
 
 import de.fh_zwickau.informatik.sensor.IZWayApiCallbacks;
 import de.fh_zwickau.informatik.sensor.model.devicehistory.DeviceHistory;

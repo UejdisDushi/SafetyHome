@@ -10,6 +10,7 @@ import de.fh_zwickau.informatik.sensor.IZWayApi;
 import de.fh_zwickau.informatik.sensor.ZWayApiHttp;
 import de.fh_zwickau.informatik.sensor.model.devices.Device;
 import de.fh_zwickau.informatik.sensor.model.devices.DeviceList;
+import it.upo.reti2s.utils.ZWayLib.ZWaySimpleCallback;
 
 import javax.imageio.ImageIO;
 import java.io.*;
