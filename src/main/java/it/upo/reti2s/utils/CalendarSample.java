@@ -64,7 +64,8 @@ public class CalendarSample {
     static final java.util.List<Calendar> addedCalendarsUsingBatch = Lists.newArrayList();
 
     /** Authorizes the installed application to access user's protected data. */
-    private static Credential authorize() throws Exception {
+    private static Credential authorize() throws Exception
+    {
         // load client secrets
         GoogleClientSecrets clientSecrets = GoogleClientSecrets.load(JSON_FACTORY,
                 new InputStreamReader(CalendarSample.class.getResourceAsStream("/client_secrets.json")));

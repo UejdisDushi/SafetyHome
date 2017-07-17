@@ -116,6 +116,16 @@ public class SafetyHomeWebhook
             return returnGson;
         },gson::toJson);
 
+
+        get("/statoServizio",(request, response) ->
+        {
+            String returnGson = String.valueOf(UtilCalendario.attivazioneServizio());
+            System.out.println(returnGson);
+                    Util.sendMessage(returnGson,TELEGRAM_RESPONSE_CHAT_ID,TELEGRAM_URL);
+                    Util.sendMessage(returnGson,TELEGRAM_RESPONSE_CHAT_ID_EDI,TELEGRAM_URL);
+            return returnGson;
+        },gson::toJson);
+
         /*calendario
         */
 /*
