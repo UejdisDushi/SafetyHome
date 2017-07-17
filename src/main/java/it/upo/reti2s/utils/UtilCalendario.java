@@ -77,7 +77,7 @@ public class UtilCalendario
     {
         // load client secrets
         GoogleClientSecrets clientSecrets = GoogleClientSecrets.load(JSON_FACTORY,
-                new InputStreamReader(CalendarSample.class.getResourceAsStream("/client_secrets.json")));
+                new InputStreamReader(UtilCalendario.class.getResourceAsStream("/client_secrets.json")));
         if (clientSecrets.getDetails().getClientId().startsWith("Enter")
                 || clientSecrets.getDetails().getClientSecret().startsWith("Enter ")) {
             System.out.println(
