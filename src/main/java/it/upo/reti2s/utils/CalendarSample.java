@@ -136,149 +136,10 @@ public class CalendarSample {
 
                     System.out.println("\n\n INIZIO METODO VERIFICA \n\n");
 
+                    String.valueOf(tmp.getEnd());
+                    boolean n =attivaServizio(String.valueOf(tmp.getStart()),String.valueOf(tmp.getEnd()));
 
-                    Date now = new Date(java.util.Calendar.getInstance().getTime().getTime());
-                    DateTime now_convertita = new DateTime(now);
-
-                    Boolean attivareServizio = false;
-                    Boolean eventoGiornata = false;
-
-                    //Prendo la stringa della data di partenza
-                    //String data_partenza = String.valueOf(tmp.getStart()).substring(13,42);//<--formato ok
-
-
-                    System.out.println(now_convertita);
-                    String data_now = now_convertita.toString();
-                    String data_inizioEvento = String.valueOf(tmp.getStart());
-                    String data_fineEvento = String.valueOf(tmp.getEnd());
-
-
-                    //Data separata Evento now generato
-                    int aaaa_now = Integer.valueOf(data_now.substring(0,4));
-                    int mm_now = Integer.valueOf(data_now.substring(5,7));
-                    int gg_now = Integer.valueOf(data_now.substring(8,10));
-                    int hh_now = Integer.valueOf(data_now.substring(11,13));
-                    int min_now=Integer.valueOf(data_now.substring(14,16));
-                    int sec_now = Integer.valueOf(data_now.substring(17,19));
-
-
-
-                    //variabili di partenza
-                    int aaaa_inizioEvento=0;
-                    int mm_inizioEvento=0;
-                    int gg_inizioEvento=0;
-                    int hh_inizioEvento=0;
-                    int min_inizioEvento=0;
-                    int sec_inizioEvento=0;
-
-                    int aaaa_fineEvento=0;
-                    int mm_fineEvento=0;
-                    int gg_fineEvento=0;
-                    int hh_fineEvento=0;
-                    int min_fineEvento=0;
-                    int sec_fineEvento=0;
-
-
-                    //Data separata Evento inizio
-                    if(data_inizioEvento.length()==21)//evento che dura una giornata
-                    {
-                        eventoGiornata= true;
-                        System.out.println("data di 21");
-                        aaaa_inizioEvento = Integer.valueOf(data_inizioEvento.substring(13,17));
-                        mm_inizioEvento = Integer.valueOf(data_inizioEvento.substring(18,20));
-                        gg_inizioEvento = Integer.valueOf(data_inizioEvento.substring(21,23));
-                    }
-                    else//evento con data inizio e fine in giornata
-                    {
-                        eventoGiornata=false;
-                        aaaa_inizioEvento = Integer.valueOf(data_inizioEvento.substring(13,17));
-                        mm_inizioEvento = Integer.valueOf(data_inizioEvento.substring(18,20));
-                        gg_inizioEvento = Integer.valueOf(data_inizioEvento.substring(21,23));
-                        hh_inizioEvento = Integer.valueOf(data_inizioEvento.substring(24,26));
-                        min_inizioEvento =Integer.valueOf(data_inizioEvento.substring(27,29));
-                        sec_inizioEvento = Integer.valueOf(data_inizioEvento.substring(30,32));
-                    }
-
-
-
-
-                    //Data separata Evento fine
-                    if(data_fineEvento.length()==21)//evento che dura una giornata
-                    {
-                        eventoGiornata= true;
-                        aaaa_fineEvento = Integer.valueOf(data_fineEvento.substring(13,17));
-                        mm_fineEvento = Integer.valueOf(data_fineEvento.substring(18,20));
-                        gg_fineEvento = Integer.valueOf(data_fineEvento.substring(21,23));
-                    }
-                    else
-                    {
-
-                        aaaa_fineEvento = Integer.valueOf(data_fineEvento.substring(13,17));
-                        mm_fineEvento = Integer.valueOf(data_fineEvento.substring(18,20));
-                        gg_fineEvento = Integer.valueOf(data_fineEvento.substring(21,23));
-                        hh_fineEvento = Integer.valueOf(data_fineEvento.substring(24,26));
-                        min_fineEvento = Integer.valueOf(data_fineEvento.substring(27,29));
-                        sec_fineEvento = Integer.valueOf(data_fineEvento.substring(30,32));
-
-                    }
-
-
-                    if(eventoGiornata==false)//controllo se è un evento giornata
-                    {
-                        if(aaaa_now>=aaaa_inizioEvento && aaaa_now<=aaaa_fineEvento)//controllo anni
-                        {
-                            if(mm_now>= mm_inizioEvento && mm_now<=mm_fineEvento)//controllo mese
-                            {
-                                if(gg_now>=gg_inizioEvento && gg_now <=gg_fineEvento)//controllo giorni
-                                {
-                                    if(hh_now>=hh_inizioEvento && hh_now<=hh_fineEvento)//controllo ora
-                                    {
-                                        if(min_now>= min_inizioEvento && min_now<=min_fineEvento)//controllo minuti
-                                        {
-                                            if(sec_now >= sec_inizioEvento && sec_now<=sec_fineEvento)
-                                            {
-                                                attivareServizio = true;
-                                                System.out.println(attivareServizio);
-                                            }
-                                            attivareServizio=false;
-                                        }//fine controllo minuti
-                                        attivareServizio=false;
-
-                                    }//fine controllo ora
-                                    attivareServizio=false;
-
-                                }//fine controllo giorni
-                                attivareServizio=false;
-
-
-                            }//fine controllo mese
-                            attivareServizio=false;
-
-
-                        }//fine controllo anni
-                        else//se non è giornata
-                        {
-                            if (aaaa_now >= aaaa_inizioEvento && aaaa_now <= aaaa_fineEvento)//controllo anni
-                            {
-                                if (mm_now >= mm_inizioEvento && mm_now <= mm_fineEvento)//controllo mese
-                                {
-                                    if (gg_now >= gg_inizioEvento && gg_now <= gg_fineEvento)//controllo giorni
-                                    {
-                                        attivareServizio = true;
-                                        System.out.println(attivareServizio);
-                                    }
-                                    attivareServizio=false;
-                                }attivareServizio=false;
-                            }attivareServizio=false;
-                        }
-
-
-                    }
-
-
-
-
-                    System.out.println(attivareServizio);
+                   System.out.println(n);
 
 
                 }
@@ -476,5 +337,151 @@ public class CalendarSample {
         String minuti = orario.subSequence(3,5).toString();
         String finale = anno+"-"+mese+"-"+giorno+" "+ora+":"+minuti+":"+"00";
         return finale;
+    }
+    public static boolean attivaServizio(String data_inizio,String data_fine)
+    {
+        Date now = new Date(java.util.Calendar.getInstance().getTime().getTime());
+        DateTime now_convertita = new DateTime(now);
+
+        Boolean attivareServizio = false;
+        Boolean eventoGiornata = false;
+
+        //Prendo la stringa della data di partenza
+        //String data_partenza = String.valueOf(tmp.getStart()).substring(13,42);//<--formato ok
+
+
+        //System.out.println(now_convertita);
+        String data_now = now_convertita.toString();
+        String data_inizioEvento = data_inizio;
+        String data_fineEvento = data_fine;
+
+
+        //Data separata Evento now generato
+        int aaaa_now = Integer.valueOf(data_now.substring(0,4));
+        int mm_now = Integer.valueOf(data_now.substring(5,7));
+        int gg_now = Integer.valueOf(data_now.substring(8,10));
+        int hh_now = Integer.valueOf(data_now.substring(11,13));
+        int min_now=Integer.valueOf(data_now.substring(14,16));
+        int sec_now = Integer.valueOf(data_now.substring(17,19));
+
+
+
+        //variabili di partenza
+        int aaaa_inizioEvento=0;
+        int mm_inizioEvento=0;
+        int gg_inizioEvento=0;
+        int hh_inizioEvento=0;
+        int min_inizioEvento=0;
+        int sec_inizioEvento=0;
+
+        int aaaa_fineEvento=0;
+        int mm_fineEvento=0;
+        int gg_fineEvento=0;
+        int hh_fineEvento=0;
+        int min_fineEvento=0;
+        int sec_fineEvento=0;
+
+
+        //Data separata Evento inizio
+        if(data_inizioEvento.length()==21)//evento che dura una giornata
+        {
+            eventoGiornata= true;
+            System.out.println("data di 21");
+            aaaa_inizioEvento = Integer.valueOf(data_inizioEvento.substring(13,17));
+            mm_inizioEvento = Integer.valueOf(data_inizioEvento.substring(18,20));
+            gg_inizioEvento = Integer.valueOf(data_inizioEvento.substring(21,23));
+        }
+        else//evento con data inizio e fine in giornata
+        {
+            eventoGiornata=false;
+            aaaa_inizioEvento = Integer.valueOf(data_inizioEvento.substring(13,17));
+            mm_inizioEvento = Integer.valueOf(data_inizioEvento.substring(18,20));
+            gg_inizioEvento = Integer.valueOf(data_inizioEvento.substring(21,23));
+            hh_inizioEvento = Integer.valueOf(data_inizioEvento.substring(24,26));
+            min_inizioEvento =Integer.valueOf(data_inizioEvento.substring(27,29));
+            sec_inizioEvento = Integer.valueOf(data_inizioEvento.substring(30,32));
+        }
+
+
+
+
+        //Data separata Evento fine
+        if(data_fineEvento.length()==21)//evento che dura una giornata
+        {
+            eventoGiornata= true;
+            aaaa_fineEvento = Integer.valueOf(data_fineEvento.substring(13,17));
+            mm_fineEvento = Integer.valueOf(data_fineEvento.substring(18,20));
+            gg_fineEvento = Integer.valueOf(data_fineEvento.substring(21,23));
+        }
+        else
+        {
+
+            aaaa_fineEvento = Integer.valueOf(data_fineEvento.substring(13,17));
+            mm_fineEvento = Integer.valueOf(data_fineEvento.substring(18,20));
+            gg_fineEvento = Integer.valueOf(data_fineEvento.substring(21,23));
+            hh_fineEvento = Integer.valueOf(data_fineEvento.substring(24,26));
+            min_fineEvento = Integer.valueOf(data_fineEvento.substring(27,29));
+            sec_fineEvento = Integer.valueOf(data_fineEvento.substring(30,32));
+
+        }
+
+
+        if(eventoGiornata==false)//controllo se è un evento giornata
+        {
+            if(aaaa_now>=aaaa_inizioEvento && aaaa_now<=aaaa_fineEvento)//controllo anni
+            {
+                if(mm_now>= mm_inizioEvento && mm_now<=mm_fineEvento)//controllo mese
+                {
+                    if(gg_now>=gg_inizioEvento && gg_now <=gg_fineEvento)//controllo giorni
+                    {
+                        if(hh_now>=hh_inizioEvento && hh_now<=hh_fineEvento)//controllo ora
+                        {
+                            if(min_now>= min_inizioEvento && min_now<=min_fineEvento)//controllo minuti
+                            {
+                                if(sec_now >= sec_inizioEvento && sec_now<=sec_fineEvento)
+                                {
+                                    attivareServizio = true;
+                                    System.out.println(attivareServizio);
+                                }
+                                attivareServizio=false;
+                            }//fine controllo minuti
+                            attivareServizio=false;
+
+                        }//fine controllo ora
+                        attivareServizio=false;
+
+                    }//fine controllo giorni
+                    attivareServizio=false;
+
+
+                }//fine controllo mese
+                attivareServizio=false;
+
+
+            }//fine controllo anni
+            else//se non è giornata
+            {
+                if (aaaa_now >= aaaa_inizioEvento && aaaa_now <= aaaa_fineEvento)//controllo anni
+                {
+                    if (mm_now >= mm_inizioEvento && mm_now <= mm_fineEvento)//controllo mese
+                    {
+                        if (gg_now >= gg_inizioEvento && gg_now <= gg_fineEvento)//controllo giorni
+                        {
+                            attivareServizio = true;
+                            System.out.println(attivareServizio);
+                        }
+                        attivareServizio=false;
+                    }attivareServizio=false;
+                }attivareServizio=false;
+            }
+            return attivareServizio;
+
+
+        }
+
+
+
+
+        return false;
     }
 }
