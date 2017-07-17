@@ -157,35 +157,23 @@ public class CalendarSample {
                     int sec_now = Integer.valueOf(data_now.substring(17,19));
 
                     //Data separata Evento inizio
-                    System.out.println("Inizio dell'evento : "+String.valueOf(tmp.getStart()));
-
                     int aaaa_inizioEvento = Integer.valueOf(data_inizioEvento.substring(13,17));
-                    System.out.println(aaaa_inizioEvento);
-
-
                     int mm_inizioEvento = Integer.valueOf(data_inizioEvento.substring(18,20));
-                    System.out.println(mm_inizioEvento);
                     int gg_inizioEvento = Integer.valueOf(data_inizioEvento.substring(21,23));
-                    System.out.println(gg_inizioEvento);
-
                     int hh_inizioEvento = Integer.valueOf(data_inizioEvento.substring(24,26));
-                    System.out.println(hh_inizioEvento);
-
                     int min_inizioEvento =Integer.valueOf(data_inizioEvento.substring(27,29));
-                    System.out.println(min_inizioEvento);
-
                     int sec_inizioEvento = Integer.valueOf(data_inizioEvento.substring(30,32));
-                    System.out.println(sec_inizioEvento);
 
-/*
+
+
                     //Data separata Evento fine
-                    int aaaa_fineEvento = Integer.valueOf(data_fineEvento.substring(0,4));;
-                    int mm_fineEvento = Integer.valueOf(data_fineEvento.substring(5,7));
-                    int gg_fineEvento = Integer.valueOf(data_fineEvento.substring(8,10));
-                    int hh_fineEvento = Integer.valueOf(data_fineEvento.substring(11,13));
-                    int min_fineEvento = Integer.valueOf(data_fineEvento.substring(14,16));
-                    int sec_fineEvento = Integer.valueOf(data_fineEvento.substring(17,19));
-                    */
+                    int aaaa_fineEvento = Integer.valueOf(data_fineEvento.substring(13,17));
+                    int mm_fineEvento = Integer.valueOf(data_fineEvento.substring(18,20));
+                    int gg_fineEvento = Integer.valueOf(data_fineEvento.substring(21,23));
+                    int hh_fineEvento = Integer.valueOf(data_fineEvento.substring(24,26));
+                    int min_fineEvento = Integer.valueOf(data_fineEvento.substring(27,29));
+                    int sec_fineEvento = Integer.valueOf(data_fineEvento.substring(30,32));
+
 
 
 

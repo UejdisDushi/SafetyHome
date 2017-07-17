@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="966f5009-a094-4c32-9990-c49804e0a537" name="Default" comment="Iniziato progetto">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/CalendarSample.java" afterPath="$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/CalendarSample.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -65,8 +64,8 @@
       <file leaf-file-name="CalendarSample.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/CalendarSample.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
-              <caret line="176" column="94" lean-forward="false" selection-start-line="176" selection-start-column="94" selection-end-line="176" selection-end-column="94" />
+            <state relative-caret-position="480">
+              <caret line="174" column="91" lean-forward="false" selection-start-line="174" selection-start-column="91" selection-end-line="174" selection-end-column="91" />
               <folding />
             </state>
           </provider>
@@ -1189,12 +1188,12 @@
       <workItem from="1500232356281" duration="968000" />
       <workItem from="1500233341009" duration="2329000" />
       <workItem from="1500235692107" duration="3200000" />
-      <workItem from="1500274453887" duration="1705000" />
+      <workItem from="1500274453887" duration="2190000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="116617000" />
+    <option name="totallyTimeSpent" value="117102000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1206,7 +1205,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1060" extended-state="1" />
+    <frame x="-9" y="-9" width="1938" height="1060" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1475,8 +1474,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/it/upo/reti2s/utils/CalendarSample.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="176" column="94" lean-forward="false" selection-start-line="176" selection-start-column="94" selection-end-line="176" selection-end-column="94" />
+        <state relative-caret-position="480">
+          <caret line="174" column="91" lean-forward="false" selection-start-line="174" selection-start-column="91" selection-end-line="174" selection-end-column="91" />
           <folding />
         </state>
       </provider>
