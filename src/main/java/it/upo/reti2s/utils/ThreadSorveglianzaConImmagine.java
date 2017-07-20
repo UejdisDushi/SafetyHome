@@ -2,77 +2,63 @@ package it.upo.reti2s.utils;
 
 import com.github.sarxos.webcam.Webcam;
 import de.fh_zwickau.informatik.sensor.model.devices.Device;
-
 import javax.imageio.ImageIO;
 import java.io.File;
 import java.io.IOException;
-
 import static it.upo.reti2s.utils.SafetyHomeWebhook.*;
 import static it.upo.reti2s.utils.Util.*;
 
-/**
- * Created by Luca Franciscone on 11/07/2017.
- */
-public class ThreadSorveglianzaConImmagine implements Runnable
-{
-    private Thread thread;
+public class ThreadSorveglianzaConImmagine implements Runnable {
     private boolean stopThread = false;
     int durataSecondi;
     String text = "";
-    //imposta quanto dura la sorveglianza
-    public ThreadSorveglianzaConImmagine(int durataSecondi)
-    {
+
+    /**
+     * Costruttore della classe
+     * @param durataSecondi sono i secondi stabiliti per far durare il thread
+     */
+    public ThreadSorveglianzaConImmagine(int durataSecondi) {
         this.durataSecondi = durataSecondi;
     }
 
-    public void run()
-    {
+    /**
+     * Metodo che avvia il thread per i secondi prefissati dal costruttore.
+     * Se dispositivi presenti controlla che la porta sia aperta e il sensone abbia rilevato una presenza.
+     * In caso di scarsa luminosità accendi la luce per effettuare delle foto migliori
+     */
+    public void run() {
         Device sensoreAperturaPorta = getSensoreAperturaPorta();
         Device sensorePresenza  = getSensorePresenza();
         Device sensoreLuminosita = getSensoreLuminosita();
-        Device holderLampadina = getDevice(SWITCHBINARY, ID_HOLDERLAMPADINA);
+        Device holderLampadina = getHolderLampadina();
         Webcam webcam = Webcam.getDefault();
 
-        if(sensoreAperturaPorta == null || sensorePresenza==null || sensoreLuminosita==null ||holderLampadina==null)
-        {
+        if(sensoreAperturaPorta == null || sensorePresenza==null || sensoreLuminosita==null ||holderLampadina==null) {
             if(webcam==null)
-            {
                 text = "Webcam non rilevata";
-            }
             else
-            {
-                text = "Nessun sensore rilevato ";
-            }
+                text = "Nessun sensore rilevato";
             try {
                 Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID,TELEGRAM_URL);
                 Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID_EDI,TELEGRAM_URL);
                 System.out.println(text);
-
-                this.stopRunning();
-            } catch (IOException e)
-            {
+                this.stopRunning();     //non essendoci nessun dispositivo termino l'esecuzione
+            } catch (IOException e) {
                 e.printStackTrace();
             }
             this.stopRunning();
         }
-        else
-        {
-            while (!stopThread)
-            {
-                for (int i = 0; i < durataSecondi; i++)//attivo per 5 minuti
-                {
+        else {
+            while (!stopThread) {
+                for (int i = 0; i < durataSecondi; i++) {
                     try {
-                        Thread.sleep(1000);
-                        if(getPortaAperta(sensoreAperturaPorta).equalsIgnoreCase("on") || sensorePresenza.getMetrics().getLevel().equalsIgnoreCase("on"))//
-                        {
-                            if( Double.parseDouble(sensoreLuminosita.getMetrics().getLevel()) <200)
-                            {
+                        Thread.sleep(1000);     //interrompo esecuzione del thread per 1 secondo
+                        if(getPortaAperta(sensoreAperturaPorta).equalsIgnoreCase("on") || sensorePresenza.getMetrics().getLevel().equalsIgnoreCase("on")) {
+                            if(Double.parseDouble(sensoreLuminosita.getMetrics().getLevel()) <200)
                                 holderLampadina.on();
-                            }
-                            else
-                            {
-                                holderLampadina.off();
-                            }
+
+                            else holderLampadina.off();
+
                             webcam.open();
                             ImageIO.write(webcam.getImage(), FORMATO_IMMAGINE, new File(PATH_IMMAGINE));
                             webcam.close();
@@ -84,11 +70,9 @@ public class ThreadSorveglianzaConImmagine implements Runnable
                             Util.sendMessage("https://www.dropbox.com/s/v7arilbs00h4849/prova.png?dl=0",TELEGRAM_RESPONSE_CHAT_ID,TELEGRAM_URL);
                             Util.sendMessage("https://www.dropbox.com/s/v7arilbs00h4849/prova.png?dl=0",TELEGRAM_RESPONSE_CHAT_ID_EDI,TELEGRAM_URL);
                         }
-                    } catch (InterruptedException e)
-                    {
+                    } catch (InterruptedException e) {
                         e.printStackTrace();
-                    } catch (IOException e)
-                    {
+                    } catch (IOException e) {
                         e.printStackTrace();
                     }
                 }
@@ -97,8 +81,10 @@ public class ThreadSorveglianzaConImmagine implements Runnable
         }
     }
 
-    public void stopRunning()
-    {
+    /**
+     * Metodo che interrompe l'esecuzione del thread
+     */
+    public void stopRunning(){
         stopThread = true;
     }
 }

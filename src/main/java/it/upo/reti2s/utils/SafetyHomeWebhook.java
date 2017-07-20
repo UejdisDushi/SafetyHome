@@ -49,7 +49,6 @@ public class SafetyHomeWebhook
     //Nome del getProbeTitle() del Device
     final static String SWITCHBINARY = "SwitchBinary";
     final static String SENSORBINARY = "SensorBinary";
-    final static String SENSORMULTILEVEL = "SensorMultilevel";
     final static String MULTILEVEL_LUMINESCENCE = "Luminiscence";
     final static String MULTILEVEL_PURPOSE = "purpose";
 
@@ -75,20 +74,15 @@ public class SafetyHomeWebhook
         System.out.println("Inserisca y per avvisare il servizio di monitoraggio da calendario : \n");
         String s = (input.readLine());
         if(s.equalsIgnoreCase("y"))
-        {
             avviaCal = true;
-        }
-        if(avviaCal==true)
-        {
-            String text="";
-            if(UtilCalendario.attivazioneServizio()==true)
-            {
-                Thread threadSoverglianza = new Thread(new ThreadSorveglianzaConImmagine(10));
-                threadSoverglianza.start();//faccio partire il thread per l interrogazione sottostante
 
+        if(avviaCal==true) {
+            String text="";
+            if(UtilCalendario.attivazioneServizio()==true) {
+                Thread threadSoverglianza = new Thread(new ThreadSorveglianzaConImmagine(10));
+                threadSoverglianza.start(); //faccio partire il thread per l interrogazione sottostante
             }
-            else
-            {
+            else {
                 text="Nessun evento in programma";
                 Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID,TELEGRAM_URL);
                 Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID_EDI,TELEGRAM_URL);
@@ -100,8 +94,6 @@ public class SafetyHomeWebhook
         //text="Thread attivato";
 
 
-
-
         Gson gson = GsonFactory.getDefaultFactory().getGson();
         //Usato per catturare Post da API.ai
         post("/", (request, response) -> {
@@ -109,79 +101,9 @@ public class SafetyHomeWebhook
             doWebhook(gson.fromJson(request.body(), AIResponse.class), output);
             response.type("application/json");
             return output;
-        }, gson::toJson);//gson::toJson serve per prendere il contenuto della return e mapparlo in un oggetto json
+        }, gson::toJson);       //gson::toJson serve per prendere il contenuto della return e mapparlo in un oggetto json
 
-
-
-        get("/statoPorta",(request, response) ->
-        {
-            String returnGson = "";
-            String statoPorta ="";
-            Gson gson1 = new Gson();
-            DeviceList allDevices = getAllDevices();
-            if(allDevices!=null)
-            {
-                Device aperturaPorta = getSensoreAperturaPorta();
-                if(aperturaPorta!=null)
-                {
-                    statoPorta = getPortaAperta(aperturaPorta);
-                    if(statoPorta.equalsIgnoreCase("off"))
-                    {
-                        returnGson ="Porta chiusa, valore : off";
-                    }
-                    else
-                    {
-                        returnGson ="Porta aperta, valore : on";
-                    }
-                    Util.sendMessage(returnGson,TELEGRAM_RESPONSE_CHAT_ID,TELEGRAM_URL);
-                    Util.sendMessage(returnGson,TELEGRAM_RESPONSE_CHAT_ID_EDI,TELEGRAM_URL);
-                }
-                else
-                {
-                    returnGson = "Sensore non trovato";
-                    Util.sendMessage(returnGson,TELEGRAM_RESPONSE_CHAT_ID,TELEGRAM_URL);
-                    Util.sendMessage(returnGson,TELEGRAM_RESPONSE_CHAT_ID_EDI,TELEGRAM_URL);
-                }
-            }
-            else
-            {
-                returnGson = "Nessun device trovato";
-                Util.sendMessage(returnGson,TELEGRAM_RESPONSE_CHAT_ID,TELEGRAM_URL);
-                Util.sendMessage(returnGson,TELEGRAM_RESPONSE_CHAT_ID_EDI,TELEGRAM_URL);
-            }
-            return returnGson;
-        },gson::toJson);
-
-
-        get("/statoServizio",(request, response) ->
-        {
-            String returnGson = String.valueOf(UtilCalendario.attivazioneServizio());
-            System.out.println(returnGson);
-                    Util.sendMessage(returnGson,TELEGRAM_RESPONSE_CHAT_ID,TELEGRAM_URL);
-                    Util.sendMessage(returnGson,TELEGRAM_RESPONSE_CHAT_ID_EDI,TELEGRAM_URL);
-            return returnGson;
-        },gson::toJson);
-
-        /*calendario
-        */
-/*
-        get("/calendar", (request, response) ->
-        {
-            Gson gson1 = new Gson();
-            response.status(200);//200 OK
-            response.type("application/json");
-            Calendar service = new Timeout.Builder(httpTransport, jsonFactory, credentials)
-                    .setApplicationName("applicationName").build();
-
-            Event allEvent = service.event
-            String finalJson = "Invocato il metodo per inviare un messaggio su telegram";
-            System.out.println(finalJson);
-            Util.sendMessage("attenzione ladro",TELEGRAM_RESPONSE_CHAT_ID,TELEGRAM_URL);
-            return finalJson;
-        }, gson::toJson);
-
-*/
-    }//chiude main
+    }
 
     /**
      * The webhook method. It is where the "magic" happens.
@@ -200,139 +122,79 @@ public class SafetyHomeWebhook
         Holder della lampadina ha id=20             Accendi la luce da  API.ai            Accendi la luce da Telegram
          */
 
-        if (input.getResult().getAction().equalsIgnoreCase("accendiLuce"))
-        {
-            String text="Nessun device collegato trovato";
-            System.out.println(text);
+        String text="Device non trovato";
+
+        if (input.getResult().getAction().equalsIgnoreCase("accendiLuce")) {
             DeviceList allDevice = getAllDevices();//aggiungo tutti i device dal metodo in util
-            if(allDevice!=null)
-            {
-                Device devDaAccendere = getDevice(SWITCHBINARY, ID_HOLDERLAMPADINA);
-                if(devDaAccendere!=null)
-                {
+            if(allDevice!=null) {
+                Device devDaAccendere = getHolderLampadina();
+                if(devDaAccendere!=null) {
                     devDaAccendere.on();
                     text="Luce accesa";
                 }
-                else
-                {
-                    text = "Device non trovato";
-                }
-            }
-            else
-            {
-                text = "Nessun device collegato trovato";
             }
 
             //faccio passare output come parametro senno posso fare la return lo ritorno nella classe chiamante
-            System.out.println(text);
             Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID,TELEGRAM_URL);
             Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID_EDI,TELEGRAM_URL);
             output.setSpeech(text);
             output.setDisplayText(text);
         }
 
-        if (input.getResult().getAction().equalsIgnoreCase("spegniLuce"))
-        {
-            String text="";
-            System.out.println(text);
-            Device devDaSpegnere = getDevice(SWITCHBINARY, ID_HOLDERLAMPADINA);
-            if(devDaSpegnere!=null)
-            {
+        if (input.getResult().getAction().equalsIgnoreCase("spegniLuce")) {
+            Device devDaSpegnere = getHolderLampadina();
+            if(devDaSpegnere!=null) {
                 devDaSpegnere.off();
-                text="Luce accesa";
-            }
-            else
-            {
-                text = "Device non trovato";
+                text="Luce spenta";
             }
 
-            System.out.println(text);
+            Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID,TELEGRAM_URL);
+            Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID_EDI,TELEGRAM_URL);
             output.setSpeech(text);
             output.setDisplayText(text);
         }
 
-
-        //                  OK  ---------
-        if (input.getResult().getAction().equalsIgnoreCase("scattaFoto"))
-        {
+        if (input.getResult().getAction().equalsIgnoreCase("scattaFoto")) {
             Device sensoreLuminosita = getSensoreLuminosita();
-            Device holderLampadina = getDevice(SWITCHBINARY, ID_HOLDERLAMPADINA);
+            Device holderLampadina = getHolderLampadina();
 
-            String text="";
             Webcam webcam = Webcam.getDefault();
-            if (webcam != null && sensoreLuminosita!=null && holderLampadina!=null)
-            {
-
+            if (webcam != null && sensoreLuminosita!=null && holderLampadina!=null) {
                 if( Double.parseDouble(sensoreLuminosita.getMetrics().getLevel()) <200)
-                {//accendo luce
                     holderLampadina.on();
-                }
                 else
-                {
                     holderLampadina.off();
-                }
 
                 webcam.open();
-                try
-                {
+                try{
                     ImageIO.write(webcam.getImage(), "PNG", new File("Images/prova.png"));
-
                     webcam.close();
                     holderLampadina.off();
-
-                    text = "https://www.dropbox.com/s/v7arilbs00h4849/prova.png?dl=0";
+                    text = PATH_IMMAGINE_DROPBOX;
                     Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID,TELEGRAM_URL);
                     Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID_EDI,TELEGRAM_URL);
-
-                } catch (IOException e)
-                {
+                } catch (IOException e) {
                     text="Problema con la cam";
                     e.printStackTrace();
                     Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID,TELEGRAM_URL);
                     Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID_EDI,TELEGRAM_URL);
                 }
             }
-            else
-            {
-                text = "No webcam detected";
+            else {
+                text = "Nessuna webcam rilevata";
                 Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID,TELEGRAM_URL);
                 Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID_EDI,TELEGRAM_URL);
             }
-
-            System.out.print(text);
-            output.setSpeech(text);
-            output.setDisplayText(text);
         }
 
-
-        /*
-        METODO USATO PER IL TEST DELLE VARIABILI PASSATE IN INPUT
-         */
-        if (input.getResult().getAction().equalsIgnoreCase("accendiPresa"))
-        {
-            String text="";
-
-            //String stanza = input.getResult().getStringParameter("Stanza");
-/*
-            if(stanza == null)//Se mancano parametri restituisco un halt
-            {
-                halt(403);
-            }
-            */
-
+        if (input.getResult().getAction().equalsIgnoreCase("accendiPresa")) {
             Device presaPilotata = getPresaPilotata();
-            if(presaPilotata!=null)
-            {
+            if(presaPilotata!=null) {
                 presaPilotata.on();
-                //text = "Accesa Presa Corrente per la stanza: "+stanza;
-                text = "Accesa Presa Corrente: ";
+                text = "Presa corrente accesa";
             }
-            else
-            {
-               // text="Device non trovato Non e stato possibile accendere la presa nella "+stanza;
-                text="Device accendi presa non trovato";
-            }
-            System.out.println(text);
+            else text="Device accendi presa non trovato";
+
             Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID,TELEGRAM_URL);
             Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID_EDI,TELEGRAM_URL);
 
@@ -341,21 +203,14 @@ public class SafetyHomeWebhook
             output.setDisplayText(text);
         }
 
-        if (input.getResult().getAction().equalsIgnoreCase("spegniPresa"))
-        {
-            String text="";
+        if (input.getResult().getAction().equalsIgnoreCase("spegniPresa")) {
             Device presaPilotata = getPresaPilotata();
-            if(presaPilotata!=null)
-            {
+            if(presaPilotata!=null) {
                 presaPilotata.off();
-                text = "Spenta Presa ";
+                text = "Presa corrente spenta";
             }
-            else
-            {
-                // text="Device non trovato Non e stato possibile accendere la presa nella "+stanza;
-                text="Device spegni presa non trovato";
-            }
-            System.out.println(text);
+            else text="Device spegni presa non trovato";
+
             //faccio passare output come parametro senno posso fare la return lo ritorno nella classe chiamante
             Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID,TELEGRAM_URL);
             Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID_EDI,TELEGRAM_URL);
@@ -363,31 +218,18 @@ public class SafetyHomeWebhook
             output.setDisplayText(text);
         }
 
-
-
-        //SERVIZIO VERIFICA PRESENZA <-- verificare metodo per prelevare valori sensori presenza
-        if (input.getResult().getAction().equalsIgnoreCase("verificaPresenza"))
-        {
+        if (input.getResult().getAction().equalsIgnoreCase("verificaPresenza")) {
             //6	SensoreAmbientale_SafetyHome	General purpose  	Idle/trigered  	 	02:44 PM
-            String text="";
+
             Device sensorePrenza = getSensorePresenza();
-            if(sensorePrenza !=null)
-            {
-                //verificare se è corretto il metodo
+            if(sensorePrenza !=null) {
                 if(sensorePrenza.getMetrics().getLevel().equalsIgnoreCase("on"))
-                {
                     text = "Rilevata presenza";
-                }
                 else
-                {
                     text="Nessuna presenza rilevata";
-                }
             }
-            else
-            {
-                text="Sensore presenza non trovato";
-            }
-            System.out.println(text);
+            else text="Sensore presenza non trovato";
+
             Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID,TELEGRAM_URL);
             Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID_EDI,TELEGRAM_URL);
 
@@ -396,29 +238,16 @@ public class SafetyHomeWebhook
             output.setDisplayText(text);
         }
 
-        //SERVIZIO VERIFICA APERTURA PORTA <-- verificare metodo per prelevare valori sensori presenza
-        if (input.getResult().getAction().equalsIgnoreCase("verificaPorta"))
-        {
-            String text="Errore";
+        if (input.getResult().getAction().equalsIgnoreCase("verificaPorta")) {
             Device sensoreAperturaPorta = getSensoreAperturaPorta();
-            if(sensoreAperturaPorta !=null)
-            {
-                //verificare se è corretto il metodo
+            if(sensoreAperturaPorta !=null) {
                 if(sensoreAperturaPorta.getMetrics().getLevel().equalsIgnoreCase("on"))
-                {
                     text = "Porta Aperta";
-                }
                 else
-                {
                     text="Porta Chiusa";
-                }
             }
-            else
-            {
-                text="Sensore porta non trovato";
-            }
+            else text="Sensore porta non trovato";
 
-            System.out.println(text);
             Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID,TELEGRAM_URL);
             Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID_EDI,TELEGRAM_URL);
 
@@ -427,40 +256,23 @@ public class SafetyHomeWebhook
             output.setDisplayText(text);
         }
 
-
-        //simplirunner non andava
-
-
-        // da adattare ai nuovi thread creati
-        if (input.getResult().getAction().equalsIgnoreCase("attivaServizioMonitoraggioConImmagine"))
-        {
+        if (input.getResult().getAction().equalsIgnoreCase("attivaServizioMonitoraggioConImmagine")) {
             Thread t = new Thread(new ThreadSorveglianzaConImmagine(5));
             t.start();//faccio partire il thread per l interrogazione sottostante
-
         }
 
         // da adattare ai nuovi thread creati
-        if (input.getResult().getAction().equalsIgnoreCase("attivaServizioMonitoraggioSenzaImmagine"))
-        {
-            String text="";
+        if (input.getResult().getAction().equalsIgnoreCase("attivaServizioMonitoraggioSenzaImmagine")) {
             Thread threadSoverglianza = new Thread(new ThreadSorveglianzaSenzaImmagine(5));
             threadSoverglianza.start();//faccio partire il thread per l interrogazione sottostante
-            //text="Thread attivato";
-
         }
 
-
-        if (input.getResult().getAction().equalsIgnoreCase("attivaMonitoraggioCalendarioConImmagine"))
-        {
-            String text="";
-
-            if(UtilCalendario.attivazioneServizio()==true)
-            {
+        if (input.getResult().getAction().equalsIgnoreCase("attivaMonitoraggioCalendarioConImmagine")) {
+            if(UtilCalendario.attivazioneServizio()) {
                 Thread threadSoverglianza = new Thread(new ThreadSorveglianzaConImmagine(10));
                 threadSoverglianza.start();//faccio partire il thread per l interrogazione sottostante
             }
-            else
-            {
+            else {
                 text="Nessun evento in programma";
                 Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID,TELEGRAM_URL);
                 Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID_EDI,TELEGRAM_URL);
@@ -471,17 +283,12 @@ public class SafetyHomeWebhook
             output.setDisplayText(text);
         }
 
-        if (input.getResult().getAction().equalsIgnoreCase("attivaMonitoraggioCalendarioSenzaImmagine"))
-        {
-            String text="";
-
-            if(UtilCalendario.attivazioneServizio()==true)
-            {
+        if (input.getResult().getAction().equalsIgnoreCase("attivaMonitoraggioCalendarioSenzaImmagine")) {
+            if(UtilCalendario.attivazioneServizio()) {
                 Thread threadSoverglianza = new Thread(new ThreadSorveglianzaSenzaImmagine(2));
                 threadSoverglianza.start();//faccio partire il thread per l interrogazione sottostante
             }
-            else
-            {
+            else {
                 text="Nessun evento in programma";
                 Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID,TELEGRAM_URL);
                 Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID_EDI,TELEGRAM_URL);
@@ -491,44 +298,30 @@ public class SafetyHomeWebhook
         }
 
 
-        if (input.getResult().getAction().equalsIgnoreCase("attivaSimulaPresenza"))
-        {
-            String text="";
+        if (input.getResult().getAction().equalsIgnoreCase("attivaSimulaPresenza")) {
             Device presaPilotata = getPresaPilotata();
-            Device holderLampadina = null;
-            DeviceList allDevice = getAllDevices();//aggiungo tutti i device dal metodo in util
-            if(allDevice!=null)
-            {
-                holderLampadina = getDevice(SWITCHBINARY, ID_HOLDERLAMPADINA);
-            }
-            if(holderLampadina!=null && presaPilotata!=null)
-            {
+            Device holderLampadina = getHolderLampadina();
+
+            if(holderLampadina!=null && presaPilotata!=null) {
                 holderLampadina.on();
                 presaPilotata.on();
                 text="Simulazione presenza avviata";
             }
-            System.out.println(text);
+
             Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID,TELEGRAM_URL);
             Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID_EDI,TELEGRAM_URL);
         }
 
-        if (input.getResult().getAction().equalsIgnoreCase("disattivaSimulaPresenza"))
-        {
-            String text="";
+        if (input.getResult().getAction().equalsIgnoreCase("disattivaSimulaPresenza")) {
             Device presaPilotata = getPresaPilotata();
-            Device holderLampadina = null;
-            DeviceList allDevice = getAllDevices();//aggiungo tutti i device dal metodo in util
-            if(allDevice!=null)
-            {
-                holderLampadina = getDevice(SWITCHBINARY, ID_HOLDERLAMPADINA);
-            }
-            if(holderLampadina!=null && presaPilotata!=null)
-            {
+            Device holderLampadina = getHolderLampadina();
+
+            if(holderLampadina!=null && presaPilotata!=null) {
                 holderLampadina.off();
                 presaPilotata.off();
                 text="Simulazione presenza disattivata";
             }
-            System.out.println(text);
+
             Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID,TELEGRAM_URL);
             Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID_EDI,TELEGRAM_URL);
             output.setSpeech(text);

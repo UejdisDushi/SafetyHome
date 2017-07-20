@@ -10,30 +10,23 @@ import com.google.api.client.http.HttpTransport;
 import com.google.api.client.json.JsonFactory;
 import com.google.api.client.json.jackson2.JacksonFactory;
 import com.google.api.client.util.DateTime;
-import com.google.api.client.util.Lists;
 import com.google.api.client.util.store.FileDataStoreFactory;
 import com.google.api.services.calendar.*;
 import com.google.api.services.calendar.model.*;
-import com.google.api.services.calendar.model.Calendar;
-
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Collections;
 import java.util.Date;
 import java.util.List;
-public class UtilCalendario
-{
-    private static final String APPLICATION_NAME = "safetyhome-173418";
-    private static final java.io.File DATA_STORE_DIR =
-            new java.io.File(System.getProperty("user.home"), ".credentials/calendar-java-quickstart");
+
+public class UtilCalendario {
+    private static final java.io.File DATA_STORE_DIR = new java.io.File(System.getProperty("user.home"), ".credentials/calendar-java-quickstart");
     private static FileDataStoreFactory dataStoreFactory;
     private static HttpTransport httpTransport;
     private static final JsonFactory JSON_FACTORY = JacksonFactory.getDefaultInstance();
-    private static com.google.api.services.calendar.Calendar client;
-    static final java.util.List<Calendar> addedCalendarsUsingBatch = Lists.newArrayList();
 
-    public static boolean attivazioneServizio()
-    {
+
+    public static boolean attivazioneServizio() {
         boolean attivaServizioMonitoraggio = false;
 
         try {
@@ -42,34 +35,29 @@ public class UtilCalendario
             Credential credential = authorize();
             com.google.api.services.calendar.Calendar service = new com.google.api.services.calendar.Calendar.Builder(httpTransport, JSON_FACTORY, credential)
                     .setApplicationName("applicationName").build();
-            com.google.api.services.calendar.model.Calendar calendar20010057 =
-                    service.calendars().get("20010057@studenti.uniupo.it").execute();
             String pageToken = null;
             do {
                 Events events = service.events().list("20010057@studenti.uniupo.it").setPageToken(pageToken).execute();
                 List<Event> items = events.getItems();
-                for (Event tmp : items)
-                {
+                for (Event tmp : items){
                     //tiro su l ide del corrente evento
                     System.out.println("evento = "+tmp.getSummary()+" attivare vale : "+ attivazioneServizioInterno(String.valueOf(tmp.getStart()),String.valueOf(tmp.getEnd())));
-                    if(attivazioneServizioInterno(String.valueOf(tmp.getStart()),String.valueOf(tmp.getEnd()))==true)
-                    {
+                    if(attivazioneServizioInterno(String.valueOf(tmp.getStart()),String.valueOf(tmp.getEnd()))) {
                         attivaServizioMonitoraggio=true;
-                        return true;
+                        // return true;  secondo me può essere cancellato, in ogni caso fai return sotto
                     }
                 }
                 if(items.size()==0) return false;
                 pageToken = events.getNextPageToken();
             } while (pageToken != null);
         }
-        catch (IOException e)
-        {
+        catch (IOException e) {
             //System.err.println(e.getMessage());
         } catch (Throwable t) {
-
             t.printStackTrace();
         }
-        System.exit(1);
+
+        //System.exit(1);           secondo me può essere cancellato, in ogni caso fa il return sotto
         return attivaServizioMonitoraggio;
     }
 
@@ -94,43 +82,34 @@ public class UtilCalendario
         return new AuthorizationCodeInstalledApp(flow, new LocalServerReceiver()).authorize("user");
     }
 
-
-    private static boolean attivazioneServizioInterno(String data_inizio, String data_fine)
-    {
+    /**
+     * Controlla a partire da un evento nel calendario se l'ora attuale si interseca con quel evento
+     * @param data_inizio inizio evento
+     * @param data_fine fine evento
+     * @return True se interseca || False se non interseca
+     */
+    private static boolean attivazioneServizioInterno(String data_inizio, String data_fine) {
         Date now = new Date(java.util.Calendar.getInstance().getTime().getTime());
         DateTime now_convertita = new DateTime(now);
-        Boolean attivareServizio = false;
         Boolean eventoGiornata = false;
         if(data_inizio.length()==21)
-        {
             eventoGiornata=true;
-        }
+
         String data_now = now_convertita.toString();
         String data_inizioEvento = data_inizio;
         String data_fineEvento = data_fine;
         //System.out.println("DATA NOW VALE: "+data_now+"\n DATA INIZIO VALE : "+data_inizioEvento+"\n DATA FINE VALE : "+data_fineEvento+"\n\n");
-        //Data separata Evento now generato
-        int aaaa_now = 0;
-        int mm_now = 0;
-        int gg_now = 0;
-        int hh_now = 0;
-        int min_now = 0;
-        int sec_now = 0;
-        //INIZIALIZZAZIONE VARIABILI INIZIO EVENTO
-        int aaaa_inizioEvento=0;
-        int mm_inizioEvento=0;
-        int gg_inizioEvento=0;
-        int hh_inizioEvento=0;
-        int min_inizioEvento=0;
-        int sec_inizioEvento=0;
-        //INIZIALIZZAZIONE VARIABILI FINE EVENTO
-        int aaaa_fineEvento=0;
-        int mm_fineEvento=0;
-        int gg_fineEvento=0;
-        int hh_fineEvento=0;
 
-        if(eventoGiornata)//21
-        {
+        //Data separata Evento now generato
+        int aaaa_now, mm_now, gg_now, hh_now = 0, min_now = 0, sec_now = 0;
+
+        //INIZIALIZZAZIONE VARIABILI INIZIO EVENTO
+        int aaaa_inizioEvento, mm_inizioEvento, gg_inizioEvento, hh_inizioEvento = 0, min_inizioEvento = 0, sec_inizioEvento = 0;
+
+        //INIZIALIZZAZIONE VARIABILI FINE EVENTO
+        int aaaa_fineEvento, mm_fineEvento, gg_fineEvento, hh_fineEvento = 0;
+
+        if(eventoGiornata){   //21
             aaaa_now = Integer.valueOf(data_now.substring(0,4));
             mm_now = Integer.valueOf(data_now.substring(5,7));
             gg_now = Integer.valueOf(data_now.substring(8,10));
@@ -143,8 +122,7 @@ public class UtilCalendario
             mm_fineEvento = Integer.valueOf(data_fineEvento.substring(14,16));
             gg_fineEvento = Integer.valueOf(data_fineEvento.substring(17,19));
         }
-        else//EVENTO INIZIO FINE LUNGHEZZA 44
-        {
+        else{    //EVENTO INIZIO FINE LUNGHEZZA 44
             aaaa_now = Integer.valueOf(data_now.substring(0,4));
             mm_now = Integer.valueOf(data_now.substring(5,7));
             gg_now = Integer.valueOf(data_now.substring(8,10));
@@ -166,40 +144,20 @@ public class UtilCalendario
         }
 
         if(eventoGiornata)
-        {
             if (aaaa_now >=aaaa_inizioEvento && aaaa_now<=aaaa_fineEvento)
-            {
                 if (mm_now>=mm_inizioEvento && mm_now<=mm_fineEvento)
-                {
                     if (gg_now>=gg_inizioEvento && gg_now<=gg_fineEvento)
-                    {
                         return true;
-                    }
-                }
-            }
-        }
-        else//controllo se è un evento giornata
-        {
+
+        else       //controllo se è NON è un evento giornata
             if(aaaa_now>=aaaa_inizioEvento && aaaa_now<=aaaa_fineEvento)
-            {
                 if(mm_now>= mm_inizioEvento && mm_now<=mm_fineEvento)
-                {
                     if(gg_now>=gg_inizioEvento && gg_now <=gg_fineEvento)
-                    {
                         if(hh_now>=hh_inizioEvento && hh_now<=hh_fineEvento)
-                        {
                             if(min_now>= min_inizioEvento)
-                            {
                                 if(sec_now >= sec_inizioEvento)
-                                {
                                     return true;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
+
         return false;
     }
 }

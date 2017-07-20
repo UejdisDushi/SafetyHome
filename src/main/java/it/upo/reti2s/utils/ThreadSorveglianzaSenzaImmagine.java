@@ -10,28 +10,29 @@ import static it.upo.reti2s.utils.SafetyHomeWebhook.TELEGRAM_URL;
 import static it.upo.reti2s.utils.Util.getSensoreAperturaPorta;
 import static it.upo.reti2s.utils.Util.getSensorePresenza;
 
-/**
- * Created by Luca Franciscone on 11/07/2017.
- */
-public class ThreadSorveglianzaSenzaImmagine implements Runnable
-{
-    private Thread thread;
+
+public class ThreadSorveglianzaSenzaImmagine implements Runnable {
     private boolean stopThread = false;
     int durataSecondi;
     String text = "";
 
-    public ThreadSorveglianzaSenzaImmagine(int durataSecondi)
-    {
+    /**
+     * Costruttore della classe
+     * @param durataSecondi sono i secondi stabiliti per far durare il thread
+     */
+    public ThreadSorveglianzaSenzaImmagine(int durataSecondi){
         this.durataSecondi = durataSecondi;
     }
 
+    /**
+     * Metodo che avvia il thread per i secondi prefissati dal costruttore.
+     * Se dispositivi presenti controlla che la porta sia aperta e il sensone abbia rilevato una presenza.
+     */
     public void run()
     {
-
         Device sensoreAperturaPorta = getSensoreAperturaPorta();
         Device sensorePresenza  = getSensorePresenza();
-        if(sensoreAperturaPorta == null || sensorePresenza==null)
-        {
+        if(sensoreAperturaPorta == null || sensorePresenza==null){
             text = "Nessun sensore rilevato ";
             System.out.println(text);
             try {
@@ -42,17 +43,13 @@ public class ThreadSorveglianzaSenzaImmagine implements Runnable
             }
             this.stopRunning();
         }
-        else
-        {
-            while (!stopThread)
-            {
-                for (int i = 0; i < durataSecondi; i++)
-                {
+        else {
+            while (!stopThread) {
+                for (int i = 0; i < durataSecondi; i++) {
                     try {
-                        Thread.sleep(1000);//10 sec
+                        Thread.sleep(1000);     //interrompo esecuzione del thread per 1 secondo
                         if(sensoreAperturaPorta.getMetrics().getLevel().equalsIgnoreCase("on")
-                                || sensorePresenza.getMetrics().getLevel().equalsIgnoreCase("on"))
-                        {
+                                || sensorePresenza.getMetrics().getLevel().equalsIgnoreCase("on")) {
                             Util.sendMessage("Rilevata Presenza",TELEGRAM_RESPONSE_CHAT_ID,TELEGRAM_URL);
                             Util.sendMessage("Rilevata Presenza",TELEGRAM_RESPONSE_CHAT_ID_EDI,TELEGRAM_URL);
                         }
@@ -67,6 +64,9 @@ public class ThreadSorveglianzaSenzaImmagine implements Runnable
         }
     }
 
+    /**
+     * Metodo che interrompe l'esecuzione del thread
+     */
     public void stopRunning()
     {
         stopThread = true;
