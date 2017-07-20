@@ -1,5 +1,7 @@
 package it.upo.reti2s.utils;
 
+import java.util.*;
+import java.io.*;
 
 import ai.api.GsonFactory;
 import ai.api.model.AIResponse;
@@ -11,6 +13,7 @@ import de.fh_zwickau.informatik.sensor.ZWayApiHttp;
 import de.fh_zwickau.informatik.sensor.model.devices.Device;
 import de.fh_zwickau.informatik.sensor.model.devices.DeviceList;
 import it.upo.reti2s.utils.ZWayLib.ZWaySimpleCallback;
+import jdk.internal.util.xml.impl.Input;
 
 import javax.imageio.ImageIO;
 import java.io.*;
@@ -66,21 +69,32 @@ public class SafetyHomeWebhook
     static final long TELEGRAM_RESPONSE_CHAT_ID_EDI = 128905829;//id/username Edi
 
     public static void main(String[] args) throws IOException {
-        String text="";
+        boolean avviaCal = false;
+        BufferedReader input = new BufferedReader (new InputStreamReader(System.in));
 
-        if(UtilCalendario.attivazioneServizio()==true)
+        System.out.println("Inserisca y per avvisare il servizio di monitoraggio da calendario : \n");
+        String s = (input.readLine());
+        if(s.equalsIgnoreCase("y"))
         {
-            Thread threadSoverglianza = new Thread(new ThreadSorveglianzaConImmagine(10));
-            threadSoverglianza.start();//faccio partire il thread per l interrogazione sottostante
+            avviaCal = true;
+        }
+        if(avviaCal==true)
+        {
+            String text="";
+            if(UtilCalendario.attivazioneServizio()==true)
+            {
+                Thread threadSoverglianza = new Thread(new ThreadSorveglianzaConImmagine(10));
+                threadSoverglianza.start();//faccio partire il thread per l interrogazione sottostante
+
+            }
+            else
+            {
+                text="Nessun evento in programma";
+                Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID,TELEGRAM_URL);
+                Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID_EDI,TELEGRAM_URL);
+            }
 
         }
-        else
-        {
-            text="Nessun evento in programma";
-            Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID,TELEGRAM_URL);
-            Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID_EDI,TELEGRAM_URL);
-        }
-
         //Thread threadSoverglianza = new Thread(new ThreadSorveglianzaSenzaImmagine(10));
         //threadSoverglianza.start();//faccio partire il thread per l interrogazione sottostante
         //text="Thread attivato";
@@ -258,8 +272,6 @@ public class SafetyHomeWebhook
                     holderLampadina.off();
                 }
 
-                //System.out.println("Webcam: " + webcam.getName());
-
                 webcam.open();
                 try
                 {
@@ -326,7 +338,7 @@ public class SafetyHomeWebhook
 
             //faccio passare output come parametro senno posso fare la return lo ritorno nella classe chiamante
             output.setSpeech(text);
-           output.setDisplayText(text);
+            output.setDisplayText(text);
         }
 
         if (input.getResult().getAction().equalsIgnoreCase("spegniPresa"))
@@ -422,7 +434,7 @@ public class SafetyHomeWebhook
         // da adattare ai nuovi thread creati
         if (input.getResult().getAction().equalsIgnoreCase("attivaServizioMonitoraggioConImmagine"))
         {
-            Thread t = new Thread(new ThreadSorveglianzaConImmagine(10));
+            Thread t = new Thread(new ThreadSorveglianzaConImmagine(5));
             t.start();//faccio partire il thread per l interrogazione sottostante
 
         }
@@ -431,7 +443,7 @@ public class SafetyHomeWebhook
         if (input.getResult().getAction().equalsIgnoreCase("attivaServizioMonitoraggioSenzaImmagine"))
         {
             String text="";
-            Thread threadSoverglianza = new Thread(new ThreadSorveglianzaSenzaImmagine(10));
+            Thread threadSoverglianza = new Thread(new ThreadSorveglianzaSenzaImmagine(5));
             threadSoverglianza.start();//faccio partire il thread per l interrogazione sottostante
             //text="Thread attivato";
 
@@ -454,10 +466,9 @@ public class SafetyHomeWebhook
                 Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID_EDI,TELEGRAM_URL);
             }
 
-            //Thread threadSoverglianza = new Thread(new ThreadSorveglianzaSenzaImmagine(10));
-            //threadSoverglianza.start();//faccio partire il thread per l interrogazione sottostante
-            //text="Thread attivato";
-
+            text="Thread attivato";
+            output.setSpeech(text);
+            output.setDisplayText(text);
         }
 
         if (input.getResult().getAction().equalsIgnoreCase("attivaMonitoraggioCalendarioSenzaImmagine"))
@@ -475,13 +486,54 @@ public class SafetyHomeWebhook
                 Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID,TELEGRAM_URL);
                 Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID_EDI,TELEGRAM_URL);
             }
-
-            //Thread threadSoverglianza = new Thread(new ThreadSorveglianzaSenzaImmagine(10));
-            //threadSoverglianza.start();//faccio partire il thread per l interrogazione sottostante
-            //text="Thread attivato";
-
+            output.setSpeech(text);
+            output.setDisplayText(text);
         }
 
+
+        if (input.getResult().getAction().equalsIgnoreCase("attivaSimulaPresenza"))
+        {
+            String text="";
+            Device presaPilotata = getPresaPilotata();
+            Device holderLampadina = null;
+            DeviceList allDevice = getAllDevices();//aggiungo tutti i device dal metodo in util
+            if(allDevice!=null)
+            {
+                holderLampadina = getDevice(SWITCHBINARY, ID_HOLDERLAMPADINA);
+            }
+            if(holderLampadina!=null && presaPilotata!=null)
+            {
+                holderLampadina.on();
+                presaPilotata.on();
+                text="Simulazione presenza avviata";
+            }
+            System.out.println(text);
+            Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID,TELEGRAM_URL);
+            Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID_EDI,TELEGRAM_URL);
+        }
+
+        if (input.getResult().getAction().equalsIgnoreCase("disattivaSimulaPresenza"))
+        {
+            String text="";
+            Device presaPilotata = getPresaPilotata();
+            Device holderLampadina = null;
+            DeviceList allDevice = getAllDevices();//aggiungo tutti i device dal metodo in util
+            if(allDevice!=null)
+            {
+                holderLampadina = getDevice(SWITCHBINARY, ID_HOLDERLAMPADINA);
+            }
+            if(holderLampadina!=null && presaPilotata!=null)
+            {
+                holderLampadina.off();
+                presaPilotata.off();
+                text="Simulazione presenza disattivata";
+            }
+            System.out.println(text);
+            Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID,TELEGRAM_URL);
+            Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID_EDI,TELEGRAM_URL);
+            output.setSpeech(text);
+            output.setDisplayText(text);
+        }
 
     }
 }
