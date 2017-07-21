@@ -116,6 +116,16 @@ public class Util
         return null;
     }
 
+    public static Device getHolderLampadina() {
+        DeviceList lista = getAllDevices();
+        if(lista != null) {
+            for(Device tmp : lista.getAllDevices())
+                if(tmp.getNodeId() == ID_HOLDERLAMPADINA && tmp.getDeviceType().equalsIgnoreCase(SWITCHBINARY))
+                    return tmp;
+        }
+        return null;
+    }
+
 
     public static  Device getSensorePresenza() {
         DeviceList lista = zWayApi.getDevices();
@@ -146,8 +156,7 @@ public class Util
         return null;
     }
 
-    public static String getPortaAperta(Device aperturaPorta)
-    {
+    public static String getPortaAperta(Device aperturaPorta) {
         return aperturaPorta.getMetrics().getLevel();
     }
 
