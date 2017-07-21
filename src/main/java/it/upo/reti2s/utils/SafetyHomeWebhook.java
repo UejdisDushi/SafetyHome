@@ -294,7 +294,7 @@ public class SafetyHomeWebhook
             }
             else
             {
-                text = "No webcam detected";
+                text = "Devices Mancanti";
                 Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID,TELEGRAM_URL);
                 Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID_EDI,TELEGRAM_URL);
             }
