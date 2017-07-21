@@ -159,6 +159,7 @@ public class SafetyHomeWebhook
             Device holderLampadina = getHolderLampadina();
 
             Webcam webcam = Webcam.getDefault();
+
             if (webcam != null && sensoreLuminosita!=null && holderLampadina!=null) {
                 if( Double.parseDouble(sensoreLuminosita.getMetrics().getLevel()) <200)
                     holderLampadina.on();
