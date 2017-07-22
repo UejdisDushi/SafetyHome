@@ -41,10 +41,10 @@ public class SafetyHomeWebhook
     final static String PATH_IMMAGINE_DROPBOX = "https://www.dropbox.com/s/v7arilbs00h4849/prova.png?dl=0";
 
     // Identificatori singoli Device
-    final static int ID_APERTURAPORTE = 13;//CORRETTO
-    final static int ID_PRESAPILOTATA = 3;// CORRETTO PRESA PILOTATA PER RADIO
+    final static int ID_APERTURAPORTE = 13;
+    final static int ID_PRESAPILOTATA = 3;
     final static int ID_HOLDERLAMPADINA = 21;//CORRETTO EVERSPRING WALL PLUG
-    final static int ID_MULTILEVEL_PURPOSE = 6;//CORRETTO DA USARE PER PURPOSE E LUMINOSITA
+    final static int ID_MULTILEVEL_PURPOSE = 6;
 
     //Nome del getProbeTitle() del Device
     final static String SWITCHBINARY = "SwitchBinary";
@@ -89,19 +89,14 @@ public class SafetyHomeWebhook
             }
 
         }
-        //Thread threadSoverglianza = new Thread(new ThreadSorveglianzaSenzaImmagine(10));
-        //threadSoverglianza.start();//faccio partire il thread per l interrogazione sottostante
-        //text="Thread attivato";
-
 
         Gson gson = GsonFactory.getDefaultFactory().getGson();
-        //Usato per catturare Post da API.ai
         post("/", (request, response) -> {
             Fulfillment output = new Fulfillment();
             doWebhook(gson.fromJson(request.body(), AIResponse.class), output);
             response.type("application/json");
             return output;
-        }, gson::toJson);       //gson::toJson serve per prendere il contenuto della return e mapparlo in un oggetto json
+        }, gson::toJson);
 
     }
 
@@ -112,20 +107,11 @@ public class SafetyHomeWebhook
      * @param input  the request body that comes from api.ai
      * @param output the @link(Fulfillment) response to be sent to api.ai
      */
-
-    //tutte le action sono mappate dentro doWebhook
     private static void doWebhook(AIResponse input, Fulfillment output) throws InterruptedException, IOException {
-
-        //In AIResponse input dobbiamo prendere un getResult e getAction, get action avrà lo stesso nome della action dell intent
-        //text verrà utilizzato per il ritorno
-        /*
-        Holder della lampadina ha id=20             Accendi la luce da  API.ai            Accendi la luce da Telegram
-         */
-
         String text="Device non trovato";
 
         if (input.getResult().getAction().equalsIgnoreCase("accendiLuce")) {
-            DeviceList allDevice = getAllDevices();//aggiungo tutti i device dal metodo in util
+            DeviceList allDevice = getAllDevices();
             if(allDevice!=null) {
                 Device devDaAccendere = getHolderLampadina();
                 if(devDaAccendere!=null) {
@@ -134,7 +120,6 @@ public class SafetyHomeWebhook
                 }
             }
 
-            //faccio passare output come parametro senno posso fare la return lo ritorno nella classe chiamante
             Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID,TELEGRAM_URL);
             Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID_EDI,TELEGRAM_URL);
             output.setSpeech(text);
@@ -200,7 +185,6 @@ public class SafetyHomeWebhook
             Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID,TELEGRAM_URL);
             Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID_EDI,TELEGRAM_URL);
 
-            //faccio passare output come parametro senno posso fare la return lo ritorno nella classe chiamante
             output.setSpeech(text);
             output.setDisplayText(text);
         }
@@ -213,7 +197,6 @@ public class SafetyHomeWebhook
             }
             else text="Device spegni presa non trovato";
 
-            //faccio passare output come parametro senno posso fare la return lo ritorno nella classe chiamante
             Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID,TELEGRAM_URL);
             Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID_EDI,TELEGRAM_URL);
             output.setSpeech(text);
@@ -221,7 +204,7 @@ public class SafetyHomeWebhook
         }
 
         if (input.getResult().getAction().equalsIgnoreCase("verificaPresenza")) {
-            //6	SensoreAmbientale_SafetyHome	General purpose  	Idle/trigered  	 	02:44 PM
+            //6	SensoreAmbientale_SafetyHome	General purpose  	Idle/trigered
 
             Device sensorePrenza = getSensorePresenza();
             if(sensorePrenza !=null) {
@@ -231,11 +214,8 @@ public class SafetyHomeWebhook
                     text="Nessuna presenza rilevata";
             }
             else text="Sensore presenza non trovato";
-
             Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID,TELEGRAM_URL);
             Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID_EDI,TELEGRAM_URL);
-
-            //faccio passare output come parametro senno posso fare la return lo ritorno nella classe chiamante
             output.setSpeech(text);
             output.setDisplayText(text);
         }
@@ -252,27 +232,24 @@ public class SafetyHomeWebhook
 
             Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID,TELEGRAM_URL);
             Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID_EDI,TELEGRAM_URL);
-
-            //faccio passare output come parametro senno posso fare la return lo ritorno nella classe chiamante
             output.setSpeech(text);
             output.setDisplayText(text);
         }
 
         if (input.getResult().getAction().equalsIgnoreCase("attivaServizioMonitoraggioConImmagine")) {
             Thread t = new Thread(new ThreadSorveglianzaConImmagine(5));
-            t.start();//faccio partire il thread per l interrogazione sottostante
+            t.start();
         }
 
-        // da adattare ai nuovi thread creati
         if (input.getResult().getAction().equalsIgnoreCase("attivaServizioMonitoraggioSenzaImmagine")) {
             Thread threadSoverglianza = new Thread(new ThreadSorveglianzaSenzaImmagine(5));
-            threadSoverglianza.start();//faccio partire il thread per l interrogazione sottostante
+            threadSoverglianza.start();
         }
 
         if (input.getResult().getAction().equalsIgnoreCase("attivaMonitoraggioCalendarioConImmagine")) {
             if(UtilCalendario.attivazioneServizio()) {
                 Thread threadSoverglianza = new Thread(new ThreadSorveglianzaConImmagine(10));
-                threadSoverglianza.start();//faccio partire il thread per l interrogazione sottostante
+                threadSoverglianza.start();
             }
             else {
                 text="Nessun evento in programma";
@@ -288,7 +265,7 @@ public class SafetyHomeWebhook
         if (input.getResult().getAction().equalsIgnoreCase("attivaMonitoraggioCalendarioSenzaImmagine")) {
             if(UtilCalendario.attivazioneServizio()) {
                 Thread threadSoverglianza = new Thread(new ThreadSorveglianzaSenzaImmagine(2));
-                threadSoverglianza.start();//faccio partire il thread per l interrogazione sottostante
+                threadSoverglianza.start();
             }
             else {
                 text="Nessun evento in programma";

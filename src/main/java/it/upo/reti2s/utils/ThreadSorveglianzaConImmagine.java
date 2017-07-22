@@ -42,7 +42,7 @@ public class ThreadSorveglianzaConImmagine implements Runnable {
                 Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID,TELEGRAM_URL);
                 Util.sendMessage(text,TELEGRAM_RESPONSE_CHAT_ID_EDI,TELEGRAM_URL);
                 System.out.println(text);
-                this.stopRunning();     //non essendoci nessun dispositivo termino l'esecuzione
+                this.stopRunning();
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -52,7 +52,7 @@ public class ThreadSorveglianzaConImmagine implements Runnable {
             while (!stopThread) {
                 for (int i = 0; i < durataSecondi; i++) {
                     try {
-                        Thread.sleep(1000);     //interrompo esecuzione del thread per 1 secondo
+                        Thread.sleep(1000);
                         if(getPortaAperta(sensoreAperturaPorta).equalsIgnoreCase("on") || sensorePresenza.getMetrics().getLevel().equalsIgnoreCase("on")) {
                             if(Double.parseDouble(sensoreLuminosita.getMetrics().getLevel()) <200)
                                 holderLampadina.on();

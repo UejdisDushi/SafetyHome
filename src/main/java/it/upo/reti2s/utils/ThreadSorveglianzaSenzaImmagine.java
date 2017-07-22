@@ -47,7 +47,7 @@ public class ThreadSorveglianzaSenzaImmagine implements Runnable {
             while (!stopThread) {
                 for (int i = 0; i < durataSecondi; i++) {
                     try {
-                        Thread.sleep(1000);     //interrompo esecuzione del thread per 1 secondo
+                        Thread.sleep(1000);
                         if(sensoreAperturaPorta.getMetrics().getLevel().equalsIgnoreCase("on")
                                 || sensorePresenza.getMetrics().getLevel().equalsIgnoreCase("on")) {
                             Util.sendMessage("Rilevata Presenza",TELEGRAM_RESPONSE_CHAT_ID,TELEGRAM_URL);

@@ -12,18 +12,9 @@ import java.net.URL;
 import java.nio.charset.Charset;
 
 import static it.upo.reti2s.utils.SafetyHomeWebhook.*;
-
-/**
- * Created by Luca Franciscone on 12/07/2017.
- */
 public class Util
 {
-    //METODI PER INVIARE MESSAGGI CON TELEGRAM
-    //Metodo usato per inviare messaggio a telegram senza webhook mediante post
-    /*
-     message è il messaggio in stringa da inviare
-     /chatid è l id dell utente a cui rispondere nella chat
-          */
+
     public static void sendMessage(String message, long aChatId, String telegram_url) throws SecurityException, IOException
     {
         String response = "";
@@ -55,7 +46,6 @@ public class Util
     }
 
 
-    //HTTP POST PARTE CHIAMATA PER L INVIO DEL MESSAGGIO
     public static String eseguiPost(String url, String json) throws Exception
     {
         URL obj = new URL(url);
@@ -82,7 +72,6 @@ public class Util
     }
 
 
-    //INIZIO METODI PER I DEVICE
 
 
     public static DeviceList getAllDevices()
@@ -177,8 +166,6 @@ public class Util
         }
         return null;
     }
-
-    //manca il metodo per acendere la spina
 
     public static Device getPresaPilotata()
     {

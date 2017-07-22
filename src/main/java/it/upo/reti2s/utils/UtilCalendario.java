@@ -44,7 +44,7 @@ public class UtilCalendario {
                     System.out.println("evento = "+tmp.getSummary()+" attivare vale : "+ attivazioneServizioInterno(String.valueOf(tmp.getStart()),String.valueOf(tmp.getEnd())));
                     if(attivazioneServizioInterno(String.valueOf(tmp.getStart()),String.valueOf(tmp.getEnd()))) {
                         attivaServizioMonitoraggio=true;
-                        // return true;  secondo me può essere cancellato, in ogni caso fai return sotto
+                        return true;
                     }
                 }
                 if(items.size()==0) return false;
@@ -52,12 +52,12 @@ public class UtilCalendario {
             } while (pageToken != null);
         }
         catch (IOException e) {
-            //System.err.println(e.getMessage());
+
         } catch (Throwable t) {
             t.printStackTrace();
         }
 
-        //System.exit(1);           secondo me può essere cancellato, in ogni caso fa il return sotto
+        //System.exit(1);
         return attivaServizioMonitoraggio;
     }
 
